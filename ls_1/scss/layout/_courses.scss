@@ -1,0 +1,31 @@
+.slider-prev {
+    background-image: url('../../assets/icons/slider-left.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.slider-next {
+    background-image: url('../../assets/icons/slider-right.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.star {
+    fill: #FDD22F;
+    stroke: #FDD22F;
+}
+
+.star-empty {
+    fill: #DEDEDE;
+    stroke: #DEDEDE;
+}
