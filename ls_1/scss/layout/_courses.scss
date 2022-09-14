@@ -1,7 +1,4 @@
 .slider-prev {
-    background-image: url('../../assets/icons/slider-left.svg');
-    background-repeat: no-repeat;
-    background-position: center;
     width: 40px;
     height: 40px;
     border: none;
@@ -9,10 +6,11 @@
     cursor: pointer;
 }
 
+.icon__prev, .icon__next {
+    margin: 8px;
+}
+
 .slider-next {
-    background-image: url('../../assets/icons/slider-right.svg');
-    background-repeat: no-repeat;
-    background-position: center;
     width: 40px;
     height: 40px;
     border: none;

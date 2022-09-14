@@ -55,6 +55,7 @@ input,
 button,
 textarea,
 select {
+  padding: 0;
   font: inherit;
 }
 
@@ -82,9 +83,6 @@ select {
 }
 
 .slider-prev {
-  background-image: url("../../assets/icons/slider-left.svg");
-  background-repeat: no-repeat;
-  background-position: center;
   width: 40px;
   height: 40px;
   border: none;
@@ -92,10 +90,11 @@ select {
   cursor: pointer;
 }
 
+.icon__prev, .icon__next {
+  margin: 8px;
+}
+
 .slider-next {
-  background-image: url("../../assets/icons/slider-right.svg");
-  background-repeat: no-repeat;
-  background-position: center;
   width: 40px;
   height: 40px;
   border: none;
@@ -114,15 +113,16 @@ select {
 }
 
 .tour__btn-play {
-  background-image: url("../../assets/icons/play.svg");
-  background-repeat: no-repeat;
-  background-position: center;
   width: 40px;
   height: 40px;
   border: 2px solid #fff;
   border-radius: 50%;
   cursor: pointer;
   box-shadow: 0px 4px 16px 0px rgba(75, 202, 103, 0.56);
+}
+
+.tour__video-play {
+  margin: 6px;
 }
 
 .choose__item-icon {
