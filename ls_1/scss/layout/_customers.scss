@@ -1,0 +1,26 @@
+.blue-square {
+    display: block;
+    width: 344px;
+    height: 344px;
+    background-color: #637AF2;
+    border-radius: 24px;
+}
+
+.customers__slider-quotes {
+    fill: #3F4C9A;
+}
+
+.customers__slider-dot {
+    padding: 0;
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border: none;
+    background-color: #BAD1FF;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.customers__slider-active {
+    background-color: #1B63F0;
+}

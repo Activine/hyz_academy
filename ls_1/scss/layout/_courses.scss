@@ -1,0 +1,29 @@
+.slider-prev {
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.icon__prev, .icon__next {
+    margin: 8px;
+}
+
+.slider-next {
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.star {
+    fill: #FDD22F;
+    stroke: #FDD22F;
+}
+
+.star-empty {
+    fill: #DEDEDE;
+    stroke: #DEDEDE;
+}
