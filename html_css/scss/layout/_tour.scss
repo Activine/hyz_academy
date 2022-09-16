@@ -1,0 +1,78 @@
+.tour {
+  margin-bottom: 100px;
+  &__inner {
+    display: flex;
+  }
+
+  &__video {
+  }
+
+  &__video-img {
+  }
+
+  &__btn-play {
+  }
+
+  &__video-play {
+  }
+
+  &__info {
+    max-width: 415px;
+  }
+
+  &__desc {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 100%;
+    color: #1b63f0;
+    margin-top: 56px;
+    margin-bottom: 6px;
+  }
+
+  &__title {
+    font-size: 26px;
+    line-height: 138%;
+    color: #000000;
+    position: relative;
+    margin-bottom: 24px;
+    &::after {
+      content: "";
+      position: absolute;
+      display: inline-block;
+      width: 60px;
+      height: 2px;
+      top: 26px;
+      background-color: #637af2;
+      margin-left: 24px;
+    }
+  }
+
+  &__text, &__list{
+    font-size: 14px;
+    line-height: 157%;
+    margin-bottom: 12px;
+  }
+
+  &__list {
+    margin-bottom: 24px;
+  }
+
+  &__item {
+    list-style-type: none;
+    margin-bottom: 12px;
+    position: relative;
+    &::before {
+      position: absolute;
+      color: #FDE7E6;
+      content: "\2022";
+      font-size: 26px;
+      font-weight: 700;
+      left: -20px;
+     }
+  }
+}
+
+.btn {
+  &__blue {
+  }
+}

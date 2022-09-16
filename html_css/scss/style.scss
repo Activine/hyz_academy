@@ -1,0 +1,21 @@
+@import './base/reset';
+@import './utils/variables';
+@import './components/buttons';
+@import './base//typography';
+@import './layout/header';
+@import './layout/education';
+@import './layout/advantages';
+@import './layout/courses';
+@import './layout/tour';
+@import './layout/choose';
+@import './layout/prefer';
+@import './layout/customers';
+@import './layout/started';
+@import './layout/blog';
+@import './layout/form';
+@import './layout/footer';
+
+body {
+    font-family: 'Montserrat';
+    color: $domimant-color;
+}

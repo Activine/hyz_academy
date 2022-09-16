@@ -1,0 +1,111 @@
+.choose {
+  &__inner {
+    display: flex;
+  }
+
+  &__left {
+  }
+  
+  &__title {
+    position: relative;
+    font-size: 26px;
+    line-height: 138%;
+    color: #000;
+    margin-bottom: 56px;
+    &::after {
+      content: "";
+      position: absolute;
+      display: inline-block;
+      width: 60px;
+      height: 2px;
+      top: 26px;
+      background-color: #637af2;
+      margin-left: 24px;
+    }
+  }
+
+  &__list {
+    list-style-type: none;
+    padding-left: 0;
+  }
+
+  &__item {
+    max-width: 502px;
+  }
+
+  &__item-title {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 150%;
+    color: #000000;
+  }
+
+  &__item-info {
+    display: flex;
+    gap: 24px;
+  }
+
+  &__item-date {
+    display: flex;
+  }
+
+  &__item-icon {
+    stroke: #838383;
+    margin-right: 8px;
+  }
+  &__item-text {
+    font-size: 14px;
+    line-height: 157%;
+  }
+  &__item-time {
+    display: flex;
+  }
+
+  &__item-location {
+    display: flex;
+  }
+
+  &__right {
+    background: #FFF9F1;
+  }
+
+  &__bg-title {
+  }
+
+  &__box {
+  }
+
+  &__box-text {
+  }
+
+  &__days {
+  }
+
+  &__hours {
+  }
+
+  &__min {
+  }
+
+  &__card {
+  }
+
+  &__card-title {
+  }
+
+  &__card-info {
+  }
+
+  &__card-date {
+  }
+
+  &__card-time {
+  }
+
+  &__card-location {
+  }
+}
+.btn {
+  &__blue {
+  }
+}

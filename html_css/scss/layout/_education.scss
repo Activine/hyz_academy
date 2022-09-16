@@ -1,0 +1,15 @@
+.education {
+  &__title {
+    max-width: 410px;
+    font-size: 36px;
+    line-height: 122%;
+    color: #000;
+    margin-bottom: 32px;
+  }
+  &__desc{
+    margin-bottom: 40px;
+  }
+  &__content{
+    margin-bottom: 100px;
+  }
+}
