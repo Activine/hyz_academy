@@ -4,6 +4,27 @@
   }
 }
 
+.nav{
+  &__link{
+      color: #06bbdf;
+      font-weight: 600;
+      line-height: 133%;
+      text-decoration: none;
+      &:hover{
+          opacity: .85;
+      }
+      &:focus{
+          opacity: .85;
+      }
+      &:active{
+          opacity: .75;
+      }
+  }
+  &__link-active{
+      color: #1B63F0;
+  }
+}
+
 .btn {
   display: inline-block;
   font-weight: 700;
@@ -72,10 +93,15 @@
   }
   &__ed {
     padding: 12px 24px;
-  }
 
+  }
+  &__nav{
+    margin-left: 40px;
+  }
   &__form{
     box-shadow: 0px 4px 16px rgba(75, 202, 103, 0.58);
+    max-width: 120px;
+    margin-top: 32px;
   }
 }
 
@@ -123,38 +149,6 @@
 .star-empty {
   fill: $star-empty;
   stroke: $star-empty;
-}
-
-.tour {
-  &__btn-play {
-    background-color: $lightgreen-btn;
-    width: 40px;
-    height: 40px;
-    border: 2px solid #fff;
-    border-radius: 50%;
-    cursor: pointer;
-    box-shadow: 0px 4px 16px 0px rgba(75, 202, 103, 0.56);
-  }
-
-  &__video-play {
-    margin: 6px;
-  }
-}
-
-.tour__btn-play:hover {
-  border: 2px solid $lightgreen-btn;
-}
-
-.tour__btn-play:active {
-  box-shadow: none;
-  background-color: $btn-play;
-  border: 2px solid $btn-play;
-}
-
-.tour__btn-play:focus {
-  box-shadow: none;
-  background-color: $btn-play;
-  border: 2px solid $btn-play;
 }
 
 .customers {

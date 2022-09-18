@@ -1,29 +1,43 @@
 .header{
     margin-bottom: 144px;
+    &__top{
+        display: flex;
+        align-items: center;
+    }
+    &__logo{
+        margin-right: auto;
+    }
 }
 .logo{
     &__img {
         fill: #1B63F0;
+ 
     }
 }
 
-.nav{
-    &__link{
-        color: #fff;
-        font-weight: 600;
-        line-height: 133%;
-        text-decoration: none;
-        &:hover{
-            opacity: .85;
-        }
-        &:focus{
-            opacity: .85;
-        }
-        &:active{
-            opacity: .75;
-        }
+.nav {
+    display: flex;
+    align-items: center;
+    &__list {
+        display: flex;
+        align-items: center;
+        gap: 20px;
     }
-    &__link-active{
-        color: #1B63F0;
+
+    &__item {
+    }
+
+    &__link {
+    }
+
+    &__link-active {
+    }
+}
+.btn {
+
+    &__blue {
+    }
+
+    &__ed {
     }
 }

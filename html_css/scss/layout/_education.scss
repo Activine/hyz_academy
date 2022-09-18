@@ -1,6 +1,8 @@
 .education {
-  &__title {
+  &__wrap{
     max-width: 410px;
+  }
+  &__title {
     font-size: 36px;
     line-height: 122%;
     color: #000;
@@ -11,5 +13,20 @@
   }
   &__content{
     margin-bottom: 100px;
+    position: relative;
+  }
+  &__img{
+    position: absolute;
+    top: -140px;
+    right: 0;
+  }
+}
+.partners {
+  display: flex;
+  align-items: center;
+  &__link {
+  }
+
+  &__logo {
   }
 }

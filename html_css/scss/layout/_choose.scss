@@ -1,17 +1,18 @@
 .choose {
+  margin-bottom: 80px;
   &__inner {
     display: flex;
   }
 
   &__left {
   }
-  
+
   &__title {
     position: relative;
     font-size: 26px;
     line-height: 138%;
     color: #000;
-    margin-bottom: 56px;
+    margin-bottom: 32px;
     &::after {
       content: "";
       position: absolute;
@@ -31,22 +32,28 @@
 
   &__item {
     max-width: 502px;
+    border-bottom: 1px solid rgba(92, 92, 92, 0.1);
   }
-
+  &__item:not(:last-child) {
+    margin-bottom: 40px;
+  }
   &__item-title {
     font-weight: 600;
     font-size: 16px;
     line-height: 150%;
     color: #000000;
+    margin-bottom: 16px;
   }
 
   &__item-info {
     display: flex;
     gap: 24px;
+    padding-bottom: 24px;
   }
 
   &__item-date {
     display: flex;
+    flex-wrap: wrap;
   }
 
   &__item-icon {
@@ -66,36 +73,78 @@
   }
 
   &__right {
-    background: #FFF9F1;
+    background: #fff9f1;
   }
 
   &__bg-title {
+    font-weight: 700;
+    font-size: 60px;
+    line-height: 122%;
+    letter-spacing: 0.4em;
+    color: #f6f2e9;
   }
 
   &__box {
+    display: flex;
+    justify-content: space-between;
   }
 
   &__box-text {
   }
+  &__span {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 133%;
+    padding-right: 6px;
+  }
 
   &__days {
+    color: #91a3ed;
   }
 
   &__hours {
+    color: #f0c41b;
   }
 
   &__min {
+    color: #fe5f60;
   }
 
   &__card {
+    background-image: url("../../assets/images/slider-image1.png");
+    background-size: cover;
+    
   }
-
+  &__card-wrap{
+    background: rgba(0, 0, 0, .8);
+    width: 280px;
+    margin: auto 24px 0 24px;
+  }
   &__card-title {
+    font-weight: 600;
+    line-height: 150%;
+    text-align: center;
+    color: #ffffff;
   }
 
   &__card-info {
-  }
+    display: flex;
 
+    flex-wrap: wrap;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 157%;
+    color: #BFBFBF;
+    align-items: center;
+  }
+  &__card-icon{
+    stroke: #BFBFBF;
+  }
+  &__card-data{
+    display: flex;
+    // width: 107px;
+    // flex-shrink: 0;
+  }
   &__card-date {
   }
 

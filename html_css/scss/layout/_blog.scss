@@ -1,4 +1,5 @@
 .blog {
+  margin-bottom: 80px;
   &__title {
     position: relative;
     font-size: 26px;
@@ -19,54 +20,83 @@
 
   &__slider {
     display: flex;
+    height: 264px;
+    gap: 20px;
   }
 
   &__item {
     display: flex;
+    position: relative;
+    background: #d6fae7;
+    border-radius: 16px 16px 0px 16px;
+    margin-top: 24px;
+    width: 415px;
+    flex-shrink: 0;
   }
 
   &__sidebar {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    padding: 18px 24px 56px 16px;
   }
 
   &__sidebar-desc {
     font-weight: 700;
     font-size: 12px;
     line-height: 133%;
+    margin-bottom: 46px;
     text-align: center;
     color: #5d74e4;
+    text-orientation: upright;
+    writing-mode: vertical-lr;
   }
 
   &__sidebar-avatar {
   }
 
   &__item-desc {
+    display: flex;
+    flex-direction: column;
     color: #000;
+    padding-right: 16px;
   }
 
   &__item-img {
+    position: absolute;
+    top: -24px;
   }
 
   &__item-title {
     font-weight: 600;
     font-size: 16px;
+    margin-top: auto;
+    margin-bottom: 16px;
   }
 
   &__item-link {
     font-weight: 700;
     font-size: 12px;
     text-decoration: none;
+    margin-bottom: 24px;
+    color: #000;
   }
 
+  &__item-link:hover{
+    opacity: .85;
+  }
+  &__item-link:focus{
+    opacity: .85;
+  }
+  &__item-link:active{
+    opacity: .75;
+  }
+  
   &__slider-dots {
     display: flex;
     flex-direction: column;
-  }
-
-  &__slider-dot {
-  }
-
-  &__slider-active {
+    align-items: center;
+    gap: 22px;
+    margin-left: 87px;
   }
 }

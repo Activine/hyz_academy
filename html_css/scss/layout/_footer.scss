@@ -1,6 +1,7 @@
 .footer {
   &__top {
     display: flex;
+    margin-bottom: 80px;
   }
   &__logo {
     margin-right: 120px;
@@ -18,8 +19,6 @@
     font-size: 16px;
     line-height: 150%;
     padding-bottom: 8px;
-    /* identical to box height, or */
-
     color: #000000;
   }
 
@@ -34,6 +33,17 @@
   &__item-link {
     font-size: 14px;
     text-decoration: none;
+    color: #5c5c5c;
+  }
+
+  &__item-link:hover{
+    opacity: .85;
+  }
+  &__item-link:focus{
+    opacity: .85;
+  }
+  &__item-link:active{
+    opacity: .75;
   }
 
   &__social {
@@ -81,5 +91,15 @@
     font-weight: 600;
     font-size: 12px;
     text-decoration: none;
+    color: #5c5c5c;
+  }
+  &__bottom-link:hover{
+    opacity: .85;
+  }
+  &__bottom-link:focus{
+    opacity: .85;
+  }
+  &__bottom-link:active{
+    opacity: .75;
   }
 }

@@ -19,9 +19,12 @@
   }
 
   &__list {
+    display: flex;
+    flex-wrap: wrap;
   }
 
   &__item {
+    max-width: 415px;
   }
 
   &__item-img {

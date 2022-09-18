@@ -2,7 +2,7 @@
   background-image: url("../../assets/images/slider-image1.png");
   background-repeat: no-repeat;
   background-size: cover;
-
+  margin-bottom: 100px;
   &__inner {
     display: flex;
     max-width: 1024px;
@@ -89,4 +89,17 @@
 }
 .btn-transparent {
   border: 1px solid #ffffff;
+}
+
+.btn-transparent:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.btn-transparent:focus {
+  background: rgba(255, 255, 255, 0.15);
+}
+.btn-transparent:active {
+  background: rgba(255, 255, 255, 0.15);
+  padding: 9px 19px;
+  border: 2px solid #ffffff;
 }

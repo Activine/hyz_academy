@@ -31,7 +31,7 @@
                 <a class="nav__link" href="#">Degrees</a>
               </li>
             </ul>
-            <button class="btn btn__blue btn__ed">Explore</button>
+            <button class="btn btn__blue btn__ed btn__nav">Explore</button>
           </nav>
         </div>
       </div>
@@ -53,12 +53,11 @@
                 <a class="btn btn__lightgreen-ed btn__ed" href="#form">Get started</a>
               </div>
             </div>
-            <img
-              class="education__img"
-              src="./assets/images/study.png"
-              alt="study"
-              width="403"
-            />
+            <svg class="education__img" width="500" height="500">
+              <use
+                href="./assets/icons/Coding-amico.svg#ed-svg"
+              ></use>
+            </svg>
           </div>
           <div class="partners">
             <a class="partners__link" href="#">
@@ -410,37 +409,39 @@
             <p class="choose__bg-title">FEATURED</p>
             <div class="choose__box">
               <p class="choose__box-text">
-                <span class="choose__days">$213</span> Days
+                <span class="choose__days choose__span">$213</span> Days
               </p>
               <p class="choose__box-text">
-                <span class="choose__hours">23</span> Hours
+                <span class="choose__hours choose__span">23</span> Hours
               </p>
               <p class="choose__box-text">
-                <span class="choose__min">59</span> Min
+                <span class="choose__min choose__span">59</span> Min
               </p>
             </div>
             <div class="choose__card">
-              <h3 class="choose__card-title">International Conference...</h3>
-              <div class="choose__card-info">
-                <div class="choose__card-date">
-                  <svg class="choose__item-icon" width="20" height="20">
-                    <use
-                      href="./assets/icons/symbol-defs.svg#icon-calendar"
-                    ></use>
-                  </svg>
-                  <p class="choose__item-text">July 8, 2018</p>
-                </div>
-                <div class="choose__card-time">
-                  <svg class="choose__item-icon" width="20" height="20">
-                    <use href="./assets/icons/symbol-defs.svg#icon-clock"></use>
-                  </svg>
-                  <p class="choose__item-text">5:00pm - 7:00pm</p>
-                </div>
-                <div class="choose__card-location">
-                  <svg class="choose__item-icon" width="20" height="20">
-                    <use href="./assets/icons/symbol-defs.svg#icon-map"></use>
-                  </svg>
-                  <p class="choose__item-text">United States</p>
+              <div class="choose__card-wrap">
+                <h3 class="choose__card-title">International Conference...</h3>
+                <div class="choose__card-info">
+                  <div class="choose__card-data">
+                    <svg class="choose__item-icon choose__card-icon" width="20" height="20">
+                      <use
+                        href="./assets/icons/symbol-defs.svg#icon-calendar"
+                      ></use>
+                    </svg>
+                    <p class="choose__item-text">July 8, 2018</p>
+                  </div>
+                  <div class="choose__card-data">
+                    <svg class="choose__item-icon choose__card-icon" width="20" height="20">
+                      <use href="./assets/icons/symbol-defs.svg#icon-clock"></use>
+                    </svg>
+                    <p class="choose__item-text">5:00pm - 7:00pm</p>
+                  </div>
+                  <div class="choose__card-data">
+                    <svg class="choose__item-icon choose__card-icon" width="20" height="20">
+                      <use href="./assets/icons/symbol-defs.svg#icon-map"></use>
+                    </svg>
+                    <p class="choose__item-text">United States</p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -620,6 +621,7 @@
                   class="blog__sidebar-avatar"
                   src="./assets/images/avatar-1.png"
                   alt="avatar"
+                  width="48"
                 />
               </div>
               <div class="blog__item-desc">
@@ -641,6 +643,7 @@
                   class="blog__sidebar-avatar"
                   src="./assets/images/avatar-2.png"
                   alt="avatar"
+                  width="48"
                 />
               </div>
               <div class="blog__item-desc">
@@ -668,7 +671,7 @@
       <section class="form">
         <div class="container">
           <h2 hidden>Contact us</h2>
-          <form id="form" action="submit-form">
+          <form id="form" class="form__wrap" action="submit-form">
             <input class="form__input" type="text" placeholder="Name Surname" />
             <input class="form__input" type="number" placeholder="Phone" />
             <input
@@ -801,3 +804,4 @@
     </footer>
   </body>
 </html>
+reset.css
