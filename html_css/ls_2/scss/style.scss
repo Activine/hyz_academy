@@ -1,5 +1,6 @@
 @import './base/reset';
 @import './utils/variables';
+@import './utils/mixins';
 @import './components/buttons';
 @import './base//typography';
 @import './layout/header';
@@ -17,5 +18,22 @@
 
 body {
     font-family: 'Montserrat';
-    color: $domimant-color;
+    color: var(--greyBase);
+}
+.section-title{
+    @include sectionTitle();
+}
+.section-title::after{
+    content: '';
+    position: absolute;
+    display: inline-block;
+    width: 60px;
+    height: 2px;
+    top: 26px;
+    background-color: #637AF2;
+    margin-left: 24px;
+}
+
+.item-title{
+    @include itemTitle()
 }

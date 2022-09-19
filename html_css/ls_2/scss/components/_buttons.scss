@@ -1,0 +1,108 @@
+.logo {
+  &__img {
+    &:hover{fill: #000}
+  }
+}
+
+
+
+.btn {
+  display: inline-block;
+  font-weight: 700;
+  padding: 10px 20px;
+  border-radius: 22px;
+  font-size: 12px;
+  line-height: 16px;
+  border: none;
+  color: var(--whiteDesc);
+  cursor: pointer;
+  text-decoration: none;
+  transition: 200ms linear;
+
+  &__blue {
+    background-color: var(--blueDesc);
+    &:hover{
+        background-color: var(--blueBtnHover);
+    }
+
+    &:focus{
+      background-color: var(--blueBtnHover);
+    }
+
+    &:active{
+        background-color: var(--blueBtnAct);
+    }
+  }
+
+  &__lightgreen {
+    background-color: var(--lightgreenBtn);
+    color: var(--blackTitle);
+
+    &:hover{
+        background-color: var(--lightgreenBtnHover);
+    }
+
+    &:focus{
+      background-color: var(--lightgreenBtnHover);
+    }
+
+    &:active{
+      background-color: var(--lightgreenBtnAct);
+    }
+  }
+
+
+  &__form{
+    box-shadow: 0px 4px 16px rgba(75, 202, 103, 0.58);
+    max-width: 120px;
+    margin-top: 32px;
+  }
+}
+
+.slider-prev,
+.slider-next {
+  stroke: var(--greenBtn);
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 200ms linear;
+
+}
+
+.slider-prev:hover,
+.slider-next:hover {
+  background-color: var(--greenBtn);
+  stroke: var(--whiteDesc);
+}
+
+.slider-prev:active,
+.slider-next:active {
+  background-color: var(--greenBtn);
+}
+
+.slider-prev:focus,
+.slider-next:focus {
+  background-color: var(--greenSlideAct);
+  stroke: var(--whiteDesc);
+}
+
+.icon {
+  &__prev,
+  &__next {
+    margin: 8px;
+  }
+}
+
+.star {
+  fill: var(--goldenStar);
+  stroke: var(--goldenStar);
+}
+.star + .star {
+    margin-right: 2px;
+}
+.star-empty {
+  fill: var(--greyStar);
+  stroke: var(--greyStar);
+}

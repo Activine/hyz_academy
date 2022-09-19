@@ -1,18 +1,15 @@
 .courses {
   margin-bottom: 64px;
   &__desc {
-    color: #1b63f0;
+    color: var(--blueDesc);
     font-weight: 500;
     font-size: 12px;
     line-height: 100%;
 }
 
 &__title {
-    font-weight: 700;
-    font-size: 26px;
+  @include sectionTitle();
     margin-bottom: 78px;
-    line-height: 138%;
-    color: #000000;
   }
 
   &__list {
@@ -25,11 +22,13 @@
     flex-direction: column;
     justify-content: flex-end;
     position: relative;
+    text-decoration: none;
     width: 270px;
     padding: 16px;
     height: 364px;
     border-radius: 8px;
-    color: #fff;
+    background-color: silver;
+    color:var(--whiteDesc);
   }
 
   &__item-avatar {
@@ -39,10 +38,9 @@
   }
 
   &__item-desc {
+    @include itemTitle(var(--whiteDesc));
     padding-bottom: 16px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.5);
-    font-weight: 600;
-    font-size: 16px;
   }
 
   &__item-title {

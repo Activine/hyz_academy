@@ -1,21 +1,7 @@
 .blog {
   margin-bottom: 80px;
   &__title {
-    position: relative;
-    font-size: 26px;
-    line-height: 138%;
-    color: #000;
     margin-bottom: 48px;
-    &::after {
-      content: "";
-      position: absolute;
-      display: inline-block;
-      width: 60px;
-      height: 2px;
-      top: 26px;
-      background-color: #637af2;
-      margin-left: 24px;
-    }
   }
 
   &__slider {
@@ -27,10 +13,11 @@
   &__item {
     display: flex;
     position: relative;
-    background: #d6fae7;
+    background: var(--lightgreenBlog);
     border-radius: 16px 16px 0px 16px;
     margin-top: 24px;
     width: 415px;
+    height: 264px;
     flex-shrink: 0;
   }
 
@@ -47,30 +34,26 @@
     line-height: 133%;
     margin-bottom: 46px;
     text-align: center;
-    color: #5d74e4;
+    color: var(--blueBlog);
     text-orientation: upright;
     writing-mode: vertical-lr;
-  }
-
-  &__sidebar-avatar {
   }
 
   &__item-desc {
     display: flex;
     flex-direction: column;
-    color: #000;
     padding-right: 16px;
   }
 
   &__item-img {
     position: absolute;
     top: -24px;
+    right: 0;
   }
 
   &__item-title {
-    font-weight: 600;
-    font-size: 16px;
-    margin-top: auto;
+
+    margin-top: 160px;
     margin-bottom: 16px;
   }
 
@@ -79,24 +62,53 @@
     font-size: 12px;
     text-decoration: none;
     margin-bottom: 24px;
-    color: #000;
+    color: var(--blackTitle);
+    transition: 200ms linear;
   }
 
   &__item-link:hover{
+    color: var(--blueDesc);
     opacity: .85;
   }
   &__item-link:focus{
+    color: var(--blueDesc);
     opacity: .85;
   }
   &__item-link:active{
-    opacity: .75;
+    opacity: .7;
   }
   
   &__slider-dots {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     align-items: center;
-    gap: 22px;
     margin-left: 87px;
+  }
+  &__slider-dot {
+    background-color: #fff;
+    width: 40px;
+    height: 40px;
+    border: none;
+    color: var(--blueDesc);
+    border-radius: 50%;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    transition: 300ms linear;
+
+    &:hover {
+      box-shadow: 0px 4px 16px #e2edfb;
+    }
+    &:active {
+      border: 1px solid var(--greenBtn);
+      box-shadow: none;
+    }
+    &:focus {
+      box-shadow: 0px 4px 16px #e2edfb;
+    }
+  }
+  &__slider-active {
+    border: 1px solid var(--greenBtn);
   }
 }

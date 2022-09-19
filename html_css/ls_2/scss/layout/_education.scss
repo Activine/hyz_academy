@@ -1,11 +1,13 @@
 .education {
   &__wrap{
+    position: relative;
     max-width: 410px;
+    z-index: 0;
   }
   &__title {
+    @include sectionTitle();
     font-size: 36px;
     line-height: 122%;
-    color: #000;
     margin-bottom: 32px;
   }
   &__desc{
@@ -17,16 +19,31 @@
   }
   &__img{
     position: absolute;
-    top: -140px;
+    top: -130px;
     right: 0;
+    z-index: -1;
   }
 }
 .partners {
   display: flex;
   align-items: center;
-  &__link {
+  &__link:hover {
+    opacity: 0.8;
+  }
+  &__link:focus {
+    opacity: 0.8;
+  }
+  &__link:active{
+    opacity: 0.7;
   }
 
   &__logo {
+  }
+}
+
+.btn{
+  &__ed {
+    padding: 12px 24px;
+
   }
 }

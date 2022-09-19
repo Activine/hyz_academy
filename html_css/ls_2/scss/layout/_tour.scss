@@ -15,7 +15,7 @@
     top: 41%;
     right: 29%;
     transform: translate(50%, 50%);
-    background-color: $lightgreen-btn;
+    background-color: var(--greenBtn);
     width: 40px;
     height: 40px;
     border: 2px solid #fff;
@@ -42,21 +42,7 @@
   }
 
   &__title {
-    font-size: 26px;
-    line-height: 138%;
-    color: #000000;
-    position: relative;
     margin-bottom: 24px;
-    &::after {
-      content: "";
-      position: absolute;
-      display: inline-block;
-      width: 60px;
-      height: 2px;
-      top: 26px;
-      background-color: #637af2;
-      margin-left: 24px;
-    }
   }
 
   &__text, &__list{
@@ -74,27 +60,27 @@
     margin-left: 36px;
     margin-bottom: 12px;
     position: relative;
-    &::before {
-      position: absolute;
-      color: #FDE7E6;
-      content: "\2022";
-      font-size: 26px;
-      font-weight: 700;
-      left: -20px;
-     }
+    // &::before {
+    //   position: absolute;
+    //   color: #FDE7E6;
+    //   content: "\2022";
+    //   font-size: 26px;
+    //   font-weight: 700;
+    //   left: -20px;
+    //  }
   }
   &__btn-play:hover {
-    border: 2px solid $lightgreen-btn;
-  }
+    border: 2px solid var(--greenBtn);
+  } 
   &__btn-play:active {
     box-shadow: none;
-    background-color: $btn-play;
-    border: 2px solid $btn-play;
+    background-color: var(--greenBtn);
+    border: 2px solid var(--greenBtn);
   }
   &__btn-play:focus {
     box-shadow: none;
-    background-color: $btn-play;
-    border: 2px solid $btn-play;
+    background-color: var(--greenSlideAct);;
+    border: 2px solid var(--greenSlideAct);;
   }
 }
 
