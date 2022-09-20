@@ -1,11 +1,24 @@
 .header{
-    margin-bottom: 144px;
+    padding-bottom: 104px;
     &__top{
+        padding-top: 24px;
         display: flex;
         align-items: center;
     }
     &__logo{
         margin-right: auto;
+    }
+    &__bg-inner{
+        position: relative;
+    }
+    &__bg{
+        position: absolute;
+        background: url('../../assets/icons/Coding-amico.svg') 84% 40%/ auto no-repeat,
+        url('../../assets/icons/Frame3.svg') 100% 100%/ auto no-repeat,
+        url('../../assets/icons/Union.svg') 100% 100%/ auto auto;
+        right: 0;
+        width: 1440px;
+        height: 652px;
     }
 }
 .logo{
@@ -50,10 +63,25 @@
 .btn {
     &__nav{
         margin-left: 40px;
+        padding: 12px 24px;
+        position: relative;
+        z-index: 0;
       }
     &__blue {
     }
 
     &__ed {
+        position: relative;
+        z-index: 0;
     }
+    &__ed:not(:last-child){
+        margin-right: 24px;
+    }
+}
+
+.div__rel{
+
+}
+.div__ab{
+
 }

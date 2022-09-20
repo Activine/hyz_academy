@@ -252,16 +252,29 @@ table {
 }
 
 .header {
-  margin-bottom: 144px;
+  padding-bottom: 104px;
 }
 
 .header__top {
+  padding-top: 24px;
   display: flex;
   align-items: center;
 }
 
 .header__logo {
   margin-right: auto;
+}
+
+.header__bg-inner {
+  position: relative;
+}
+
+.header__bg {
+  position: absolute;
+  background: url("../../assets/icons/Coding-amico.svg") 84% 40%/auto no-repeat, url("../../assets/icons/Frame3.svg") 100% 100%/auto no-repeat, url("../../assets/icons/Union.svg") 100% 100%/auto auto;
+  right: 0;
+  width: 1440px;
+  height: 652px;
 }
 
 .logo__img {
@@ -308,6 +321,23 @@ table {
 
 .btn__nav {
   margin-left: 40px;
+  padding: 12px 24px;
+  position: relative;
+  z-index: 0;
+}
+
+.btn__ed {
+  position: relative;
+  z-index: 0;
+}
+
+.btn__ed:not(:last-child) {
+  margin-right: 24px;
+}
+
+.education {
+  padding-top: 40px;
+  padding-bottom: 40px;
 }
 
 .education__wrap {
@@ -339,7 +369,7 @@ table {
 .education__img {
   position: absolute;
   top: -130px;
-  right: 0;
+  right: -400px;
   z-index: -1;
 }
 
@@ -755,7 +785,7 @@ table {
 }
 
 .prefer {
-  margin-bottom: 180px;
+  padding-bottom: 90px;
 }
 
 .prefer__title {
@@ -771,6 +801,7 @@ table {
   max-width: 676px;
   text-align: center;
   margin-bottom: 52px;
+  margin: 0 auto;
 }
 
 .prefer__slider {
@@ -854,7 +885,8 @@ table {
 }
 
 .customers {
-  margin-bottom: 160px;
+  padding-top: 90px;
+  padding-bottom: 160px;
 }
 
 .customers__inner {
@@ -876,6 +908,20 @@ table {
   background-color: #637af2;
   border-radius: 24px;
   z-index: -1;
+}
+
+.customers__bg-wrap {
+  position: relative;
+}
+
+.customers__bg {
+  position: absolute;
+  background: url("../../assets/icons/Vector3.svg") 17% 68%/auto no-repeat, url("../../assets/icons/Vector4.svg") 21% 100%/auto auto no-repeat;
+  right: 0;
+  top: -180px;
+  width: 1440px;
+  height: 652px;
+  z-index: -3;
 }
 
 .customers__img {
@@ -1391,5 +1437,10 @@ body {
   font-size: 16px;
   line-height: 150%;
   color: var(--blackTitle);
+}
+
+.container {
+  max-width: 1024px;
+  margin: 0 auto;
 }
 /*# sourceMappingURL=style.css.map */

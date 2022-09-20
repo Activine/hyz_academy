@@ -1,5 +1,6 @@
 .customers {
-  margin-bottom: 160px;
+  padding-top: 90px;
+  padding-bottom: 160px;
   &__inner {
     display: flex;
   }
@@ -17,6 +18,20 @@
       border-radius: 24px;
       z-index: -1;
     }
+  }
+  &__bg-wrap {
+    position: relative;
+  }
+
+  &__bg {
+    position: absolute;
+    background: url('../../assets/icons/Vector3.svg') 17% 68%/ auto no-repeat,
+    url('../../assets/icons/Vector4.svg') 21% 100%/ auto auto no-repeat;
+    right: 0;
+    top: -180px;
+    width: 1440px;
+    height: 652px;
+    z-index: -3;
   }
 
   &__img {
