@@ -1,0 +1,109 @@
+.customers {
+  padding-top: 90px;
+  padding-bottom: 160px;
+  &__inner {
+    display: flex;
+  }
+  &__left {
+    position: relative;
+    margin-right: 110px;
+    &::before {
+      content: "";
+      position: absolute;
+      display: inline-block;
+      left: -68px;
+      width: 344px;
+      height: 344px;
+      background-color: #637af2;
+      border-radius: 24px;
+      z-index: -1;
+    }
+  }
+  &__bg-wrap {
+    position: relative;
+  }
+
+  &__bg {
+    position: absolute;
+    background: url('../../assets/icons/Vector3.svg') 17% 68%/ auto no-repeat,
+    url('../../assets/icons/Vector4.svg') 21% 100%/ auto auto no-repeat;
+    right: 0;
+    top: -180px;
+    width: 1440px;
+    height: 652px;
+    z-index: -3;
+  }
+
+  &__img {
+    padding-top: 58px;
+  }
+
+  &__right {
+  }
+
+  &__title {
+    margin-bottom: 111px;
+  }
+
+  &__slider {
+  }
+
+  &__slider-item {
+    max-width: 415px;
+  }
+  &__slider-quote {
+    position: relative;
+  }
+  &__slider-quote::before {
+    position: absolute;
+    content: "\201C";
+    font-weight: 700;
+    font-size: 100px;
+    color: var(--blueQuote);
+    top: -100px;
+    left: -2px;
+  }
+
+  &__slider-desc {
+    margin-bottom: 16px;
+    font-size: 14px;
+    line-height: 157%;
+  }
+
+  &__slider-author {
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 133%;
+    color: var(--blackTitle);
+    margin-bottom: 60px;
+  }
+
+  &__slider-dots {
+    display: flex;
+    gap: 5px;
+  }
+
+  &__slider-dot {
+    padding: 0;
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border: none;
+    background-color: var(--blueDot);
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  &__slider-dot:hover {
+    background-color: var(--blueBlog);
+  }
+  &__slider-dot:focus {
+    background-color: var(--blueBlog);
+  }
+  &__slider-dot:active {
+    background-color: var(--blueData);
+  }
+
+  &__slider-active {
+    background-color: var(--blueDesc);
+  }
+}

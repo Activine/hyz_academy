@@ -1,0 +1,147 @@
+.choose {
+  margin-bottom: 80px;
+  &__inner {
+    display: flex;
+  }
+
+  &__left {
+    margin-right: 107px;
+  }
+
+  &__title {
+    margin-bottom: 32px;
+    margin-top: 68px;
+  }
+
+  &__list {
+    list-style-type: none;
+    padding-left: 0;
+  }
+
+  &__item {
+    max-width: 502px;
+    border-bottom: 1px solid rgba(92, 92, 92, 0.1);
+  }
+  &__item:not(:last-child) {
+    margin-bottom: 40px;
+  }
+  &__item-title {
+    margin-bottom: 16px;
+  }
+
+  &__item-info {
+    display: flex;
+    gap: 24px;
+    padding-bottom: 24px;
+  }
+
+  &__item-date {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__item-icon {
+    stroke: var(--greyDesc);
+    margin-right: 8px;
+  }
+  &__item-text {
+    font-size: 14px;
+    line-height: 157%;
+  }
+  &__item-time {
+    display: flex;
+  }
+
+  &__item-location {
+    display: flex;
+  }
+
+  &__right {
+    background: var(--creamyBg);
+    position: relative;
+  }
+
+  &__bg-title {
+    font-weight: 700;
+    font-size: 60px;
+    line-height: 122%;
+    letter-spacing: 0.4em;
+    color: var(--creamyTitle);
+    margin-top: 60px;
+    margin-bottom: 91px;
+  }
+
+  &__box {
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    top: -60px;
+    gap: 45px;
+  }
+
+  &__days {
+    @include topCardText();
+    color: var(--blueData);
+  }
+
+  &__hours {
+    @include topCardText();
+    color: var(--yellowData);
+  }
+
+  &__min {
+    @include topCardText();
+    color: var(--redData);
+  }
+
+  &__card {
+    position: relative;
+    background-color: silver;
+    background-image: url("../../assets/images/slider-image1.png");
+    background-size: cover;
+    width: 328px;
+    height: 380px;
+    margin-bottom: 76px;
+    margin-left: 87px;
+    border-radius: 8px;
+  }
+  &__card-wrap {
+    display: flex;
+    flex-direction: column;
+    background: rgba(0, 0, 0, 0.8);
+    width: 280px;
+    margin-top: auto;
+    margin: auto 24px 0 24px;
+    position: absolute;
+    bottom: 0;
+    padding: 24px 16px 32px;
+  }
+  &__card-title {
+    @include itemTitle(var(--whiteDesc));
+    text-align: center;
+    margin-bottom: 16px;
+  }
+
+  &__card-info {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 157%;
+    color: var(--greyCard);
+    align-items: center;
+  }
+  &__card-icon {
+    stroke: var(--greyCard);
+  }
+  &__card-data {
+    display: flex;
+    margin-bottom: 8px;
+  }
+  &__btn {
+    position: absolute;
+    bottom: -20px;
+    left: 87px;
+  }
+}

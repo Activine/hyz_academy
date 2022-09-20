@@ -1,0 +1,114 @@
+.blog {
+  margin-bottom: 80px;
+  &__title {
+    margin-bottom: 48px;
+  }
+
+  &__slider {
+    display: flex;
+    height: 264px;
+    gap: 20px;
+  }
+
+  &__item {
+    display: flex;
+    position: relative;
+    background: var(--lightgreenBlog);
+    border-radius: 16px 16px 0px 16px;
+    margin-top: 24px;
+    width: 415px;
+    height: 264px;
+    flex-shrink: 0;
+  }
+
+  &__sidebar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 18px 24px 56px 16px;
+  }
+
+  &__sidebar-desc {
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 133%;
+    margin-bottom: 46px;
+    text-align: center;
+    color: var(--blueBlog);
+    text-orientation: upright;
+    writing-mode: vertical-lr;
+  }
+
+  &__item-desc {
+    display: flex;
+    flex-direction: column;
+    padding-right: 16px;
+  }
+
+  &__item-img {
+    position: absolute;
+    top: -24px;
+    right: 0;
+  }
+
+  &__item-title {
+
+    margin-top: 160px;
+    margin-bottom: 16px;
+  }
+
+  &__item-link {
+    font-weight: 700;
+    font-size: 12px;
+    text-decoration: none;
+    margin-bottom: 24px;
+    color: var(--blackTitle);
+    transition: 200ms linear;
+  }
+
+  &__item-link:hover{
+    color: var(--blueDesc);
+    opacity: .85;
+  }
+  &__item-link:focus{
+    color: var(--blueDesc);
+    opacity: .85;
+  }
+  &__item-link:active{
+    opacity: .7;
+  }
+  
+  &__slider-dots {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 87px;
+  }
+  &__slider-dot {
+    background-color: #fff;
+    width: 40px;
+    height: 40px;
+    border: none;
+    color: var(--blueDesc);
+    border-radius: 50%;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    transition: 300ms linear;
+
+    &:hover {
+      box-shadow: 0px 4px 16px #e2edfb;
+    }
+    &:active {
+      border: 1px solid var(--greenBtn);
+      box-shadow: none;
+    }
+    &:focus {
+      box-shadow: 0px 4px 16px #e2edfb;
+    }
+  }
+  &__slider-active {
+    border: 1px solid var(--greenBtn);
+  }
+}

@@ -1,0 +1,43 @@
+@import './base/reset';
+@import './utils/variables';
+@import './utils/mixins';
+@import './components/buttons';
+@import './base//typography';
+@import './layout/header';
+@import './layout/education';
+@import './layout/advantages';
+@import './layout/courses';
+@import './layout/tour';
+@import './layout/choose';
+@import './layout/prefer';
+@import './layout/customers';
+@import './layout/started';
+@import './layout/blog';
+@import './layout/form';
+@import './layout/footer';
+
+body {
+    font-family: 'Montserrat';
+    color: var(--greyBase);
+}
+.section-title{
+    @include sectionTitle();
+}
+.section-title::after{
+    content: '';
+    position: absolute;
+    display: inline-block;
+    width: 60px;
+    height: 2px;
+    top: 26px;
+    background-color: #637AF2;
+    margin-left: 24px;
+}
+
+.item-title{
+    @include itemTitle()
+}
+.container {
+    max-width: 1024px;
+    margin: 0 auto;
+}

@@ -1,0 +1,102 @@
+.courses {
+  margin-bottom: 64px;
+  &__desc {
+    color: var(--blueDesc);
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 100%;
+}
+
+&__title {
+  @include sectionTitle();
+    margin-bottom: 78px;
+  }
+
+  &__list {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  &__item {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    position: relative;
+    text-decoration: none;
+    width: 270px;
+    padding: 16px;
+    height: 364px;
+    border-radius: 8px;
+    background-color: silver;
+    color:var(--whiteDesc);
+  }
+
+  &__item-avatar {
+    position: absolute;
+    top: -24px;
+    left: 24.5px;
+  }
+
+  &__item-desc {
+    @include itemTitle(var(--whiteDesc));
+    padding-bottom: 16px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  }
+
+  &__item-title {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 100%;
+    margin-bottom: 8px;
+  }
+
+  &__item-bottom {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 16px;
+    margin-bottom: 4px;
+  }
+
+  &__item-coust {
+    display: flex;
+    align-items: center;
+  }
+
+  &__item-coust-new {
+    margin-right: 10px;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 133%;
+  }
+
+  &__item-coust-old {
+    font-size: 12px;
+    line-height: 16px;
+    text-decoration: line-through;
+  }
+}
+
+.stars {
+  &__inner {
+    display: flex;
+    align-items: center;
+  }
+  &__counter {
+    margin-left: 2px;
+  }
+}
+.courses .courses__item:nth-child(2) {
+  background-image: url("../../assets/images/slider-image1.png");
+  background-position: center;
+  background-size: cover;
+}
+.courses .courses__item:nth-child(3) {
+  background-image: url("../../assets/images/courses-slide2.jfif");
+  background-position: center;
+  background-size: cover;
+}
+.courses .courses__item:nth-child(4) {
+  background-image: url("../../assets/images/courses-slide3.png");
+  background-position: center;
+  background-size: cover;
+}

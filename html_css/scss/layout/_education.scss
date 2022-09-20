@@ -1,0 +1,51 @@
+.education {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  &__wrap{
+    position: relative;
+    max-width: 410px;
+    z-index: 0;
+  }
+  &__title {
+    @include sectionTitle();
+    font-size: 36px;
+    line-height: 122%;
+    margin-bottom: 32px;
+  }
+  &__desc{
+    margin-bottom: 40px;
+  }
+  &__content{
+    margin-bottom: 100px;
+    position: relative;
+  }
+  &__img{
+    position: absolute;
+    top: -130px;
+    right: -400px;
+    z-index: -1;
+  }
+}
+.partners {
+  display: flex;
+  align-items: center;
+  &__link:hover {
+    opacity: 0.8;
+  }
+  &__link:focus {
+    opacity: 0.8;
+  }
+  &__link:active{
+    opacity: 0.7;
+  }
+
+  &__logo {
+  }
+}
+
+.btn{
+  &__ed {
+    padding: 12px 24px;
+
+  }
+}
