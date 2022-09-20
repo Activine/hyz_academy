@@ -18,9 +18,8 @@
   cursor: pointer;
   text-decoration: none;
   transition: 200ms linear;
-
+  background-color: var(--blueDesc);
   &__blue {
-    background-color: var(--blueDesc);
     &:hover{
         background-color: var(--blueBtnHover);
     }

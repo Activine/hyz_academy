@@ -39,7 +39,25 @@
     color: var(--whiteDesc);
     margin-bottom: 16px;
   }
+  &__link {
+    display: flex;
+    text-decoration: none;
+    transition: 200ms linear;
+    color: var(--whiteDesc);  
+    stroke: var(--whiteDesc);
 
+  }
+  &__link:hover {
+    color: var(--lightgreenTitle);
+    stroke: var(--lightgreenTitle);
+  }
+  &__link:focus {
+    color: var(--lightgreenTitle);
+  }
+  &__link:active {
+    color: var(--lightgreenTitle);
+    opacity: .75;
+  }
   &__links {
     padding-top: 16px;
     margin-bottom: 64px;
@@ -51,9 +69,12 @@
   &__list-box{
     display: flex;
     margin-bottom: 25px;
-  }
-  &__list-icon {
     stroke: var(--whiteDesc);
+    align-items: center;
+  }
+
+  &__list-icon {
+    stroke: inherit;
   }
 
   &__list-title {
@@ -81,7 +102,8 @@
     font-weight: 500;
     font-size: 14px;
     line-height: 157%;
-    color: var(--whiteDesc);
+    color: inherit;
+
   }
 }
 .container {
@@ -95,6 +117,7 @@
 }
 .btn-transparent {
   border: 1px solid var(--whiteDesc);
+  background-color: transparent;
 }
 
 .btn-transparent:hover {

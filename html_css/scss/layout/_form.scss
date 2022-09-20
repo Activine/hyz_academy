@@ -11,13 +11,14 @@
     width: 420px;
     border-radius: 22px;
     padding: 14px 12px;
-    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.25);
     border: none;
     background-color: #f3f6fc;
   }
   &__input:hover {
-    border: 2px solid rgba(27, 99, 240, 1);
-    padding: 12px 10px;
+    outline: 2px solid rgba(27, 99, 240, 1);
+  }
+  &__input:focus {
+    outline: 2px solid rgba(27, 99, 240, 1);
   }
 }
 .btn {
