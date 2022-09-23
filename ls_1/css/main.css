@@ -2,7 +2,8 @@
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 /* Remove default margin */
@@ -67,9 +68,12 @@ select {
   *,
   *::before,
   *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
+    -webkit-animation-duration: 0.01ms !important;
+            animation-duration: 0.01ms !important;
+    -webkit-animation-iteration-count: 1 !important;
+            animation-iteration-count: 1 !important;
+    -webkit-transition-duration: 0.01ms !important;
+            transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
 }
@@ -118,7 +122,8 @@ select {
   border: 2px solid #fff;
   border-radius: 50%;
   cursor: pointer;
-  box-shadow: 0px 4px 16px 0px rgba(75, 202, 103, 0.56);
+  -webkit-box-shadow: 0px 4px 16px 0px rgba(75, 202, 103, 0.56);
+          box-shadow: 0px 4px 16px 0px rgba(75, 202, 103, 0.56);
 }
 
 .tour__video-play {
@@ -163,4 +168,3 @@ select {
 .footer__social-img {
   stroke: #25282B;
 }
-/*# sourceMappingURL=main.css.map */
