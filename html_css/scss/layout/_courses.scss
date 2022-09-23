@@ -1,0 +1,136 @@
+.courses {
+  padding-bottom: 64px;
+  &__desc {
+    color: var(--blueDesc);
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 100%;
+    text-align: center;
+    padding-bottom: 6px;
+}
+
+&__title {
+  @include sectionTitle();
+    padding-bottom: 54px;
+    text-align: center;
+  }
+
+  &__list {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    justify-content: center;
+  }
+  &__item {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    position: relative;
+    text-decoration: none;
+    width: 260px;
+    padding: 16px;
+    min-height: 364px;
+    border-radius: 8px;
+    background-color: silver;
+    color:var(--whiteDesc);
+    transition: 200ms linear;
+
+  }
+  &__item:hover{
+    box-shadow: 0px 6px 20px rgba(27, 99, 240, 0.4);
+  }
+  &__item-avatar {
+    position: absolute;
+    top: -24px;
+    left: 24.5px;
+  }
+
+  &__item-desc {
+    @include itemTitle(var(--whiteDesc));
+    padding-bottom: 16px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  }
+
+  &__item-title {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 100%;
+    margin-bottom: 8px;
+  }
+
+  &__item-bottom {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 16px;
+    margin-bottom: 4px;
+  }
+
+  &__item-coust {
+    display: flex;
+    align-items: center;
+  }
+
+  &__item-coust-new {
+    margin-right: 10px;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 133%;
+  }
+
+  &__item-coust-old {
+    font-size: 12px;
+    line-height: 16px;
+    text-decoration: line-through;
+  }
+}
+
+.stars {
+  &__inner {
+    display: flex;
+    align-items: center;
+  }
+  &__counter {
+    margin-left: 2px;
+  }
+}
+.courses .courses__item:nth-child(2) {
+  background-image: url("../../assets/images/slider-image1.png");
+  background-position: center;
+  background-size: cover;
+}
+.courses .courses__item:nth-child(3) {
+  background-image: url("../../assets/images/courses-slide2.jfif");
+  background-position: center;
+  background-size: cover;
+  display: none;
+}
+.courses .courses__item:nth-child(4) {
+  background-image: url("../../assets/images/courses-slide3.png");
+  background-position: center;
+  background-size: cover;
+  display: none;
+}
+
+@media only screen and (min-width: 580px) {
+  .courses .courses__item:nth-child(3) {
+    display: flex;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .courses{
+    &__item{
+      width: 270px;
+    }
+  }
+  .courses .courses__item:nth-child(4) {
+    display: flex;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .courses{
+    &__title{
+      padding-bottom: 78px;
+    }
+  }
+}

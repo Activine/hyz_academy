@@ -1,0 +1,131 @@
+.prefer {
+  padding-top: 80px;
+  &__title {
+    padding-bottom: 16px;
+  }
+
+  &__desc {
+    font-size: 14px;
+    line-height: 157%;
+    padding-bottom: 52px;
+  }
+
+  &__top{
+    max-width: 676px;
+    text-align: center;
+    margin-bottom: 52px;
+    margin: 0 auto;
+  }
+
+  &__slider {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    justify-content: center;
+  }
+
+  &__slider-list {
+    display: flex;
+    gap: 20px;
+  }
+  &__slider-img {
+    width: 197px;
+    height: 197px;
+    object-fit: cover;
+  }
+  &__slider-link {
+    position: relative;
+    display: inline-block;
+    box-shadow: 0px 7px 20px #e2edfb;
+    border-radius: 4px;
+    transition: 300ms linear;
+  }
+  &__slider-link:not(:first-child){
+    display: none;
+  }
+  &__slider-link:nth-child(1):before{
+    @include gradient(rgba(101, 131, 255, 0.8));
+  }
+  &__slider-link:nth-child(2):before{
+    @include gradient(rgba(240, 199, 45, 0.8));
+  }
+  &__slider-link:nth-child(3):before{
+    @include gradient(rgba(148, 87, 243, 0.8));
+  }
+  &__slider-link:nth-child(4):before{
+    @include gradient(rgba(254, 95, 96, 0.8));
+  }
+  &__slider-link:hover{
+    font-size: 18px;
+  }
+
+  &__slider-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 180px;
+    font-weight: 600;
+    color: var(--whiteDesc);
+  }
+}
+
+.prefer__top .prefer__title::after{
+  content: "";
+  position: absolute;
+  display: inline-block;
+  width: 60px;
+  height: 2px;
+  top: 61px;
+  background-color: #637af2;
+  margin-left: 24px;
+}
+
+@media only screen and (min-width: 375px) {
+  .prefer{
+    &__title {
+      text-align: start;
+    padding-right: 50px;
+    }
+  }
+
+}
+@media only screen and (min-width: 500px) {
+  .prefer{
+    &__title {
+      text-align: center;
+    }
+  }
+  .prefer__top .prefer__title::after{
+    content: "";
+    position: absolute;
+    display: inline-block;
+    width: 60px;
+    height: 2px;
+    top: 26px;
+    background-color: #637af2;
+    margin-left: 24px;
+  }
+}
+@media only screen and (min-width: 540px) {
+  .prefer{
+    &__slider-link:nth-child(2){
+    display: block;
+  }
+}
+}
+@media only screen and (min-width: 768px) {
+  .prefer{
+    &__slider-link:nth-child(3){
+    display: block;
+  }
+}
+}
+@media only screen and (min-width: 1000px) {
+  .prefer{
+    &__slider-link:nth-child(4){
+    display: block;
+  }
+}
+}

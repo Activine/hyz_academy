@@ -1,0 +1,147 @@
+.started {
+  background-image: url("../../assets/images/slider-image1.png");
+  position: relative;
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: 0;
+  &::after{
+    @include gradient(rgba(69, 82, 156, 0.95));
+    z-index: -1;
+  }
+  &__inner {
+    display: flex;
+    max-width: 1024px;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__desc {
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 133%;
+    color: var(--whiteDesc);
+    padding-top: 64px;
+    padding-bottom: 8px;
+  }
+
+  &__title {
+    @include sectionTitle(var(--lightgreenTitle));
+    padding-bottom: 24px;
+  }
+
+  &__text {
+    font-size: 14px;
+    line-height: 157%;
+    color: var(--whiteDesc);
+    padding-bottom: 16px;
+  }
+  &__link {
+    display: flex;
+    text-decoration: none;
+    transition: 200ms linear;
+    color: var(--whiteDesc);  
+    stroke: var(--whiteDesc);
+
+  }
+  &__link:hover {
+    color: var(--lightgreenTitle);
+    stroke: var(--lightgreenTitle);
+  }
+  &__link:focus {
+    color: var(--lightgreenTitle);
+  }
+  &__link:active {
+    color: var(--lightgreenTitle);
+    opacity: .75;
+  }
+  &__links {
+    padding-top: 16px;
+  }
+
+  &__right {
+    padding-top: 56px;
+  }
+  &__list-box{
+    display: flex;
+    padding-bottom: 25px;
+    stroke: var(--whiteDesc);
+    align-items: center;
+  }
+
+  &__list-icon {
+    stroke: inherit;
+  }
+
+  &__list-title {
+    margin-left: 8px;
+    font-size: 26px;
+    line-height: 138%;
+    color: var(--whiteDesc);
+  }
+
+  &__list {
+    padding-left: 0;
+    margin-bottom: 40px;
+  }
+
+  &__item {
+    display: flex;
+    list-style-type: none;
+    margin-bottom: 12px;
+    padding-bottom: 13px;
+    width: 327px;
+    border-bottom: 2px solid rgba(255, 255, 255, .2);
+  }
+
+  &__item-title {
+    margin-left: 13px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 157%;
+    color: inherit;
+  }
+}
+
+.btn {
+  &__started{
+    margin-right: 24px;
+  }
+}
+.btn-transparent {
+  border: 1px solid var(--whiteDesc);
+  background-color: transparent;
+}
+
+.btn-transparent:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.btn-transparent:focus {
+  background: rgba(255, 255, 255, 0.15);
+}
+.btn-transparent:active {
+  background: rgba(255, 255, 255, 0.15);
+  padding: 9px 19px;
+  border: 2px solid var(--whiteDesc);
+}
+
+@media only screen and (min-width: 768px) {
+  .started{
+    &__item {
+      width: 415px;
+    }
+  }
+}
+
+@media only screen and (min-width: 1000px) {
+.started{
+  &__inner {
+    flex-direction: row;
+
+  }
+  &__left{
+    padding-bottom: 64px;
+    margin-right: 194px;
+  }
+}
+}
