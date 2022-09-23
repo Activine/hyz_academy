@@ -1,19 +1,19 @@
 .customers {
-  padding-top: 90px;
-  padding-bottom: 160px;
+  padding-top: 80px;
   &__inner {
     display: flex;
+    flex-direction: column;
+    align-items: center;
   }
   &__left {
     position: relative;
-    margin-right: 110px;
+    padding-bottom: 24px;
     &::before {
       content: "";
       position: absolute;
       display: inline-block;
-      left: -68px;
-      width: 344px;
-      height: 344px;
+      width: 273px;
+      height: 273px;
       background-color: #637af2;
       border-radius: 24px;
       z-index: -1;
@@ -25,27 +25,23 @@
 
   &__bg {
     position: absolute;
-    background: url('../../assets/icons/Vector3.svg') 17% 68%/ auto no-repeat,
-    url('../../assets/icons/Vector4.svg') 21% 100%/ auto auto no-repeat;
+    background: url("../../assets/icons/Vector3.svg") 100% 109%/ 28% no-repeat,
+      url("../../assets/icons/Vector4.svg") 121% 112%/ 42% no-repeat;
     right: 0;
     top: -180px;
     width: 1440px;
-    height: 652px;
+    height: 1000px;
     z-index: -3;
   }
 
   &__img {
-    padding-top: 58px;
-  }
-
-  &__right {
+    padding-left: 53px;
+    padding-top: 46px;
   }
 
   &__title {
-    margin-bottom: 111px;
-  }
-
-  &__slider {
+    padding-bottom: 111px;
+    padding-right: 50px;
   }
 
   &__slider-item {
@@ -65,7 +61,7 @@
   }
 
   &__slider-desc {
-    margin-bottom: 16px;
+    padding-bottom: 16px;
     font-size: 14px;
     line-height: 157%;
   }
@@ -75,12 +71,13 @@
     font-size: 12px;
     line-height: 133%;
     color: var(--blackTitle);
-    margin-bottom: 60px;
+    padding-bottom: 60px;
   }
 
   &__slider-dots {
     display: flex;
     gap: 5px;
+    padding-bottom: 100px;
   }
 
   &__slider-dot {
@@ -105,5 +102,68 @@
 
   &__slider-active {
     background-color: var(--blueDesc);
+  }
+}
+
+.customers__right .customers__title::after {
+  content: "";
+  position: absolute;
+  display: inline-block;
+  width: 60px;
+  height: 2px;
+  top: 60px;
+  background-color: #637af2;
+  margin-left: 24px;
+}
+
+@media only screen and (min-width: 375px) {
+}
+
+@media only screen and (min-width: 379px) {
+  .customers__right .customers__title::after {
+    content: "";
+    top: 26px;
+  }
+}
+
+@media only screen and (min-width: 500px) {
+  .customers {
+    &__bg {
+      position: absolute;
+      background: url("../../assets/icons/Vector3.svg") 90% 109%/ 28% no-repeat,
+        url("../../assets/icons/Vector4.svg") 106% 112%/ 42% no-repeat;
+      right: 0;
+      top: -180px;
+      width: 1440px;
+      height: 1000px;
+      z-index: -3;
+    }
+  }
+}
+
+@media only screen and (min-width: 1000px) {
+  .customers {
+    padding-top: 180px;
+    &__inner {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+    }
+    &__bg {
+      background: url("../../assets/icons/Vector3.svg") 35% 114%/ 37% no-repeat,
+        url("../../assets/icons/Vector4.svg") 41% 112%/ 57% no-repeat;
+      height: 660px;
+    }
+
+    &__img {
+      width: 412px;
+      margin-right: 110px;
+    }
+    &__left {
+      &::before {
+        width: 344px;
+        height: 344px;
+      }
+    }
   }
 }
