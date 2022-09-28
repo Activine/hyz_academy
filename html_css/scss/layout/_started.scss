@@ -4,10 +4,12 @@
   background-repeat: no-repeat;
   background-size: cover;
   z-index: 0;
-  &::after{
+
+  &::after {
     @include gradient(rgba(69, 82, 156, 0.95));
     z-index: -1;
   }
+
   &__inner {
     display: flex;
     max-width: 1024px;
@@ -35,25 +37,29 @@
     color: var(--whiteDesc);
     padding-bottom: 16px;
   }
+
   &__link {
     display: flex;
     text-decoration: none;
     transition: 200ms linear;
-    color: var(--whiteDesc);  
+    color: var(--whiteDesc);
     stroke: var(--whiteDesc);
-
   }
+
   &__link:hover {
     color: var(--lightgreenTitle);
     stroke: var(--lightgreenTitle);
   }
+
   &__link:focus {
     color: var(--lightgreenTitle);
   }
+
   &__link:active {
     color: var(--lightgreenTitle);
-    opacity: .75;
+    opacity: 0.75;
   }
+
   &__links {
     padding-top: 16px;
   }
@@ -61,7 +67,8 @@
   &__right {
     padding-top: 56px;
   }
-  &__list-box{
+
+  &__list-box {
     display: flex;
     padding-bottom: 25px;
     stroke: var(--whiteDesc);
@@ -90,7 +97,7 @@
     margin-bottom: 12px;
     padding-bottom: 13px;
     width: 327px;
-    border-bottom: 2px solid rgba(255, 255, 255, .2);
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
   }
 
   &__item-title {
@@ -103,10 +110,11 @@
 }
 
 .btn {
-  &__started{
+  &__started {
     margin-right: 24px;
   }
 }
+
 .btn-transparent {
   border: 1px solid var(--whiteDesc);
   background-color: transparent;
@@ -119,6 +127,7 @@
 .btn-transparent:focus {
   background: rgba(255, 255, 255, 0.15);
 }
+
 .btn-transparent:active {
   background: rgba(255, 255, 255, 0.15);
   padding: 9px 19px;
@@ -126,7 +135,7 @@
 }
 
 @media only screen and (min-width: 768px) {
-  .started{
+  .started {
     &__item {
       width: 415px;
     }
@@ -134,14 +143,14 @@
 }
 
 @media only screen and (min-width: 1000px) {
-.started{
-  &__inner {
-    flex-direction: row;
+  .started {
+    &__inner {
+      flex-direction: row;
+    }
 
+    &__left {
+      padding-bottom: 64px;
+      margin-right: 194px;
+    }
   }
-  &__left{
-    padding-bottom: 64px;
-    margin-right: 194px;
-  }
-}
 }

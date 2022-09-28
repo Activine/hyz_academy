@@ -1,7 +1,7 @@
 .logo {
   &__img {
     &:hover {
-      fill: #000;
+      fill: var(--blackTitle);
     }
   }
 }
@@ -19,6 +19,7 @@
   text-decoration: none;
   transition: 200ms linear;
   background-color: var(--blueDesc);
+
   &__blue {
     &:hover {
       background-color: var(--blueBtnHover);
@@ -65,6 +66,8 @@
   border-radius: 50%;
   cursor: pointer;
   transition: 200ms linear;
+  background-color: var(--whiteDesc);
+  box-shadow: 0px 4px 16px var(--sliderShadow);
 }
 
 .slider-prev:hover,
@@ -96,9 +99,11 @@
   fill: var(--goldenStar);
   stroke: var(--goldenStar);
 }
+
 .star + .star {
   margin-right: 2px;
 }
+
 .star-empty {
   fill: var(--greyStar);
   stroke: var(--greyStar);

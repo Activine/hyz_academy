@@ -1,19 +1,18 @@
 .advantages {
   padding-bottom: 80px;
+
   &__title {
     padding-bottom: 56px;
   }
 
   &__list {
+    display: grid;
     text-align: center;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 40px 20px;
+    gap: 20px;
   }
 
   &__item-img {
-    fill: #1b63f0;
+    fill: var(--blueDesc);
     padding-bottom: 16px;
   }
 
@@ -22,16 +21,20 @@
   }
 }
 
+@media only screen and (min-width: 768px) {
+  .advantages {
+    padding-bottom: 140px;
+    
+    &__list {
+      grid-template-columns: 1fr 1fr;
+      gap: 40px 20px;
+      text-align: start;
+    }
+  }
+}
+
 @media only screen and (min-width: 1440px) {
   .advantages {
     padding-bottom: 140px;
-    &__item {
-      max-width: 415px;
-      
-    }
-    &__list {
-      justify-content: space-between;
-      text-align: start;
-    }
   }
 }

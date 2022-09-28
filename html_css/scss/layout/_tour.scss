@@ -5,20 +5,24 @@
     position: relative;
     width: 50%;
   }
+
   &__video-img {
     position: absolute;
     left: -50%;
   }
+
   &__video {
     position: relative;
     background: url("../../assets/images/tour.png") 0% 0% / auto no-repeat;
     min-height: 520px;
     width: 100%;
+    margin: 0 auto;
   }
 
   &__video-img {
     display: none;
   }
+
   &__btn-play {
     position: absolute;
     top: 50%;
@@ -27,7 +31,7 @@
     background-color: var(--greenBtn);
     width: 40px;
     height: 40px;
-    border: 2px solid #fff;
+    border: 2px solid var(--whiteDesc);
     border-radius: 50%;
     cursor: pointer;
     box-shadow: 0px 4px 16px 0px rgba(75, 202, 103, 0.56);
@@ -37,11 +41,17 @@
     margin: 6px;
   }
 
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
   &__desc {
     font-weight: 500;
     font-size: 12px;
     line-height: 100%;
-    color: #1b63f0;
+    color: var(--blueDesc);
     padding-top: 40px;
     padding-bottom: 6px;
   }
@@ -58,32 +68,40 @@
 
   &__list {
     padding-bottom: 24px;
+    position: relative;
   }
 
   &__item {
     list-style-type: none;
     margin-left: 36px;
     position: relative;
+    font-size: 14px;
+    
     &::before {
       position: absolute;
-      color: #fde7e6;
+      color: var(--tourDecorItem);
       content: "\2022";
       font-size: 26px;
       font-weight: 700;
       left: -20px;
+      top: -10px;
     }
   }
+
   &__item:not(:last-child) {
     padding-bottom: 12px;
   }
+
   &__btn-play:hover {
     border: 2px solid var(--greenBtn);
   }
+
   &__btn-play:active {
     box-shadow: none;
     background-color: var(--greenBtn);
     border: 2px solid var(--greenBtn);
   }
+
   &__btn-play:focus {
     box-shadow: none;
     background-color: var(--greenSlideAct);
@@ -96,6 +114,7 @@
     &__video {
       position: relative;
     }
+
     &__video-img {
       position: absolute;
       left: 0;
@@ -103,51 +122,30 @@
   }
 }
 
-@media only screen and (min-width: 768px) {
-  .tour {
-    &__video {
-      position: relative;
-      width: 50%;
-      background: none;
-    }
-    &__video-img {
-      display: block;
-      position: absolute;
-      left: 0;
-    }
-    &__btn-play {
-      position: absolute;
-      right: 0;
-      transform: translate(50%, -50%);
-      background-color: var(--greenBtn);
-      width: 40px;
-      height: 40px;
-      border: 2px solid #fff;
-      border-radius: 50%;
-      cursor: pointer;
-      box-shadow: 0px 4px 16px 0px rgba(75, 202, 103, 0.56);
-    }
-  }
-}
-
-@media only screen and (min-width: 1440px) {
+@media only screen and (min-width: 1300px) {
   .tour {
     &__desc {
       padding-top: 56px;
     }
 
     &__inner {
+      flex-direction: row;
       display: flex;
       flex-wrap: nowrap;
     }
+
     &__video {
       position: relative;
-      width: 50%;
+      margin: 0;
+      margin-right: 63px;
+      max-width: 720px;
     }
+
     &__video-img {
       position: absolute;
       left: -50%;
     }
+
     &__btn-play {
       position: absolute;
       top: 50%;
@@ -156,14 +154,51 @@
       background-color: var(--greenBtn);
       width: 40px;
       height: 40px;
-      border: 2px solid #fff;
+      border: 2px solid var(--whiteDesc);
       border-radius: 50%;
       cursor: pointer;
       box-shadow: 0px 4px 16px 0px rgba(75, 202, 103, 0.56);
     }
+
     &__info {
-      padding-left: 87px;
-      width: 50%;
+      width: 415px;
+    }
+
+    &__list {
+      &::before{
+        content: '';
+        position: absolute;
+        width: 32px;
+        height: 32px;
+        background-color: var(--tourDecorCircle);
+        border-radius: 50%;
+        left: 373px;
+        bottom: -35px;
+      }
+
+      &::after{
+        content: '';
+        position: absolute;
+        width: 40px;
+        height: 40px;
+        background-color: var(--tourDecorSquare);
+        border-radius: 8px;
+        left: 505px;
+        bottom: 130px;
+      }
+    }
+  }
+
+  .tour .tour__container {
+    margin: 0;
+    margin-right: 194px;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .tour {
+    &__btn-play {
+      right: 25%;
     }
   }
 }
