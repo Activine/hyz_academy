@@ -1387,6 +1387,7 @@ table {
   max-width: 1024px;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
 }
 
 .started__desc {
@@ -1508,17 +1509,21 @@ table {
 }
 
 @media only screen and (min-width: 768px) {
+  .started__inner {
+    flex-direction: row;
+  }
   .started__item {
+    width: 415px;
+  }
+  .started__left {
+    padding-bottom: 64px;
+    margin-right: 30px;
     width: 415px;
   }
 }
 
-@media only screen and (min-width: 1000px) {
-  .started__inner {
-    flex-direction: row;
-  }
+@media only screen and (min-width: 1440px) {
   .started__left {
-    padding-bottom: 64px;
     margin-right: 194px;
   }
 }
