@@ -1,5 +1,6 @@
 .education {
-  padding-top: 60px;
+  position: relative;
+  width: 100%;
   padding-bottom: 80px;
 
   &__wrap {
@@ -20,6 +21,7 @@
   }
 
   &__content {
+    padding-top: 424px;
     padding-bottom: 40px;
     position: relative;
   }
@@ -70,6 +72,7 @@
 
     &__content {
       padding-bottom: 100px;
+      padding-top: 200px;
     }
 
     &__wrap {

@@ -120,6 +120,7 @@ table {
   --lightgreenTitle: #97F5CD;
   --lightgreenBtnHover: #C0FFE4;
   --lightgreenBtnAct: #83EBBF;
+  --scroll-header-bg: #bafee2;
   --lightgreenBlog: #d6fae7;
   --lightgreenBtn: #97F5CD;
   --greenBtn: #64BE97;
@@ -259,19 +260,33 @@ table {
 }
 
 .header {
-  padding-bottom: 300px;
+  position: fixed;
+  width: 100%;
+  justify-content: space-between;
+  text-align: center;
+  transition: 600ms;
+  padding: 24px 0;
+  z-index: 100;
 }
 
 .header__top {
-  padding-top: 24px;
   display: flex;
   align-items: center;
   position: relative;
+  justify-content: space-between;
 }
 
 .header__logo {
+  position: relative;
+  transition: 600ms;
   margin-right: auto;
   padding-left: 40px;
+}
+
+.header__inner {
+  display: flex;
+  align-items: center;
+  gap: 15px;
 }
 
 .header__bg-inner {
@@ -284,6 +299,10 @@ table {
   right: 0;
   left: 0;
   height: 652px;
+}
+
+.header.sticky {
+  background-color: var(--scroll-header-bg);
 }
 
 .logo__img {
@@ -303,7 +322,12 @@ table {
   z-index: 0;
 }
 
+.nav__item {
+  position: relative;
+}
+
 .nav__link {
+  position: relative;
   color: var(--whiteDesc);
   font-weight: 600;
   line-height: 133%;
@@ -345,7 +369,6 @@ table {
 }
 
 .hamburger-lines {
-  padding-top: 33px;
   position: absolute;
   z-index: 10;
 }
@@ -363,9 +386,6 @@ table {
 }
 
 @media only screen and (min-width: 768px) {
-  .header {
-    padding-bottom: 144px;
-  }
   .header__bg {
     position: absolute;
     background: url("../../assets/icons/Coding-amico.svg") 100% 84%/auto no-repeat, url("../../assets/icons/Frame3.svg") 100% 0/auto no-repeat, url("../../assets/icons/Union.svg") 100% 100%/auto auto;
@@ -387,9 +407,6 @@ table {
 }
 
 @media only screen and (min-width: 1440px) {
-  .header {
-    padding-bottom: 144px;
-  }
   .header__bg {
     position: absolute;
     background: url("../../assets/icons/Coding-amico.svg") calc(var(--widthA) / 1.23) 84%/auto no-repeat, url("../../assets/icons/Frame3.svg") 100% 0/50% no-repeat, url("../../assets/icons/Union.svg") 100% 100%/auto auto;
@@ -398,7 +415,8 @@ table {
 }
 
 .education {
-  padding-top: 60px;
+  position: relative;
+  width: 100%;
   padding-bottom: 80px;
 }
 
@@ -424,6 +442,7 @@ table {
 }
 
 .education__content {
+  padding-top: 424px;
   padding-bottom: 40px;
   position: relative;
 }
@@ -469,6 +488,7 @@ table {
   }
   .education__content {
     padding-bottom: 100px;
+    padding-top: 200px;
   }
   .education__wrap {
     margin: 0;

@@ -1,16 +1,33 @@
 .header {
-  padding-bottom: 300px;
+  position: fixed;
+  // top: 0;
+  // left: 0;
+  width: 100%;
+  justify-content: space-between;
+  text-align: center;
+  transition: 600ms;
+  // margin: 0;
+  padding: 24px 0;
+  z-index: 100;
 
   &__top {
-    padding-top: 24px;
     display: flex;
     align-items: center;
     position: relative;
+    justify-content: space-between;
   }
 
   &__logo {
+    position: relative;
+    transition: 600ms;
     margin-right: auto;
     padding-left: 40px;
+  }
+
+  &__inner{
+    display: flex;
+    align-items: center;
+    gap: 15px;
   }
 
   &__bg-inner {
@@ -27,6 +44,10 @@
     left: 0;
     height: 652px;
   }
+}
+
+.header.sticky {
+  background-color: var(--scroll-header-bg);
 }
 
 .logo {
@@ -47,7 +68,12 @@
     z-index: 0;
   }
 
+  &__item {
+    position: relative;
+  }
+
   &__link {
+    position: relative;
     color: var(--whiteDesc);
     font-weight: 600;
     line-height: 133%;
@@ -92,7 +118,6 @@
 }
 
 .hamburger-lines {
-  padding-top: 33px;
   position: absolute;
   z-index: 10;
 }
@@ -111,7 +136,6 @@
 
 @media only screen and (min-width: 768px) {
   .header {
-    padding-bottom: 144px;
 
     &__bg {
       position: absolute;
@@ -144,7 +168,7 @@
 
 @media only screen and (min-width: 1440px) {
   .header {
-    padding-bottom: 144px;
+    // padding-bottom: 144px;
 
     &__bg {
       position: absolute;
