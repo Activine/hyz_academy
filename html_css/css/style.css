@@ -518,6 +518,7 @@ table {
 
 .courses {
   padding-bottom: 64px;
+  background: url(../../assets/icons/Union.svg) 100% 100%/auto auto;
 }
 
 .courses__desc {
@@ -559,6 +560,11 @@ table {
   background-color: silver;
   color: var(--whiteDesc);
   transition: 200ms linear;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-all;
+  word-break: break-word;
+  hyphens: auto;
 }
 
 .courses__item:hover {

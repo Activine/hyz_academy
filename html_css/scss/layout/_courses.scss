@@ -1,5 +1,6 @@
 .courses {
   padding-bottom: 64px;
+  background: url(../../assets/icons/Union.svg) 100% 100% / auto auto;
 
   &__desc {
     color: var(--blueDesc);
@@ -36,6 +37,11 @@
     background-color: silver;
     color:var(--whiteDesc);
     transition: 200ms linear;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-all;
+    word-break: break-word;
+    hyphens: auto;
   }
 
   &__item:hover{
