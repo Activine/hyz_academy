@@ -42,7 +42,8 @@
   &__link {
     display: flex;
     text-decoration: none;
-    transition: 200ms linear;
+    transition: 250ms;
+    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     color: var(--whiteDesc);
     stroke: var(--whiteDesc);
   }

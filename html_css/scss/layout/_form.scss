@@ -9,6 +9,11 @@
     gap: 16px;
     align-items: center;
   }
+  
+  &__label {
+    text-align: center;
+    width: 100%;
+  }
 
   &__input {
     width: 100%;
@@ -16,6 +21,9 @@
     padding: 14px 12px;
     border: none;
     background-color: var(--formBG);
+    outline-color: var(--formBG);
+    transition: 250ms;
+    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   &__input:focus {
@@ -32,7 +40,6 @@
     line-height: 133%;
     color: var(--whiteDesc);
     box-shadow: 0px 4px 16px rgba(75, 202, 103, 0.58);
-    transition: 150ms linear;
     background-color: var(--greenBtn);
   }
 
@@ -51,14 +58,19 @@
     box-shadow: 0px 4px 16px rgba(75, 202, 103, 0.58);
   }
 }
+
 @media only screen and (min-width: 768px) {
   .form__input, .btn__form {
     width: 50%;
   }
+
+  .btn__form {
+    width: 120px;
+  }
 }
 
 @media only screen and (min-width: 1440px) {
-  .form__input, .btn__form {
+  .form__input {
     width: 420px;
   }
 }

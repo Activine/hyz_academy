@@ -43,7 +43,8 @@
     font-size: 14px;
     text-decoration: none;
     color: var(--greyBase);
-    transition: 200ms linear;
+    transition: 250ms;
+    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   &__item-link:hover {
@@ -69,7 +70,8 @@
 
   &__social-img {
     stroke: var(--bgSocialImg);
-    transition: 200ms linear;
+    transition: 250ms;
+    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   &__social-img:hover {
@@ -121,7 +123,8 @@
     font-size: 12px;
     text-decoration: none;
     color: var(--greyBase);
-    transition: 200ms linear;
+    transition: 250ms;
+    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   &__bottom-link:hover {
