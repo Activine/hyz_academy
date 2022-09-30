@@ -1,10 +1,10 @@
 .logo {
   &__img {
-    &:hover{fill: #000}
+    &:hover {
+      fill: var(--blackTitle);
+    }
   }
 }
-
-
 
 .btn {
   display: inline-block;
@@ -19,17 +19,18 @@
   text-decoration: none;
   transition: 200ms linear;
   background-color: var(--blueDesc);
-  &__blue {
-    &:hover{
-        background-color: var(--blueBtnHover);
-    }
 
-    &:focus{
+  &__blue {
+    &:hover {
       background-color: var(--blueBtnHover);
     }
 
-    &:active{
-        background-color: var(--blueBtnAct);
+    &:focus {
+      background-color: var(--blueBtnHover);
+    }
+
+    &:active {
+      background-color: var(--blueBtnAct);
     }
   }
 
@@ -37,23 +38,21 @@
     background-color: var(--lightgreenBtn);
     color: var(--blackTitle);
 
-    &:hover{
-        background-color: var(--lightgreenBtnHover);
-    }
-
-    &:focus{
+    &:hover {
       background-color: var(--lightgreenBtnHover);
     }
 
-    &:active{
+    &:focus {
+      background-color: var(--lightgreenBtnHover);
+    }
+
+    &:active {
       background-color: var(--lightgreenBtnAct);
     }
   }
 
-
-  &__form{
+  &__form {
     box-shadow: 0px 4px 16px rgba(75, 202, 103, 0.58);
-    max-width: 120px;
     margin-top: 32px;
   }
 }
@@ -67,7 +66,8 @@
   border-radius: 50%;
   cursor: pointer;
   transition: 200ms linear;
-
+  background-color: var(--whiteDesc);
+  box-shadow: 0px 4px 16px var(--sliderShadow);
 }
 
 .slider-prev:hover,
@@ -75,6 +75,7 @@
   background-color: var(--greenBtn);
   stroke: var(--whiteDesc);
 }
+
 
 .slider-prev:active,
 .slider-next:active {
@@ -98,9 +99,11 @@
   fill: var(--goldenStar);
   stroke: var(--goldenStar);
 }
+
 .star + .star {
-    margin-right: 2px;
+  margin-right: 2px;
 }
+
 .star-empty {
   fill: var(--greyStar);
   stroke: var(--greyStar);

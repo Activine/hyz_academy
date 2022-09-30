@@ -1,74 +1,82 @@
 .choose {
-  margin-bottom: 80px;
   &__inner {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
   }
 
   &__left {
-    margin-right: 107px;
+    background-color: var(--tourBgColor);
+    padding: 0 24px;
+    width: 100%;
+    text-align: center;
   }
 
   &__title {
-    margin-bottom: 32px;
-    margin-top: 68px;
+    text-align: start;
+    padding-bottom: 32px;
+    margin-top: 20px;
   }
 
   &__list {
     list-style-type: none;
     padding-left: 0;
+    padding-bottom: 40px;
   }
 
   &__item {
+    margin: 0 auto;
     max-width: 502px;
     border-bottom: 1px solid rgba(92, 92, 92, 0.1);
   }
-  &__item:not(:last-child) {
-    margin-bottom: 40px;
+
+  &__item:not(:first-child) {
+    padding-top: 40px;
   }
+
   &__item-title {
-    margin-bottom: 16px;
+    padding-bottom: 16px;
   }
 
   &__item-info {
     display: flex;
     gap: 24px;
     padding-bottom: 24px;
+    flex-wrap: wrap;
   }
 
-  &__item-date {
+  &__sub-item {
     display: flex;
-    flex-wrap: wrap;
+    align-items: center;
   }
 
   &__item-icon {
     stroke: var(--greyDesc);
     margin-right: 8px;
   }
+
   &__item-text {
     font-size: 14px;
     line-height: 157%;
   }
-  &__item-time {
-    display: flex;
-  }
-
-  &__item-location {
-    display: flex;
-  }
 
   &__right {
-    background: var(--creamyBg);
+    background-color: var(--creamyBg);
+    width: 100%;
+    background-size: contain;
     position: relative;
+    text-align: center;
+    padding-bottom: 76px;
   }
 
   &__bg-title {
     font-weight: 700;
-    font-size: 60px;
+    font-size: 36px;
     line-height: 122%;
     letter-spacing: 0.4em;
     color: var(--creamyTitle);
-    margin-top: 60px;
-    margin-bottom: 91px;
+    padding-top: 60px;
+    padding-bottom: 91px;
   }
 
   &__box {
@@ -100,11 +108,11 @@
     background-image: url("../../assets/images/slider-image1.png");
     background-size: cover;
     width: 328px;
-    height: 380px;
-    margin-bottom: 76px;
-    margin-left: 87px;
+    padding-top: 224px;
     border-radius: 8px;
+    margin: 0 auto;
   }
+
   &__card-wrap {
     display: flex;
     flex-direction: column;
@@ -112,14 +120,14 @@
     width: 280px;
     margin-top: auto;
     margin: auto 24px 0 24px;
-    position: absolute;
     bottom: 0;
     padding: 24px 16px 32px;
   }
+
   &__card-title {
     @include itemTitle(var(--whiteDesc));
     text-align: center;
-    margin-bottom: 16px;
+    padding-bottom: 16px;
   }
 
   &__card-info {
@@ -132,16 +140,89 @@
     color: var(--greyCard);
     align-items: center;
   }
+
   &__card-icon {
     stroke: var(--greyCard);
   }
+
   &__card-data {
     display: flex;
-    margin-bottom: 8px;
+    padding-bottom: 8px;
   }
+
   &__btn {
     position: absolute;
     bottom: -20px;
-    left: 87px;
+    left: 5%
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .choose {
+    &__title {
+      padding-top: 0;
+      margin-top: 68px;
+    }
+
+    &__right {
+      background-color: var(--creamyBg);
+    }
+
+    &__bg-title {
+      font-size: 60px;
+    }
+
+    &__btn {
+      left: 30%;
+      transform: translateX(-50%);
+    }
+  }
+}
+@media only screen and (min-width: 1000px) {
+  .choose {
+    background: linear-gradient(
+      90deg,
+      var(--tourBgColor) 55%,
+      var(--creamyBg) 43%
+    );
+
+    &__title {
+      text-align: start;
+    }
+
+    &__inner {
+      flex-wrap: nowrap;
+    }
+
+    &__right{
+      width: auto;
+    }
+
+    &__left {
+      width: auto;
+      padding: 0; 
+    }
+
+    &__list {
+      margin-right: 100px;
+    }
+
+    &__item-title{
+      text-align: start;
+    }
+
+    &__bg-title{
+      padding-left: 16px;
+    }
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .choose{
+      background: linear-gradient(90deg, var(--tourBgColor) 55%, var(--creamyBg) 43%);
+
+      &__list {
+        margin-right: 182px;
+      }
   }
 }

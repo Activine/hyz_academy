@@ -1,87 +1,182 @@
-.header{
-    padding-bottom: 104px;
-    &__top{
-        padding-top: 24px;
-        display: flex;
-        align-items: center;
-    }
-    &__logo{
-        margin-right: auto;
-    }
-    &__bg-inner{
-        position: relative;
-    }
-    &__bg{
-        position: absolute;
-        background: url('../../assets/icons/Coding-amico.svg') 84% 40%/ auto no-repeat,
-        url('../../assets/icons/Frame3.svg') 100% 100%/ auto no-repeat,
-        url('../../assets/icons/Union.svg') 100% 100%/ auto auto;
-        right: 0;
-        width: 1440px;
-        height: 652px;
-    }
-}
-.logo{
-    &__img {
-        fill: var(--blueDesc);
+.header {
+  position: fixed;
+  // top: 0;
+  // left: 0;
+  width: 100%;
+  justify-content: space-between;
+  text-align: center;
+  transition: 600ms;
+  // margin: 0;
+  padding: 24px 0;
+  z-index: 100;
 
-    }
+  &__top {
+    display: flex;
+    align-items: center;
+    position: relative;
+    justify-content: space-between;
+  }
+
+  &__logo {
+    position: relative;
+    transition: 600ms;
+    margin-right: auto;
+    padding-left: 40px;
+  }
+
+  &__inner{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+
+  &__bg-inner {
+    position: relative;
+  }
+
+  &__bg {
+    position: absolute;
+    background: url("../../assets/icons/Coding-amico.svg") 100% 17% / 380px
+        no-repeat,
+      url("../../assets/icons/Frame3.svg") 100% 0 / contain no-repeat,
+      url("../../assets/icons/Union.svg") 100% 100% / auto auto;
+    right: 0;
+    left: 0;
+    height: 652px;
+  }
+}
+
+.header.sticky {
+  background-color: var(--scroll-header-bg);
+}
+
+.logo {
+  &__img {
+    fill: var(--blueDesc);
+  }
 }
 
 .nav {
-    display: flex;
+  display: flex;
+  align-items: center;
+
+  &__list {
+    display: none;
     align-items: center;
-    &__list {
-        display: flex;
-        align-items: center;
-        gap: 20px;
-        position: relative;
-        z-index: 0;
+    gap: 20px;
+    position: relative;
+    z-index: 0;
+  }
+
+  &__item {
+    position: relative;
+  }
+
+  &__link {
+    position: relative;
+    color: var(--whiteDesc);
+    font-weight: 600;
+    line-height: 133%;
+    text-decoration: none;
+    transition: 200ms linear;
+
+    &:hover {
+      color: var(--blueDesc);
     }
 
-    &__link{
-        color: var(--blueData);
-        font-weight: 600;
-        line-height: 133%;
-        text-decoration: none;
-        transition: 200ms linear;
-        &:hover{
-            color: var(--blueDesc);
-          }
-        &:focus{
-            color: var(--blueDesc);
-        }
-        &:active{
-            color: var(--blueDesc);
-            opacity: .75;
-        }
+    &:focus {
+      color: var(--blueDesc);
     }
-    &__link-active{
-        color: #1B63F0;
+
+    &:active {
+      color: var(--blueDesc);
+      opacity: 0.75;
     }
+  }
+
+  &__link-active {
+    color: var(--blueDesc);
+  }
 }
+
 .btn {
-    &__nav{
-        margin-left: 40px;
-        padding: 12px 24px;
-        position: relative;
-        z-index: 0;
-      }
-    &__blue {
-    }
+  &__nav {
+    margin-left: 40px;
+    padding: 12px 24px;
+    position: relative;
+    z-index: 0;
+  }
 
-    &__ed {
-        position: relative;
-        z-index: 0;
-    }
-    &__ed:not(:last-child){
-        margin-right: 24px;
-    }
+  &__ed {
+    position: relative;
+    z-index: 0;
+  }
+
+  &__ed:not(:last-child) {
+    margin-right: 24px;
+  }
 }
 
-.div__rel{
-
+.hamburger-lines {
+  position: absolute;
+  z-index: 10;
 }
-.div__ab{
 
+.line {
+  display: block;
+  width: 18px;
+  height: 2px;
+  background-color: var(--blueDesc);
+  border-radius: 2px;
+}
+
+.line:not(:last-child) {
+  margin-bottom: 4px;
+}
+
+@media only screen and (min-width: 768px) {
+  .header {
+
+    &__bg {
+      position: absolute;
+      background: url("../../assets/icons/Coding-amico.svg") 100% 84% / auto
+          no-repeat,
+        url("../../assets/icons/Frame3.svg") 100% 0 / auto no-repeat,
+        url("../../assets/icons/Union.svg") 100% 100% / auto auto;
+      right: 0;
+    }
+
+    &__logo {
+      padding-left: 0;
+    }
+  }
+
+  .nav {
+    &__list {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      position: relative;
+      z-index: 0;
+    }
+  }
+
+  .hamburger-lines {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .header {
+    // padding-bottom: 144px;
+
+    &__bg {
+      position: absolute;
+      background: url("../../assets/icons/Coding-amico.svg")
+          calc(var(--widthA) / 1.23) 84% / auto no-repeat,
+        url("../../assets/icons/Frame3.svg") 100% 0 / 50% no-repeat,
+        url("../../assets/icons/Union.svg") 100% 100% / auto auto;
+      right: 0;
+    }
+  }
 }

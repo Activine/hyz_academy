@@ -1,15 +1,17 @@
 .prefer {
-  padding-bottom: 90px;
+  padding-top: 80px;
+
   &__title {
-    margin-bottom: 24px;
+    padding-bottom: 16px;
   }
 
   &__desc {
     font-size: 14px;
     line-height: 157%;
+    padding-bottom: 52px;
   }
 
-  &__top{
+  &__top {
     max-width: 676px;
     text-align: center;
     margin-bottom: 52px;
@@ -20,37 +22,46 @@
     display: flex;
     align-items: center;
     gap: 20px;
+    justify-content: center;
   }
 
   &__slider-list {
     display: flex;
     gap: 20px;
+    overflow: hidden;
   }
+
   &__slider-img {
     width: 197px;
     height: 197px;
     object-fit: cover;
   }
+
   &__slider-link {
     position: relative;
     display: inline-block;
-    box-shadow: 0px 7px 20px #e2edfb;
+    box-shadow: 0px 7px 20px var(--sliderShadow);
     border-radius: 4px;
     transition: 300ms linear;
   }
-  &__slider-link:nth-child(1):before{
+
+  &__slider-link:nth-child(1):before {
     @include gradient(rgba(101, 131, 255, 0.8));
   }
-  &__slider-link:nth-child(2):before{
+
+  &__slider-link:nth-child(2):before {
     @include gradient(rgba(240, 199, 45, 0.8));
   }
-  &__slider-link:nth-child(3):before{
+
+  &__slider-link:nth-child(3):before {
     @include gradient(rgba(148, 87, 243, 0.8));
   }
-  &__slider-link:nth-child(4):before{
+
+  &__slider-link:nth-child(4):before {
     @include gradient(rgba(254, 95, 96, 0.8));
   }
-  &__slider-link:hover{
+
+  &__slider-link:hover {
     font-size: 18px;
   }
 
@@ -63,5 +74,29 @@
     width: 180px;
     font-weight: 600;
     color: var(--whiteDesc);
+  }
+}
+
+.prefer__top .prefer__title::after {
+  top: 61px;
+}
+
+@media only screen and (min-width: 375px) {
+  .prefer {
+    &__title {
+      text-align: start;
+      padding-right: 80px;
+    }
+  }
+}
+@media only screen and (min-width: 482px) {
+  .prefer {
+    &__title {
+      text-align: center;
+    }
+  }
+
+  .prefer__top .prefer__title::after {
+    top: 26px;
   }
 }

@@ -1,34 +1,51 @@
 .courses {
-  margin-bottom: 64px;
+  padding-bottom: 64px;
+  background: url(../../assets/icons/Union.svg) 100% 100% / auto auto;
+
   &__desc {
     color: var(--blueDesc);
     font-weight: 500;
     font-size: 12px;
     line-height: 100%;
-}
+    text-align: center;
+    padding-bottom: 6px;
+  }
 
-&__title {
+  &__title {
   @include sectionTitle();
-    margin-bottom: 78px;
+    padding-bottom: 54px;
+    text-align: center;
   }
 
   &__list {
     display: flex;
     align-items: center;
     gap: 20px;
+    justify-content: center;
   }
+
   &__item {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     position: relative;
     text-decoration: none;
-    width: 270px;
+    width: 260px;
     padding: 16px;
-    height: 364px;
+    min-height: 364px;
     border-radius: 8px;
     background-color: silver;
     color:var(--whiteDesc);
+    transition: 200ms linear;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-all;
+    word-break: break-word;
+    hyphens: auto;
+  }
+
+  &__item:hover{
+    box-shadow: 0px 6px 20px rgba(27, 99, 240, 0.4);
   }
 
   &__item-avatar {
@@ -81,22 +98,54 @@
     display: flex;
     align-items: center;
   }
+
   &__counter {
     margin-left: 2px;
   }
 }
+
 .courses .courses__item:nth-child(2) {
   background-image: url("../../assets/images/slider-image1.png");
   background-position: center;
   background-size: cover;
 }
+
 .courses .courses__item:nth-child(3) {
   background-image: url("../../assets/images/courses-slide2.jfif");
   background-position: center;
   background-size: cover;
+  display: none;
 }
+
 .courses .courses__item:nth-child(4) {
   background-image: url("../../assets/images/courses-slide3.png");
   background-position: center;
   background-size: cover;
+  display: none;
+}
+
+@media only screen and (min-width: 580px) {
+  .courses .courses__item:nth-child(3) {
+    display: flex;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .courses{
+    &__item{
+      width: 270px;
+    }
+  }
+
+  .courses .courses__item:nth-child(4) {
+    display: flex;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .courses{
+    &__title{
+      padding-bottom: 78px;
+    }
+  }
 }
