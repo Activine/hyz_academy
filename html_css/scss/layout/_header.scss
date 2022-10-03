@@ -89,9 +89,9 @@
   &__close {
     cursor: pointer;
     position: absolute;
+    left: -200%;
     top: 20px;
     right: 10px;
-    display: none;
     z-index: 2;
     transition: 250ms;
     animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -124,6 +124,7 @@
 
   &__close.show {
     display: block;
+    left: 95%;
   }
   
   &__item {

@@ -9,17 +9,12 @@
 
   &__logo {
     padding-bottom: 14px;
-    text-align: center;
   }
 
   &__nav {
     display: flex;
     flex-direction: column;
     gap: 20px;
-  }
-
-  &__column {
-    text-align: center;
   }
 
   &__column-title {
@@ -65,7 +60,6 @@
     gap: 18px;
     padding-left: 0;
     list-style-type: none;
-    justify-content: center;
   }
 
   &__social-img {
@@ -87,16 +81,11 @@
     opacity: 0.85;
   }
 
-  &__bottom-nav {
-    margin: 0 auto;
-  }
-
   &__bottom {
     margin: 0 auto;
     max-width: 1024px;
     display: flex;
     flex-direction: column;
-    align-items: center;
     border-top: 1px solid rgba(92, 92, 92, 0.1);
     padding-top: 40px;
     padding-bottom: 24px;
@@ -105,13 +94,11 @@
 
   &__copyright {
     padding-bottom: 24px;
-    margin: 0 auto;
   }
 
   &__bottom-list {
     display: flex;
     flex-direction: column;
-    align-items: center;
     gap: 20px;
     padding-left: 0;
     list-style-type: none;

@@ -1,5 +1,5 @@
 .courses {
-  padding-bottom: 64px;
+  padding-bottom: 39px;
   background: url(../../assets/icons/Union.svg) 100% 100% / auto auto;
 
   &__desc {
@@ -24,13 +24,20 @@
     justify-content: center;
   }
 
+  &__item-inner {
+    display: flex;
+    overflow: auto;
+    gap: 20px;
+    padding-top: 25px;
+  }
+  
   &__item {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     position: relative;
     text-decoration: none;
-    width: 260px;
+    min-width: 260px;
     padding: 16px;
     min-height: 364px;
     border-radius: 8px;
@@ -105,6 +112,12 @@
   }
 }
 
+.courses .courses__item:nth-child(1) {
+  background-image: url("../../assets/images/courses-slide3.png");
+  background-position: center;
+  background-size: cover;
+}
+
 .courses .courses__item:nth-child(2) {
   background-image: url("../../assets/images/slider-image1.png");
   background-position: center;
@@ -115,14 +128,6 @@
   background-image: url("../../assets/images/courses-slide2.jfif");
   background-position: center;
   background-size: cover;
-  display: none;
-}
-
-.courses .courses__item:nth-child(4) {
-  background-image: url("../../assets/images/courses-slide3.png");
-  background-position: center;
-  background-size: cover;
-  display: none;
 }
 
 @media only screen and (min-width: 580px) {

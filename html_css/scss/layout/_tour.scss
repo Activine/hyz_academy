@@ -104,7 +104,7 @@
     border: 2px solid var(--greenBtn);
   }
 
-  &__btn-play:focus {
+  &__btn-play:focus-visible {
     box-shadow: none;
     background-color: var(--greenSlideAct);
     border: 2px solid var(--greenSlideAct);

@@ -16,13 +16,19 @@
 @import "./layout/form";
 @import "./layout/footer";
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: "Montserrat";
   color: var(--greyBase);
 }
+
 .section-title {
   @include sectionTitle();
 }
+
 .section-title::after {
   content: "";
   position: absolute;
@@ -33,15 +39,14 @@ body {
   background-color: var(--customerDecorSquare);
   margin-left: 24px;
 }
+
 .container {
   padding: 0 24px;
   margin: 0 auto;
 }
+
 .item-title {
   @include itemTitle();
-}
-
-@media only screen and (min-width: 375px) {
 }
 
 @media only screen and (min-width: 768px) {
