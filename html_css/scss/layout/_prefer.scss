@@ -28,7 +28,7 @@
   &__slider-list {
     display: flex;
     gap: 20px;
-    overflow: hidden;
+    overflow: auto;
   }
 
   &__slider-img {
@@ -42,7 +42,8 @@
     display: inline-block;
     box-shadow: 0px 7px 20px var(--sliderShadow);
     border-radius: 4px;
-    transition: 300ms linear;
+    transition: 250ms;
+    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   &__slider-link:nth-child(1):before {
@@ -63,6 +64,7 @@
 
   &__slider-link:hover {
     font-size: 18px;
+    opacity: 0.75;
   }
 
   &__slider-text {

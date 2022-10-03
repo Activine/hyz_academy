@@ -15,7 +15,7 @@
             <span class="line line1"></span>
             <span class="line line2"></span>
             <span class="line line3"></span>
-          </div> 
+          </div>
           <a class="header__logo" href="#">
             <svg class="logo__img" width="53" height="24">
               <use href="./assets/icons/symbol-defs.svg#icon-logo"></use>
@@ -24,20 +24,21 @@
           <nav class="nav">
             <ul class="nav__list">
               <li class="nav__item">
-                <a class="nav__link nav__link-active" href="#">Categories</a>
+                <a class="nav__link nav__link-active" href="#categories">Categories</a>
               </li>
               <li class="nav__item">
-                <a class="nav__link" href="#">Course</a>
+                <a class="nav__link" href="#course">Course</a>
               </li>
               <li class="nav__item">
-                <a class="nav__link" href="#">Explore</a>
+                <a class="nav__link" href="#explore">Explore</a>
               </li>
               <li class="nav__item">
-                <a class="nav__link" href="#">Degrees</a>
+                <a class="nav__link" href="#degrees">Degrees</a>
               </li>
             </ul>
             <button class="btn btn__blue btn__nav">Explore</button>
           </nav>
+          <div class="nav__close"></div>
         </div>
       </div>
     </header>
@@ -58,7 +59,9 @@
               </p>
               <div class="education__links">
                 <a class="btn btn__blue btn__ed" href="#">Read More</a>
-                <a class="btn btn__lightgreen btn__ed" href="#form">Get started</a>
+                <a class="btn btn__lightgreen btn__ed" href="#form"
+                  >Get started</a
+                >
               </div>
             </div>
           </div>
@@ -106,7 +109,7 @@
           </div>
         </div>
       </section>
-      <section class="advantages">
+      <section id="categories" class="advantages">
         <div class="container">
           <h2 class="advantages__title section-title">Shy shoose us?</h2>
           <div class="advantages__list">
@@ -173,93 +176,110 @@
                 ></use>
               </svg>
             </button>
-            <a class="courses__item"  href="#">
-              <img class="courses__item-avatar" src="./assets/images/avatar-1.png" alt="avatar" width="48" />
-              <p class="courses__item-title">DESIGN</p>
-              <h3 class="courses__item-desc">Learn Photoshop title</h3>
-              <div class="courses__item-bottom">
-                <div class="courses__item-coust">
-                  <span class="courses__item-coust-new">$260</span>
-                  <span class="courses__item-coust-old">$360</span>
+            <div class="courses__item-inner">
+              <a class="courses__item" href="#">
+                <img
+                  class="courses__item-avatar"
+                  src="./assets/images/avatar-1.png"
+                  alt="avatar"
+                  width="48"
+                />
+                <p class="courses__item-title">DESIGN</p>
+                <h3 class="courses__item-desc">Learn Photoshop title</h3>
+                <div class="courses__item-bottom">
+                  <div class="courses__item-coust">
+                    <span class="courses__item-coust-new">$260</span>
+                    <span class="courses__item-coust-old">$360</span>
+                  </div>
+                  <div class="stars__inner">
+                    <svg class="star" width="10" height="10">
+                      <use href="./assets/icons/symbol-defs.svg#icon-star"></use>
+                    </svg>
+                    <svg class="star" width="10" height="10">
+                      <use href="./assets/icons/symbol-defs.svg#icon-star"></use>
+                    </svg>
+                    <svg class="star" width="10" height="10">
+                      <use href="./assets/icons/symbol-defs.svg#icon-star"></use>
+                    </svg>
+                    <svg class="star" width="10" height="10">
+                      <use href="./assets/icons/symbol-defs.svg#icon-star"></use>
+                    </svg>
+                    <svg class="star star-empty" width="10" height="10">
+                      <use href="./assets/icons/symbol-defs.svg#icon-star"></use>
+                    </svg>
+                    <span class="stars__counter">(4)</span>
+                  </div>
                 </div>
-                <div class="stars__inner">
-                  <svg class="star" width="10" height="10">
-                    <use href="./assets/icons/symbol-defs.svg#icon-star"></use>
-                  </svg>
-                  <svg class="star" width="10" height="10">
-                    <use href="./assets/icons/symbol-defs.svg#icon-star"></use>
-                  </svg>
-                  <svg class="star" width="10" height="10">
-                    <use href="./assets/icons/symbol-defs.svg#icon-star"></use>
-                  </svg>
-                  <svg class="star" width="10" height="10">
-                    <use href="./assets/icons/symbol-defs.svg#icon-star"></use>
-                  </svg>
-                  <svg class="star star-empty" width="10" height="10">
-                    <use href="./assets/icons/symbol-defs.svg#icon-star"></use>
-                  </svg>
-                  <span class="stars__counter">(4)</span>
+              </a>
+              <a class="courses__item" href="#">
+                <img
+                  class="courses__item-avatar"
+                  src="./assets/images/avatar-2.png"
+                  alt="avatar"
+                  width="48"
+                />
+                <p class="courses__item-title">Marketing</p>
+                <h3 class="courses__item-desc">Learn Photoshop title trun...</h3>
+                <div class="courses__item-bottom">
+                  <div class="courses__item-coust">
+                    <span class="courses__item-coust-new">$260</span>
+                    <span class="courses__item-coust-old">$360</span>
+                  </div>
+                  <div class="stars__inner">
+                    <svg class="star" width="10" height="10">
+                      <use href="./assets/icons/symbol-defs.svg#icon-star"></use>
+                    </svg>
+                    <svg class="star" width="10" height="10">
+                      <use href="./assets/icons/symbol-defs.svg#icon-star"></use>
+                    </svg>
+                    <svg class="star star-empty" width="10" height="10">
+                      <use href="./assets/icons/symbol-defs.svg#icon-star"></use>
+                    </svg>
+                    <svg class="star star-empty" width="10" height="10">
+                      <use href="./assets/icons/symbol-defs.svg#icon-star"></use>
+                    </svg>
+                    <svg class="star star-empty" width="10" height="10">
+                      <use href="./assets/icons/symbol-defs.svg#icon-star"></use>
+                    </svg>
+                    <span class="stars__counter">(4)</span>
+                  </div>
                 </div>
-              </div>
-            </a>
-            <a class="courses__item"  href="#">
-              <img class="courses__item-avatar" src="./assets/images/avatar-2.png" alt="avatar" width="48" />
-              <p class="courses__item-title">Marketing</p>
-              <h3 class="courses__item-desc">Learn Photoshop title trun...</h3>
-              <div class="courses__item-bottom">
-                <div class="courses__item-coust">
-                  <span class="courses__item-coust-new">$260</span>
-                  <span class="courses__item-coust-old">$360</span>
+              </a>
+              <a class="courses__item" href="#">
+                <img
+                  class="courses__item-avatar"
+                  src="./assets/images/avatar-3.png"
+                  alt="avatar"
+                  width="48"
+                />
+                <p class="courses__item-title">Web design</p>
+                <h3 class="courses__item-desc">Learn Photoshop</h3>
+                <div class="courses__item-bottom">
+                  <div class="courses__item-coust">
+                    <span class="courses__item-coust-new">$260</span>
+                    <span class="courses__item-coust-old">$360</span>
+                  </div>
+                  <div class="stars__inner">
+                    <svg class="star" width="10" height="10">
+                      <use href="./assets/icons/symbol-defs.svg#icon-star"></use>
+                    </svg>
+                    <svg class="star" width="10" height="10">
+                      <use href="./assets/icons/symbol-defs.svg#icon-star"></use>
+                    </svg>
+                    <svg class="star" width="10" height="10">
+                      <use href="./assets/icons/symbol-defs.svg#icon-star"></use>
+                    </svg>
+                    <svg class="star" width="10" height="10">
+                      <use href="./assets/icons/symbol-defs.svg#icon-star"></use>
+                    </svg>
+                    <svg class="star" width="10" height="10">
+                      <use href="./assets/icons/symbol-defs.svg#icon-star"></use>
+                    </svg>
+                    <span class="stars__counter">(4)</span>
+                  </div>
                 </div>
-                <div class="stars__inner">
-                  <svg class="star" width="10" height="10">
-                    <use href="./assets/icons/symbol-defs.svg#icon-star"></use>
-                  </svg>
-                  <svg class="star" width="10" height="10">
-                    <use href="./assets/icons/symbol-defs.svg#icon-star"></use>
-                  </svg>
-                  <svg class="star star-empty" width="10" height="10">
-                    <use href="./assets/icons/symbol-defs.svg#icon-star"></use>
-                  </svg>
-                  <svg class="star star-empty" width="10" height="10">
-                    <use href="./assets/icons/symbol-defs.svg#icon-star"></use>
-                  </svg>
-                  <svg class="star star-empty" width="10" height="10">
-                    <use href="./assets/icons/symbol-defs.svg#icon-star"></use>
-                  </svg>
-                  <span class="stars__counter">(4)</span>
-                </div>
-              </div>
-            </a>
-            <a class="courses__item"  href="#">
-              <img class="courses__item-avatar" src="./assets/images/avatar-3.png" alt="avatar" width="48" />
-              <p class="courses__item-title">Web design</p>
-              <h3 class="courses__item-desc">Learn Photoshop</h3>
-              <div class="courses__item-bottom">
-                <div class="courses__item-coust">
-                  <span class="courses__item-coust-new">$260</span>
-                  <span class="courses__item-coust-old">$360</span>
-                </div>
-                <div class="stars__inner">
-                  <svg class="star" width="10" height="10">
-                    <use href="./assets/icons/symbol-defs.svg#icon-star"></use>
-                  </svg>
-                  <svg class="star" width="10" height="10">
-                    <use href="./assets/icons/symbol-defs.svg#icon-star"></use>
-                  </svg>
-                  <svg class="star" width="10" height="10">
-                    <use href="./assets/icons/symbol-defs.svg#icon-star"></use>
-                  </svg>
-                  <svg class="star" width="10" height="10">
-                    <use href="./assets/icons/symbol-defs.svg#icon-star"></use>
-                  </svg>
-                  <svg class="star" width="10" height="10">
-                    <use href="./assets/icons/symbol-defs.svg#icon-star"></use>
-                  </svg>
-                  <span class="stars__counter">(4)</span>
-                </div>
-              </div>
-            </a>
+              </a>
+            </div>
             <button class="slider-next">
               <svg class="icon__next" width="24" height="24">
                 <use
@@ -270,13 +290,13 @@
           </div>
         </div>
       </section>
-      <section class="tour">
+      <section id="degrees" class="tour">
         <div class="tour__inner">
           <div class="tour__video">
             <button class="tour__btn-play">
               <svg class="tour__video-play" width="24" height="24">
                 <use
-                href="./assets/icons/symbol-defs.svg#icon-play-video"
+                  href="./assets/icons/symbol-defs.svg#icon-play-video"
                 ></use>
               </svg>
             </button>
@@ -287,17 +307,16 @@
               <h2 class="tour__title section-title">Take a tour</h2>
               <p class="tour__text">
                 Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                accusantium doloremque 
+                accusantium doloremque
               </p>
               <p class="tour__text">
-                Laudantium, totam rem aperiam, eaque ipsa
-                quae ab illo inventore veritatis et quasi architecto beatae vitae
-                dicta sunt explicabo.
+                Laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore
+                veritatis et quasi architecto beatae vitae dicta sunt explicabo.
               </p>
               <ul class="tour__list">
                 <li class="tour__item">
-                  Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet,
-                  consectetur
+                  Neque porro quisquam est, qui dolorem ipsum quia dolor sit
+                  amet, consectetur
                 </li>
                 <li class="tour__item">
                   Ut enim ad minima veniam, quis nostrum exercitationem ullam
@@ -311,181 +330,195 @@
         </div>
       </section>
       <section class="choose">
-        <!-- <div class="container"> -->
-          <div class="choose__inner">
-            <div class="choose__left">
-              <h2 class="choose__title section-title">Why shoose us?</h2>
-              <ul class="choose__list">
-                <li class="choose__item">
-                  <h3 class="choose__item-title item-title">
-                    International Conference on Bussiness
-                  </h3>
-                  <div class="choose__item-info">
-                    <div class="choose__item-date choose__sub-item">
-                      <svg class="choose__item-icon" width="20" height="20">
-                        <use
-                          href="./assets/icons/symbol-defs.svg#icon-calendar"
-                        ></use>
-                      </svg>
-                      <p class="choose__item-text">July 8, 2018</p>
-                    </div>
-                    <div class="choose__item-time choose__sub-item">
-                      <svg class="choose__item-icon" width="20" height="20">
-                        <use
-                          href="./assets/icons/symbol-defs.svg#icon-clock"
-                        ></use>
-                      </svg>
-                      <p class="choose__item-text">5:00pm - 7:00pm</p>
-                    </div>
-                    <div class="choose__item-location choose__sub-item">
-                      <svg class="choose__item-icon" width="20" height="20">
-                        <use href="./assets/icons/symbol-defs.svg#icon-map"></use>
-                      </svg>
-                      <p class="choose__item-text">United States</p>
-                    </div>
+        <div class="choose__inner">
+          <div class="choose__left">
+            <h2 class="choose__title section-title">Why shoose us?</h2>
+            <ul class="choose__list">
+              <li class="choose__item">
+                <h3 class="choose__item-title item-title">
+                  International Conference on Bussiness
+                </h3>
+                <div class="choose__item-info">
+                  <div class="choose__item-date choose__sub-item">
+                    <svg class="choose__item-icon" width="20" height="20">
+                      <use
+                        href="./assets/icons/symbol-defs.svg#icon-calendar"
+                      ></use>
+                    </svg>
+                    <p class="choose__item-text">July 8, 2018</p>
                   </div>
-                </li>
-                <li class="choose__item">
-                  <h3 class="choose__item-title item-title">
-                    International Conference on Bussiness
-                  </h3>
-                  <div class="choose__item-info">
-                    <div class="choose__item-date choose__sub-item">
-                      <svg class="choose__item-icon" width="20" height="20">
-                        <use
-                          href="./assets/icons/symbol-defs.svg#icon-calendar"
-                        ></use>
-                      </svg>
-                      <p class="choose__item-text">July 8, 2018</p>
-                    </div>
-                    <div class="choose__item-time choose__sub-item">
-                      <svg class="choose__item-icon" width="20" height="20">
-                        <use
-                          href="./assets/icons/symbol-defs.svg#icon-clock"
-                        ></use>
-                      </svg>
-                      <p class="choose__item-text">5:00pm - 7:00pm</p>
-                    </div>
-                    <div class="choose__item-location choose__sub-item">
-                      <svg class="choose__item-icon" width="20" height="20">
-                        <use href="./assets/icons/symbol-defs.svg#icon-map"></use>
-                      </svg>
-                      <p class="choose__item-text">United States</p>
-                    </div>
+                  <div class="choose__item-time choose__sub-item">
+                    <svg class="choose__item-icon" width="20" height="20">
+                      <use
+                        href="./assets/icons/symbol-defs.svg#icon-clock"
+                      ></use>
+                    </svg>
+                    <p class="choose__item-text">5:00pm - 7:00pm</p>
                   </div>
-                </li>
-                <li class="choose__item">
-                  <h3 class="choose__item-title item-title">
-                    International Conference on Bussiness
-                  </h3>
-                  <div class="choose__item-info">
-                    <div class="choose__item-date choose__sub-item">
-                      <svg class="choose__item-icon" width="20" height="20">
-                        <use
-                          href="./assets/icons/symbol-defs.svg#icon-calendar"
-                        ></use>
-                      </svg>
-                      <p class="choose__item-text">July 8, 2018</p>
-                    </div>
-                    <div class="choose__item-time choose__sub-item">
-                      <svg class="choose__item-icon" width="20" height="20">
-                        <use
-                          href="./assets/icons/symbol-defs.svg#icon-clock"
-                        ></use>
-                      </svg>
-                      <p class="choose__item-text">5:00pm - 7:00pm</p>
-                    </div>
-                    <div class="choose__item-location choose__sub-item">
-                      <svg class="choose__item-icon" width="20" height="20">
-                        <use href="./assets/icons/symbol-defs.svg#icon-map"></use>
-                      </svg>
-                      <p class="choose__item-text">United States</p>
-                    </div>
+                  <div class="choose__item-location choose__sub-item">
+                    <svg class="choose__item-icon" width="20" height="20">
+                      <use href="./assets/icons/symbol-defs.svg#icon-map"></use>
+                    </svg>
+                    <p class="choose__item-text">United States</p>
                   </div>
-                </li>
-                <li class="choose__item">
-                  <h3 class="choose__item-title item-title">
-                    International Conference on Bussiness
-                  </h3>
-                  <div class="choose__item-info">
-                    <div class="choose__item-date choose__sub-item">
-                      <svg class="choose__item-icon" width="20" height="20">
-                        <use
-                          href="./assets/icons/symbol-defs.svg#icon-calendar"
-                        ></use>
-                      </svg>
-                      <p class="choose__item-text">July 8, 2018</p>
-                    </div>
-                    <div class="choose__item-time choose__sub-item">
-                      <svg class="choose__item-icon" width="20" height="20">
-                        <use
-                          href="./assets/icons/symbol-defs.svg#icon-clock"
-                        ></use>
-                      </svg>
-                      <p class="choose__item-text">5:00pm - 7:00pm</p>
-                    </div>
-                    <div class="choose__item-location choose__sub-item">
-                      <svg class="choose__item-icon" width="20" height="20">
-                        <use href="./assets/icons/symbol-defs.svg#icon-map"></use>
-                      </svg>
-                      <p class="choose__item-text">United States</p>
-                    </div>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div class="choose__right">
-              <p class="choose__bg-title">FEATURED</p>
-              <div class="choose__card">
-                <div class="choose__box">
-                  <p class="choose__box-text">
-                    <span class="choose__days choose__span">$213</span> Days
-                  </p>
-                  <p class="choose__box-text">
-                    <span class="choose__hours choose__span">23</span> Hours
-                  </p>
-                  <p class="choose__box-text">
-                    <span class="choose__min choose__span">59</span> Min
-                  </p>
                 </div>
-                <div class="choose__card-wrap">
-                  <h3 class="choose__card-title">International Conference...
-                    lo
-                  </h3>
-                  <div class="choose__card-info">
-                    <div class="choose__card-data">
-                      <svg class="choose__item-icon choose__card-icon" width="20" height="20">
-                        <use
-                          href="./assets/icons/symbol-defs.svg#icon-calendar"
-                        ></use>
-                      </svg>
-                      <p class="choose__item-text">July 8, 2018</p>
-                    </div>
-                    <div class="choose__card-data">
-                      <svg class="choose__item-icon choose__card-icon" width="20" height="20">
-                        <use href="./assets/icons/symbol-defs.svg#icon-clock"></use>
-                      </svg>
-                      <p class="choose__item-text">5pm - 7pm</p>
-                    </div>
-                    <div class="choose__card-data">
-                      <svg class="choose__item-icon choose__card-icon" width="20" height="20">
-                        <use href="./assets/icons/symbol-defs.svg#icon-map"></use>
-                      </svg>
-                      <p class="choose__item-text">United States</p>
-                    </div>
+              </li>
+              <li class="choose__item">
+                <h3 class="choose__item-title item-title">
+                  International Conference on Bussiness
+                </h3>
+                <div class="choose__item-info">
+                  <div class="choose__item-date choose__sub-item">
+                    <svg class="choose__item-icon" width="20" height="20">
+                      <use
+                        href="./assets/icons/symbol-defs.svg#icon-calendar"
+                      ></use>
+                    </svg>
+                    <p class="choose__item-text">July 8, 2018</p>
+                  </div>
+                  <div class="choose__item-time choose__sub-item">
+                    <svg class="choose__item-icon" width="20" height="20">
+                      <use
+                        href="./assets/icons/symbol-defs.svg#icon-clock"
+                      ></use>
+                    </svg>
+                    <p class="choose__item-text">5:00pm - 7:00pm</p>
+                  </div>
+                  <div class="choose__item-location choose__sub-item">
+                    <svg class="choose__item-icon" width="20" height="20">
+                      <use href="./assets/icons/symbol-defs.svg#icon-map"></use>
+                    </svg>
+                    <p class="choose__item-text">United States</p>
+                  </div>
+                </div>
+              </li>
+              <li class="choose__item">
+                <h3 class="choose__item-title item-title">
+                  International Conference on Bussiness
+                </h3>
+                <div class="choose__item-info">
+                  <div class="choose__item-date choose__sub-item">
+                    <svg class="choose__item-icon" width="20" height="20">
+                      <use
+                        href="./assets/icons/symbol-defs.svg#icon-calendar"
+                      ></use>
+                    </svg>
+                    <p class="choose__item-text">July 8, 2018</p>
+                  </div>
+                  <div class="choose__item-time choose__sub-item">
+                    <svg class="choose__item-icon" width="20" height="20">
+                      <use
+                        href="./assets/icons/symbol-defs.svg#icon-clock"
+                      ></use>
+                    </svg>
+                    <p class="choose__item-text">5:00pm - 7:00pm</p>
+                  </div>
+                  <div class="choose__item-location choose__sub-item">
+                    <svg class="choose__item-icon" width="20" height="20">
+                      <use href="./assets/icons/symbol-defs.svg#icon-map"></use>
+                    </svg>
+                    <p class="choose__item-text">United States</p>
+                  </div>
+                </div>
+              </li>
+              <li class="choose__item">
+                <h3 class="choose__item-title item-title">
+                  International Conference on Bussiness
+                </h3>
+                <div class="choose__item-info">
+                  <div class="choose__item-date choose__sub-item">
+                    <svg class="choose__item-icon" width="20" height="20">
+                      <use
+                        href="./assets/icons/symbol-defs.svg#icon-calendar"
+                      ></use>
+                    </svg>
+                    <p class="choose__item-text">July 8, 2018</p>
+                  </div>
+                  <div class="choose__item-time choose__sub-item">
+                    <svg class="choose__item-icon" width="20" height="20">
+                      <use
+                        href="./assets/icons/symbol-defs.svg#icon-clock"
+                      ></use>
+                    </svg>
+                    <p class="choose__item-text">5:00pm - 7:00pm</p>
+                  </div>
+                  <div class="choose__item-location choose__sub-item">
+                    <svg class="choose__item-icon" width="20" height="20">
+                      <use href="./assets/icons/symbol-defs.svg#icon-map"></use>
+                    </svg>
+                    <p class="choose__item-text">United States</p>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="choose__right">
+            <p class="choose__bg-title">FEATURED</p>
+            <div class="choose__card">
+              <div class="choose__box">
+                <p class="choose__box-text">
+                  <span class="choose__days choose__span">$213</span> Days
+                </p>
+                <p class="choose__box-text">
+                  <span class="choose__hours choose__span">23</span> Hours
+                </p>
+                <p class="choose__box-text">
+                  <span class="choose__min choose__span">59</span> Min
+                </p>
+              </div>
+              <div class="choose__card-wrap">
+                <h3 class="choose__card-title">
+                  International Conference... lo
+                </h3>
+                <div class="choose__card-info">
+                  <div class="choose__card-data">
+                    <svg
+                      class="choose__item-icon choose__card-icon"
+                      width="20"
+                      height="20"
+                    >
+                      <use
+                        href="./assets/icons/symbol-defs.svg#icon-calendar"
+                      ></use>
+                    </svg>
+                    <p class="choose__item-text">July 8, 2018</p>
+                  </div>
+                  <div class="choose__card-data">
+                    <svg
+                      class="choose__item-icon choose__card-icon"
+                      width="20"
+                      height="20"
+                    >
+                      <use
+                        href="./assets/icons/symbol-defs.svg#icon-clock"
+                      ></use>
+                    </svg>
+                    <p class="choose__item-text">5pm - 7pm</p>
+                  </div>
+                  <div class="choose__card-data">
+                    <svg
+                      class="choose__item-icon choose__card-icon"
+                      width="20"
+                      height="20"
+                    >
+                      <use href="./assets/icons/symbol-defs.svg#icon-map"></use>
+                    </svg>
+                    <p class="choose__item-text">United States</p>
                   </div>
                 </div>
               </div>
-              <a class="btn btn__blue choose__btn" href="#">Become a Sponsor</a>
             </div>
+            <a class="btn btn__blue choose__btn" href="#">Become a Sponsor</a>
           </div>
-        <!-- </div> -->
+        </div>
       </section>
-      <section class="prefer">
-        <div class="container"> 
+      <section id="course" class="prefer">
+        <div class="container">
           <div class="prefer__inner">
             <div class="prefer__top">
-              <h2 class="prefer__title section-title">Which one do you prefer?</h2>
+              <h2 class="prefer__title section-title">
+                Which one do you prefer?
+              </h2>
               <p class="prefer__desc">
                 Laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore
                 veritatis et quasi architecto beatae vitae dicta sunt explicabo.
@@ -502,7 +535,7 @@
               <div class="prefer__slider-list">
                 <a class="prefer__slider-link" href="#">
                   <img
-                     class="prefer__slider-img"
+                    class="prefer__slider-img"
                     src="./assets/images/slider-image1.png"
                     alt="Graphic Design"
                     width="197"
@@ -511,7 +544,7 @@
                 </a>
                 <a class="prefer__slider-link" href="#">
                   <img
-                     class="prefer__slider-img"
+                    class="prefer__slider-img"
                     src="./assets/images/slider-image2.png"
                     alt="Graphic Design"
                     width="197"
@@ -520,7 +553,7 @@
                 </a>
                 <a class="prefer__slider-link" href="#">
                   <img
-                     class="prefer__slider-img"
+                    class="prefer__slider-img"
                     src="./assets/images/slider-image3.png"
                     alt="Graphic Design"
                     width="197"
@@ -529,7 +562,7 @@
                 </a>
                 <a class="prefer__slider-link" href="#">
                   <img
-                     class="prefer__slider-img"
+                    class="prefer__slider-img"
                     src="./assets/images/slider-image4.png"
                     alt="Graphic Design"
                     width="197"
@@ -551,34 +584,38 @@
       <section class="customers">
         <div class="container">
           <div class="customers__bg-wrap">
-            <div class="customers__bg">
-            </div>
+            <div class="customers__bg"></div>
           </div>
           <div class="customers__inner">
             <div class="customers__left">
               <img
-              class="customers__img"
+                class="customers__img"
                 src="./assets/images/customer.png"
                 alt="blue square"
                 width="327"
               />
             </div>
             <div class="customers__right">
-              <h2 class="customers__title section-title">Our great customers</h2>
+              <h2 class="customers__title section-title">
+                Our great customers
+              </h2>
               <div class="customers__slider">
-                  <figure  class="customers__slider-item">
-                    <blockquote class="customers__slider-quote">
-                      <p class="customers__slider-desc">
-                        Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                        accusantium doloremque
-                      </p>
-                      <p class="customers__slider-desc">
-                        Laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore
-                        veritatis et quasi architecto beatae vitae dicta sunt explicabo.
-                      </p>
-                    </blockquote>
-                    <figcaption class="customers__slider-author">Stephanie Magion</figcaption>
-                  </figure>
+                <figure class="customers__slider-item">
+                  <blockquote class="customers__slider-quote">
+                    <p class="customers__slider-desc">
+                      Sed ut perspiciatis unde omnis iste natus error sit
+                      voluptatem accusantium doloremque
+                    </p>
+                    <p class="customers__slider-desc">
+                      Laudantium, totam rem aperiam, eaque ipsa quae ab illo
+                      inventore veritatis et quasi architecto beatae vitae dicta
+                      sunt explicabo.
+                    </p>
+                  </blockquote>
+                  <figcaption class="customers__slider-author">
+                    Stephanie Magion
+                  </figcaption>
+                </figure>
                 <div class="customers__slider-dots">
                   <button class="customers__slider-dot"></button>
                   <button class="customers__slider-dot"></button>
@@ -608,7 +645,9 @@
                 veritatis et quasi architecto beatae vitae dicta sunt explicabo.
               </p>
               <div class="started__links">
-                <a class="btn btn__lightgreen btn__started" href="#form">Apply Now</a>
+                <a class="btn btn__lightgreen btn__started" href="#form"
+                  >Apply Now</a
+                >
                 <a class="btn btn-transparent" href="#">Request Service</a>
               </div>
             </div>
@@ -641,7 +680,9 @@
                 <li class="started__item">
                   <a class="started__link" href="#">
                     <svg class="started__list-icon" width="24" height="24">
-                      <use href="./assets/icons/symbol-defs.svg#icon-book"></use>
+                      <use
+                        href="./assets/icons/symbol-defs.svg#icon-book"
+                      ></use>
                     </svg>
                     <p class="started__item-title">Universoty Facilities</p>
                   </a>
@@ -661,7 +702,7 @@
           </div>
         </div>
       </section>
-      <section class="blog">
+      <section id="explore" class="blog">
         <div class="container">
           <h2 class="blog__title section-title">Latest Blog</h2>
           <div class="blog__slider">
@@ -725,13 +766,33 @@
         <div class="container">
           <h2 hidden>Contact us</h2>
           <form id="form" class="form__wrap" action="submit-form">
-            <input class="form__input" type="text" placeholder="Name Surname" />
-            <input class="form__input" type="number" placeholder="Phone" />
-            <input
-              class="form__input"
-              type="email"
-              placeholder="Enter your email..."
-            />
+            <label class="form__label" for="full-name">
+              <input
+                id="full-name"
+                class="form__input"
+                type="text"
+                placeholder="Name Surname"
+                name="full-name"
+              />
+            </label>
+            <label class="form__label" for="phone">
+              <input
+                id="phone"
+                class="form__input"
+                type="number"
+                placeholder="Phone"
+                name="phone"
+              />
+            </label>
+            <label class="form__label" for="mail">
+              <input
+                id="mail"
+                class="form__input"
+                type="email"
+                placeholder="Enter your email..."
+                name="mail"
+              />
+            </label>
             <button class="btn__form btn" type="submit">Send</button>
           </form>
         </div>
@@ -855,6 +916,6 @@
         </nav>
       </div>
     </footer>
-    <script src="index.js"></script>
+    <script src="mobile-menu.js"></script>
   </body>
 </html>

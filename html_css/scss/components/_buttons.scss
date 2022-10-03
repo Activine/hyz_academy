@@ -17,7 +17,8 @@
   color: var(--whiteDesc);
   cursor: pointer;
   text-decoration: none;
-  transition: 200ms linear;
+  transition: 250ms;
+  animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   background-color: var(--blueDesc);
 
   &__blue {
@@ -65,9 +66,16 @@
   border: none;
   border-radius: 50%;
   cursor: pointer;
-  transition: 200ms linear;
+  transition: 250ms;
+  animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   background-color: var(--whiteDesc);
   box-shadow: 0px 4px 16px var(--sliderShadow);
+}
+
+.slider-prev:focus-visible,
+.slider-next:focus-visible {
+  background-color: var(--greenSlideAct);
+  stroke: var(--whiteDesc);
 }
 
 .slider-prev:hover,
@@ -76,16 +84,9 @@
   stroke: var(--whiteDesc);
 }
 
-
 .slider-prev:active,
 .slider-next:active {
-  background-color: var(--greenBtn);
-}
-
-.slider-prev:focus,
-.slider-next:focus {
   background-color: var(--greenSlideAct);
-  stroke: var(--whiteDesc);
 }
 
 .icon {

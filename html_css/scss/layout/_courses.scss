@@ -1,5 +1,5 @@
 .courses {
-  padding-bottom: 64px;
+  padding-bottom: 39px;
   background: url(../../assets/icons/Union.svg) 100% 100% / auto auto;
 
   &__desc {
@@ -12,7 +12,7 @@
   }
 
   &__title {
-  @include sectionTitle();
+    @include sectionTitle();
     padding-bottom: 54px;
     text-align: center;
   }
@@ -24,27 +24,35 @@
     justify-content: center;
   }
 
+  &__item-inner {
+    display: flex;
+    overflow: auto;
+    gap: 20px;
+    padding-top: 25px;
+  }
+  
   &__item {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     position: relative;
     text-decoration: none;
-    width: 260px;
+    min-width: 260px;
     padding: 16px;
     min-height: 364px;
     border-radius: 8px;
     background-color: silver;
-    color:var(--whiteDesc);
-    transition: 200ms linear;
+    color: var(--whiteDesc);
     overflow-wrap: break-word;
     word-wrap: break-word;
     word-break: break-all;
     word-break: break-word;
     hyphens: auto;
+    transition: 250ms;
+    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   }
 
-  &__item:hover{
+  &__item:hover {
     box-shadow: 0px 6px 20px rgba(27, 99, 240, 0.4);
   }
 
@@ -104,6 +112,12 @@
   }
 }
 
+.courses .courses__item:nth-child(1) {
+  background-image: url("../../assets/images/courses-slide3.png");
+  background-position: center;
+  background-size: cover;
+}
+
 .courses .courses__item:nth-child(2) {
   background-image: url("../../assets/images/slider-image1.png");
   background-position: center;
@@ -114,14 +128,6 @@
   background-image: url("../../assets/images/courses-slide2.jfif");
   background-position: center;
   background-size: cover;
-  display: none;
-}
-
-.courses .courses__item:nth-child(4) {
-  background-image: url("../../assets/images/courses-slide3.png");
-  background-position: center;
-  background-size: cover;
-  display: none;
 }
 
 @media only screen and (min-width: 580px) {
@@ -131,8 +137,8 @@
 }
 
 @media only screen and (min-width: 768px) {
-  .courses{
-    &__item{
+  .courses {
+    &__item {
       width: 270px;
     }
   }
@@ -143,8 +149,8 @@
 }
 
 @media only screen and (min-width: 1440px) {
-  .courses{
-    &__title{
+  .courses {
+    &__title {
       padding-bottom: 78px;
     }
   }

@@ -94,22 +94,25 @@
     background-color: var(--blueDot);
     border-radius: 50%;
     cursor: pointer;
+    transition: 250ms;
+    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   }
 
-  &__slider-dot:hover {
+  &__slider-dot:not(.customers__slider-active):hover {
     background-color: var(--blueBlog);
   }
 
-  &__slider-dot:focus {
+  &__slider-dot:not(.customers__slider-active):focus {
     background-color: var(--blueBlog);
   }
 
-  &__slider-dot:active {
+  &__slider-dot:not(.customers__slider-active):active {
     background-color: var(--blueData);
   }
 
   &__slider-active {
     background-color: var(--blueDesc);
+    cursor: auto;
   }
 }
 

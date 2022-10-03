@@ -38,7 +38,14 @@
   display: flex;
   align-items: center;
   flex-wrap: wrap;
+  position: relative;
+  z-index: 0;
 
+  &__link {    
+    transition: 250ms;
+    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
   &__link:hover {
     opacity: 0.8;
   }

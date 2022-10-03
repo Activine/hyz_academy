@@ -1,12 +1,9 @@
 .header {
   position: fixed;
-  // top: 0;
-  // left: 0;
   width: 100%;
   justify-content: space-between;
   text-align: center;
   transition: 600ms;
-  // margin: 0;
   padding: 24px 0;
   z-index: 100;
 
@@ -22,9 +19,10 @@
     transition: 600ms;
     margin-right: auto;
     padding-left: 40px;
+    padding-top: 5px;
   }
 
-  &__inner{
+  &__inner {
     display: flex;
     align-items: center;
     gap: 15px;
@@ -50,9 +48,17 @@
   background-color: var(--scroll-header-bg);
 }
 
+.header.sticky .nav__link {
+  color: var(--greyBase);
+}
+
 .logo {
   &__img {
     fill: var(--blueDesc);
+    position: relative;
+    z-index: 2;
+    transition: 250ms;
+    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   }
 }
 
@@ -61,24 +67,88 @@
   align-items: center;
 
   &__list {
-    display: none;
+    display: flex;
     align-items: center;
-    gap: 20px;
-    position: relative;
-    z-index: 0;
+    position: fixed;
+    z-index: 1;
+    padding: 500px 24px 75px 24px;
+    left: -100%;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    transition: 250ms;
+    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   }
 
+  &__list.active {
+    left: 0;
+    background-color: var(--whiteDesc);
+    color: var(--blackTitle);
+  }
+
+  &__close {
+    cursor: pointer;
+    position: absolute;
+    left: -200%;
+    top: 20px;
+    right: 10px;
+    z-index: 2;
+    transition: 250ms;
+    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      width: 18px;
+      height: 2px;
+      background: var(--blueDesc);
+      border-radius: 2px; 
+    }
+
+    &::before {
+      transform: rotate(45deg);
+    }
+
+    &::after {
+      transform: rotate(-45deg);
+    }
+  }
+
+  &__close:hover{
+    &::before,
+    &::after {
+      background: var(--blackTitle);
+    }
+   }
+
+  &__close.show {
+    display: block;
+    left: 95%;
+  }
+  
   &__item {
     position: relative;
+    align-self: stretch;
+  }
+
+  &__item:not(:last-child) {
+    padding-bottom: 32px;
+    border-bottom: 2px solid rgba(61, 127, 255, .2);
+  }
+
+  &__item:not(:first-child) {
+    padding-top: 32px;
   }
 
   &__link {
     position: relative;
-    color: var(--whiteDesc);
     font-weight: 600;
     line-height: 133%;
     text-decoration: none;
-    transition: 200ms linear;
+    transition: 250ms;
+    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    color: var(--blackTitle);
 
     &:hover {
       color: var(--blueDesc);
@@ -93,10 +163,10 @@
       opacity: 0.75;
     }
   }
+}
 
-  &__link-active {
-    color: var(--blueDesc);
-  }
+.nav__item .nav__link-active {
+  color: var(--blueDesc);
 }
 
 .btn {
@@ -105,6 +175,7 @@
     padding: 12px 24px;
     position: relative;
     z-index: 0;
+    cursor: pointer;
   }
 
   &__ed {
@@ -120,6 +191,7 @@
 .hamburger-lines {
   position: absolute;
   z-index: 10;
+  cursor: pointer;
 }
 
 .line {
@@ -128,6 +200,14 @@
   height: 2px;
   background-color: var(--blueDesc);
   border-radius: 2px;
+  transition: 250ms;
+  animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hamburger-lines:hover {
+  .line{
+    background-color: var(--blackTitle);
+  }
 }
 
 .line:not(:last-child) {
@@ -136,7 +216,6 @@
 
 @media only screen and (min-width: 768px) {
   .header {
-
     &__bg {
       position: absolute;
       background: url("../../assets/icons/Coding-amico.svg") 100% 84% / auto
@@ -158,6 +237,16 @@
       gap: 20px;
       position: relative;
       z-index: 0;
+      left: 0;
+      flex-direction: row;
+      padding: 0;
+    }
+    &__link {
+      color: var(--whiteDesc);
+    }
+    &__list &__item {
+      border: none;
+      padding: 0;
     }
   }
 
@@ -168,8 +257,6 @@
 
 @media only screen and (min-width: 1440px) {
   .header {
-    // padding-bottom: 144px;
-
     &__bg {
       position: absolute;
       background: url("../../assets/icons/Coding-amico.svg")
