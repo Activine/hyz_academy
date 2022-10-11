@@ -44,18 +44,18 @@ navMenu.addEventListener("click", function (event) {
   event.target.classList.add("nav__link-active");
 });
 
-const blogDots = document.querySelector(".blog__slider-dots");
-const blogAllDots = document.querySelectorAll(".blog__slider-dot");
+// const blogDots = document.querySelector(".blog__slider-dots");
 
-blogDots.addEventListener("click", function (event) {
-  const btn = "BUTTON";
-  if (event.target.tagName === btn) {
-    blogAllDots.forEach((link) => {
-      link.classList.remove("blog__slider-active");
-    });
-    event.target.classList.add("blog__slider-active");
-  }
-});
+
+// blogDots.addEventListener("click", function (event) {
+//   const btn = "BUTTON";
+//   if (event.target.tagName === btn) {
+//     blogAllDots.forEach((link) => {
+//       link.classList.remove("blog__slider-active");
+//     });
+//     event.target.classList.add("blog__slider-active");
+//   }
+// });
 
 const custDots = document.querySelector(".customers__slider-dots");
 const custAllDots = document.querySelectorAll(".customers__slider-dot");
