@@ -110,7 +110,7 @@
         </div>
       </section>
       <section id="categories" class="advantages">
-        <div class="container">
+        <div class="container small-cont">
           <h2 class="advantages__title section-title">Shy shoose us?</h2>
           <div class="advantages__list">
             <div class="advantages__item">
@@ -165,19 +165,11 @@
         </div>
       </section>
       <section class="courses">
-        <div class="container">
           <p class="courses__desc">MOST POPULAR COURSES</p>
           <h2 class="courses__title">2000+ Online courses</h2>
           <div class="courses__list">
-            <button class="slider-prev">
-              <svg class="icon__prev" width="24" height="24">
-                <use
-                  href="./assets/icons/symbol-defs.svg#icon-slide-left"
-                ></use>
-              </svg>
-            </button>
             <div class="courses__item-inner">
-              <a class="courses__item" href="#">
+              <a class="courses__item first-item" href="#">
                 <img
                   class="courses__item-avatar"
                   src="./assets/images/avatar-1.png"
@@ -211,7 +203,41 @@
                   </div>
                 </div>
               </a>
-              <a class="courses__item" href="#">
+              <a class="courses__item second-item" href="#">
+                <img
+                  class="courses__item-avatar"
+                  src="./assets/images/avatar-1.png"
+                  alt="avatar"
+                  width="48"
+                />
+                <p class="courses__item-title">DESIGN</p>
+                <h3 class="courses__item-desc">Learn Photoshop title</h3>
+                <div class="courses__item-bottom">
+                  <div class="courses__item-coust">
+                    <span class="courses__item-coust-new">$260</span>
+                    <span class="courses__item-coust-old">$360</span>
+                  </div>
+                  <div class="stars__inner">
+                    <svg class="star" width="10" height="10">
+                      <use href="./assets/icons/symbol-defs.svg#icon-star"></use>
+                    </svg>
+                    <svg class="star" width="10" height="10">
+                      <use href="./assets/icons/symbol-defs.svg#icon-star"></use>
+                    </svg>
+                    <svg class="star" width="10" height="10">
+                      <use href="./assets/icons/symbol-defs.svg#icon-star"></use>
+                    </svg>
+                    <svg class="star" width="10" height="10">
+                      <use href="./assets/icons/symbol-defs.svg#icon-star"></use>
+                    </svg>
+                    <svg class="star star-empty" width="10" height="10">
+                      <use href="./assets/icons/symbol-defs.svg#icon-star"></use>
+                    </svg>
+                    <span class="stars__counter">(4)</span>
+                  </div>
+                </div>
+              </a>
+              <a class="courses__item third-item" href="#">
                 <img
                   class="courses__item-avatar"
                   src="./assets/images/avatar-2.png"
@@ -245,7 +271,7 @@
                   </div>
                 </div>
               </a>
-              <a class="courses__item" href="#">
+              <a class="courses__item fourth-item" href="#">
                 <img
                   class="courses__item-avatar"
                   src="./assets/images/avatar-3.png"
@@ -280,15 +306,7 @@
                 </div>
               </a>
             </div>
-            <button class="slider-next">
-              <svg class="icon__next" width="24" height="24">
-                <use
-                  href="./assets/icons/symbol-defs.svg#icon-slide-right"
-                ></use>
-              </svg>
-            </button>
           </div>
-        </div>
       </section>
       <section id="degrees" class="tour">
         <div class="tour__inner">
@@ -524,7 +542,7 @@
                 veritatis et quasi architecto beatae vitae dicta sunt explicabo.
               </p>
             </div>
-            <div class="prefer__slider">
+            <div id="prefer__slider" class="prefer__slider">
               <button class="slider-prev">
                 <svg class="icon__prev" width="24" height="24">
                   <use
@@ -681,14 +699,6 @@
         <div class="container">
           <h2 class="blog__title section-title">Latest Blog</h2>
           <div id="blog__slider" class="blog__slider">
-            <!-- <div class="blog__list-wrap">
-              <div class="blog__list">
-              </div>
-            </div>
-            <div class="blog__dots-wrap">
-              <div class="blog__slider-dots">
-              </div>
-            </div> -->
           </div>
         </div>
       </section>
@@ -846,7 +856,9 @@
         </nav>
       </div>
     </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="js/slick.min.js"></script>
+    <script src="./js/slick-slider.js"></script>
     <script type="module" src="index.js"></script>
-    <!-- <script src="./js/slider.js"></script> -->
   </body>
 </html>

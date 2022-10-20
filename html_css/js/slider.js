@@ -65,10 +65,8 @@ export class Slider {
   clickBtn() {
     let allBtn = document.querySelector('.customers__slider-dots');
     let allBtns = Array.from(document.querySelectorAll('.customers__slider-dot'));
-    console.log(allBtns);
     let sliderWrap = document.querySelector('.customers__slider-list');
     this.addActive(allBtns[0]);
-    console.log(this.slider.className);
     allBtn.addEventListener('click', (event) => {
       let index = allBtns.indexOf(event.target);
       let currentArr = [...this.data].splice(index, 1).reverse();
