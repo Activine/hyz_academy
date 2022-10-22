@@ -14,3 +14,4 @@ let blogSlider = new SliderBlog(blog__slider, data);
 blogSlider.init();
 
 let prefSlider = new SliderPref(prefer__slider, data);
+prefSlider.init()

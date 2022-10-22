@@ -1257,6 +1257,17 @@ table {
   margin: 0 auto;
 }
 
+.prefer__select {
+  margin: 0 auto;
+  display: block;
+  margin-bottom: 32px;
+  width: 200px;
+  padding: 14px 12px;
+  background: var(--formBG);
+  border-radius: 22px;
+  border: none;
+}
+
 .prefer__slider {
   display: flex;
   align-items: center;
@@ -1265,15 +1276,23 @@ table {
 }
 
 .prefer__slider-list {
+  max-width: 848px;
   display: flex;
   gap: 20px;
-  overflow: auto;
+  overflow: hidden;
 }
 
 .prefer__slider-img {
   width: 197px;
   height: 197px;
   object-fit: cover;
+}
+
+.prefer__slider-line {
+  display: flex;
+  gap: 20px;
+  transition: 250ms;
+  animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .prefer__slider-link {

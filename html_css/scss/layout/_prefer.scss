@@ -18,6 +18,17 @@
     margin: 0 auto;
   }
 
+  &__select {
+    margin: 0 auto;
+    display: block;
+    margin-bottom: 32px;
+    width: 200px;
+    padding: 14px 12px;
+    background: var(--formBG);
+    border-radius: 22px;
+    border: none;
+  }
+
   &__slider {
     display: flex;
     align-items: center;
@@ -26,15 +37,23 @@
   }
 
   &__slider-list {
+    max-width: 848px;
     display: flex;
     gap: 20px;
-    overflow: auto;
+    overflow: hidden;
   }
 
   &__slider-img {
     width: 197px;
     height: 197px;
     object-fit: cover;
+  }
+
+  &__slider-line {
+    display: flex;
+    gap: 20px;
+    transition: 250ms;
+    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   &__slider-link {
