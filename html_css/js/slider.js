@@ -1,33 +1,36 @@
 export class Slider {
   constructor(slider, data) {
-    this.slider = slider;
+    this.slider = document.querySelector(`.${slider}`);
     this.data = data;
   }
 
   createSliderItemMarkup(el) {
     let itemSlider = document.createElement("div");
     itemSlider.className = "customers__item";
+  
     itemSlider.innerHTML = `
-      <figure class="customers__slider-item">
-        <blockquote class="customers__slider-quote">
-        <p class="customers__slider-desc">
+      <figure class="${this.slider.className}-item">
+        <blockquote class="${this.slider.className}-quote">
+        <p class="${this.slider.className}-desc">
         ${el.id}
         </p>
-        <p class="customers__slider-desc">
+        <p class="${this.slider.className}-desc">
         ${el.title}
         </p>
         </blockquote>
-        <figcaption class="customers__slider-author">
+        <figcaption class="${this.slider.className}-author">
         ${el.url}
         </figcaption>
       </figure>
     `;
+
     return itemSlider
   }
 
   createDot() {
     let btn = document.createElement("button");
     btn.className = `${this.slider.className}-dot`;
+
     return btn
   }
 
@@ -44,6 +47,7 @@ export class Slider {
 
   init() {
     let sliderWrap = document.createElement("div");
+
     sliderWrap.className = `${this.slider.className}-list`;
     sliderWrap.append(this.createSliderItemMarkup(this.data[0]));
     
@@ -63,10 +67,12 @@ export class Slider {
   }
 
   clickBtn() {
-    let allBtn = document.querySelector('.customers__slider-dots');
-    let allBtns = Array.from(document.querySelectorAll('.customers__slider-dot'));
-    let sliderWrap = document.querySelector('.customers__slider-list');
+    let allBtn = document.querySelector(`.${this.slider.className}-dots`);
+    let allBtns = Array.from(document.querySelectorAll(`.${this.slider.className}-dot`));
+    let sliderWrap = document.querySelector(`.${this.slider.className}-list`);
+
     this.addActive(allBtns[0]);
+
     allBtn.addEventListener('click', (event) => {
       let index = allBtns.indexOf(event.target);
       let currentArr = [...this.data].splice(index, 1).reverse();
@@ -76,8 +82,9 @@ export class Slider {
       }
 
       Array.from(sliderWrap.children).forEach(el => el.remove());
+      
       allBtns.forEach(el => this.removeActive(el));
-      this.addActive(allBtns[index])
+      this.addActive(allBtns[index]);
       currentArr.forEach(el => sliderWrap.prepend(this.createSliderItemMarkup(el)));
     })
   }

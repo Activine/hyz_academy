@@ -1,6 +1,6 @@
 export class SliderPref {
   constructor(slider) {
-    this.slider = slider;
+    this.slider = document.querySelector(`.${slider}`);
     this.offset = 0;
     this.sliderLine = document.createElement('div');
   }
@@ -10,12 +10,13 @@ export class SliderPref {
     itemSlider.className = `${this.slider.className}-link`;
     itemSlider.innerHTML = `
       <img
-        class="prefer__slider-img"
+        class="${this.slider.className}-img"
         src="${el.url}"
         alt="Graphic Design"
         width="197"
       />
-      <p class="prefer__slider-text">${el.title}</p>`;
+      <p class="${this.slider.className}-text">${el.title}</p>`;
+
     return itemSlider;
   }
   
@@ -67,6 +68,7 @@ export class SliderPref {
     for (let i = 0; i < value; i++) {
       select.append(this.createOption(`${this.slider.className}`, i + 1));
     }
+
     return select;
   }
   
@@ -84,6 +86,7 @@ export class SliderPref {
       const events = await (
         await fetch(`https://jsonplaceholder.typicode.com/albums/${value}/photos`)
         ).json();
+        
         return events;
       } catch (err) {
       console.error("Check your internet connection or server running");
@@ -94,7 +97,7 @@ export class SliderPref {
     this.slider.before(this.createSelect(3));
     this.slider.append(this.createBtnPrev());
     this.slider.append(this.createBtnNext());
-    this.sliderLine.className = 'prefer__slider-line';
+    this.sliderLine.className = `${this.slider.className}-line`;
     this.createItemList(1);
     this.clickBtn();
     this.clickSelect();

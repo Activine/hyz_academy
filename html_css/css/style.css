@@ -312,11 +312,11 @@ table {
   height: 652px;
 }
 
-.header.sticky {
+.sticky {
   background-color: var(--scroll-header-bg);
 }
 
-.header.sticky .nav__link {
+.sticky .nav__link {
   color: var(--greyBase);
 }
 
@@ -356,7 +356,7 @@ table {
 .nav__close {
   cursor: pointer;
   position: absolute;
-  left: -200%;
+  transform: translateX(3000px);
   top: 20px;
   right: 10px;
   z-index: 2;
@@ -387,7 +387,7 @@ table {
 
 .nav__close.show {
   display: block;
-  left: 95%;
+  transform: translateX(0px);
 }
 
 .nav__item {

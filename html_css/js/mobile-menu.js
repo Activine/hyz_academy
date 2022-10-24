@@ -1,14 +1,14 @@
 export function scrollApp() {
   window.addEventListener("scroll", function () {
-    const header = document.querySelector(".header");
+    const header = document.getElementById("header");
     header.classList.toggle("sticky", window.scrollY > 0);
   });
 } 
 
-export function burger() {
-  const closeMenu = document.querySelector(".nav__close");
-  const hamburger = document.querySelector(".hamburger-lines");
-  const navMenu = document.querySelector(".nav__list");
+export function burger(close, hamburgerLine, menu, links) {
+  const closeMenu = document.getElementById(close);
+  const hamburger = document.getElementById(hamburgerLine); 
+  const navMenu = document.getElementById(menu); 
   
   hamburger.addEventListener("click", function () {
     hamburger.classList.toggle("active");
@@ -37,17 +37,13 @@ export function burger() {
   
   window.addEventListener("resize", updateWidgetAreaClassList, false);
   
-  const allLinks = document.querySelectorAll(".nav__link");
+  const allLinks = document.querySelectorAll(`.${links}`);
   
   navMenu.addEventListener("click", function (event) {
     allLinks.forEach((link) => {
-      link.classList.remove("nav__link-active");
+      link.classList.remove(`${links}-active`);
     });
-    event.target.classList.add("nav__link-active");
+    
+    event.target.classList.add(`${links}-active`);
   });
 }
-
-// const submit = document.querySelector(".btn__form");
-// submit.addEventListener("click", function (event) {
-//   event.preventDefault();
-// });

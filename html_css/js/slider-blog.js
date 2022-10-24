@@ -30,6 +30,7 @@ export class SliderBlog extends Slider {
           <a class="blog__item-link" href="${el.redirectLink}">Read Now</a>
       </div>
     `;
+
     return itemSlider;
   }
 
@@ -37,6 +38,7 @@ export class SliderBlog extends Slider {
     let btn = document.createElement("button");
     btn.className = `${this.slider.className}-dot`;
     btn.textContent = `${el + 1}`;
+
     return btn
   }
 
@@ -44,6 +46,7 @@ export class SliderBlog extends Slider {
     let sliderBtns = document.createElement("div");
     sliderBtns.className = `${this.slider.className}-dots`;
     let counterDots = 0;
+
     this.slider.append(sliderBtns);
 
     this.data.forEach((el, i) => {
@@ -59,7 +62,6 @@ export class SliderBlog extends Slider {
     sliderWrap.className = `${this.slider.className}-list`;
     sliderWrap.append(this.createSliderItemMarkup(this.data[0]));
     sliderWrap.append(this.createSliderItemMarkup(this.data[1]));
-
     this.slider.append(sliderWrap);
     this.createSliderDots();
     this.clickBtn();
