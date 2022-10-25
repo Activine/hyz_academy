@@ -66,10 +66,19 @@
     left: -2px;
   }
 
+  &__slider-desc:last-child {
+    padding-bottom: 0;
+    margin-bottom: 16px;
+  }
+
   &__slider-desc {
     padding-bottom: 16px;
     font-size: 14px;
     line-height: 157%;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
 
   &__slider-author {

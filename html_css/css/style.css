@@ -1449,10 +1449,19 @@ table {
   left: -2px;
 }
 
+.customers__slider-desc:last-child {
+  padding-bottom: 0;
+  margin-bottom: 16px;
+}
+
 .customers__slider-desc {
   padding-bottom: 16px;
   font-size: 14px;
   line-height: 157%;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .customers__slider-author {
@@ -1791,7 +1800,11 @@ table {
 
 .blog__item-title {
   margin-top: 160px;
-  padding-bottom: 16px;
+  margin-bottom: 16px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .blog__item-link {
