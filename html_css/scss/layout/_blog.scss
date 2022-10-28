@@ -94,17 +94,17 @@
     width: fit-content;
   }
 
-  &__item-link:hover {
+  &__slider-link:hover {
     color: var(--blueDesc);
     opacity: 0.85;
   }
 
-  &__item-link:focus {
+  &__slider-link:focus {
     color: var(--blueDesc);
     opacity: 0.85;
   }
 
-  &__item-link:active {
+  &__slider-link:active {
     opacity: 0.7;
   }
 

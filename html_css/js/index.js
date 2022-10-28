@@ -84,10 +84,17 @@ class App {
 
     let prefSlider = new SliderPref("prefer__slider");
     prefSlider.init();
+
+  
+    window.addEventListener("resize", function() {
+      blogSlider.updateAfterResize();
+      custSlider.updateAfterResize();
+    });
   }
 }
 
 new App();
+
 
 // const form = document.getElementById("form");
 // const inputs = document.querySelectorAll(".form__input");

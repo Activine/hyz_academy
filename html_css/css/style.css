@@ -1841,17 +1841,17 @@ table {
   width: fit-content;
 }
 
-.blog__item-link:hover {
+.blog__slider-link:hover {
   color: var(--blueDesc);
   opacity: 0.85;
 }
 
-.blog__item-link:focus {
+.blog__slider-link:focus {
   color: var(--blueDesc);
   opacity: 0.85;
 }
 
-.blog__item-link:active {
+.blog__slider-link:active {
   opacity: 0.7;
 }
 

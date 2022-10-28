@@ -6,7 +6,6 @@ export class ProSlider {
     this.showSlide = showSlide;
     this.selector.className = `${selector.replace(/[#]/gi, "")}`;
     this.offset = 0;
-    console.log(this.showSlide);
   }
 
   createDot() {
@@ -71,7 +70,8 @@ export class ProSlider {
     let line = document.querySelector(`.${this.selector.className}-line`);
 
     this.addActive(allBtns[0]);
-
+    line.style.transform = `translateY(0px)`;
+    line.style.transform = `translateX(0px)`;
     allBtn.addEventListener("click", (event) => {
       let index = allBtns.indexOf(event.target);
 
@@ -81,8 +81,6 @@ export class ProSlider {
 
       let gap = window.getComputedStyle(line).gap.replace(/[a-z]/gi, "");
 
-      console.log(gap);
-      console.log(line.offsetWidth);
       if (window.screen.width < 768 && this.showSlide >= 2) {
         this.offset = -616 * index;
         line.style.transform = `translateY(${this.offset}px)`;
@@ -94,6 +92,19 @@ export class ProSlider {
       allBtns.forEach((el) => this.removeActive(el));
       this.addActive(allBtns[index]);
     });
+  }
+
+  updateAfterResize() {
+    let line = document.querySelector(`.${this.selector.className}-line`);
+    line.style.transform = `translateY(0px)`;
+    line.style.transform = `translateX(0px)`;
+
+    let allBtns = Array.from(
+      document.querySelectorAll(`.${this.selector.className}-dot`)
+    );
+
+    allBtns.forEach((el) => this.removeActive(el));
+    this.addActive(allBtns[0]);
   }
 
   init() {
