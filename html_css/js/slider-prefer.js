@@ -1,8 +1,9 @@
 export class SliderPref {
   constructor(slider) {
-    this.slider = document.querySelector(`.${slider}`);
+    this.slider = document.querySelector(`#${slider}`);
     this.offset = 0;
     this.sliderLine = document.createElement('div');
+    this.slider.className = `${slider}`;
   }
   
   createSliderItemMarkup(el) {
@@ -126,7 +127,7 @@ export class SliderPref {
 
     select.addEventListener('change', () => {
       let listItem = document.querySelector(`.${this.slider.className}-list`);
-      this.sliderLine.innerHTML = '';
+      this.sliderLine.innerHTML = ''; 
       listItem.remove(this.sliderLine);
       this.offset = 0;
       this.createItemList(select.value);

@@ -5,10 +5,10 @@ export function scrollApp() {
   });
 } 
 
-export function burger(close, hamburgerLine, menu, links) {
-  const closeMenu = document.getElementById(close);
-  const hamburger = document.getElementById(hamburgerLine); 
-  const navMenu = document.getElementById(menu); 
+export function burger(close, hamburgerLine) {
+  const closeMenu = document.querySelector('#nav__close');
+  const hamburger = document.querySelector("#hamburger-lines"); 
+  const navMenu = document.querySelector('#nav__list'); 
   
   hamburger.addEventListener("click", function () {
     hamburger.classList.toggle("active");
@@ -37,13 +37,13 @@ export function burger(close, hamburgerLine, menu, links) {
   
   window.addEventListener("resize", updateWidgetAreaClassList, false);
   
-  const allLinks = document.querySelectorAll(`.${links}`);
+  const allLinks = document.querySelectorAll('.nav__link');
   
   navMenu.addEventListener("click", function (event) {
     allLinks.forEach((link) => {
-      link.classList.remove(`${links}-active`);
+      link.classList.remove('nav__link-active');
     });
     
-    event.target.classList.add(`${links}-active`);
+    event.target.classList.add('nav__link-active');
   });
 }

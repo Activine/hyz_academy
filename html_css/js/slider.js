@@ -1,7 +1,8 @@
 export class Slider {
   constructor(slider, data) {
-    this.slider = document.querySelector(`.${slider}`);
+    this.slider = document.querySelector(`#${slider}`);
     this.data = data;
+    this.slider.className = `${slider}`
   }
 
   createSliderItemMarkup(el) {

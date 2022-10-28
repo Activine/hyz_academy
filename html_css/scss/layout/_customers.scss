@@ -27,6 +27,21 @@
     position: relative;
   }
 
+  &__slider {
+    width: 327px;
+  }
+  
+  &__slider-wrap {
+    overflow: hidden;
+    padding-top: 111px;
+  }
+
+  &__slider-line {
+    display: flex;
+    transition: 250ms;
+    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
   &__bg {
     position: absolute;
     background: url("../../assets/icons/Vector3.svg") 93% 102%/ 25% no-repeat,
@@ -44,12 +59,11 @@
   }
 
   &__title {
-    padding-bottom: 111px;
     padding-right: 80px;
   }
 
   &__slider-item {
-    width: 327px;
+    min-width: 100%;
   }
 
   &__slider-quote {
@@ -135,6 +149,14 @@
   }
 }
 
+@media only screen and (min-width: 463px) {
+  .customers {
+    &__slider {
+      width: 415px;
+    }
+  }
+}
+
 @media only screen and (min-width: 768px) {
   .customers {
     padding-top: 180px;
@@ -158,6 +180,10 @@
       margin-right: 30px;
     }
 
+    // &__slider-item {
+    //   width: 415px;
+    // }
+
     &__left {
       &::before {
         width: 320px;
@@ -175,9 +201,9 @@
       padding-bottom: 0;
     }
 
-    &__slider-item {
-      width: 415px;
-    }
+    // &__slider-item {
+    //   width: 415px;
+    // }
     &__left {
       &::before {
         width: 344px;
