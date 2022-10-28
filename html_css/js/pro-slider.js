@@ -1,10 +1,12 @@
 export class ProSlider {
-  constructor(selector, { arrow, dots }) {
+  constructor(selector, { arrow, dots, showSlide }) {
     this.selector = document.querySelector(`${selector}`);
     this.arrow = arrow;
     this.dots = dots;
-    this.selector.className = `${selector.replace(/[#]/gi, '')}`;
+    this.showSlide = showSlide;
+    this.selector.className = `${selector.replace(/[#]/gi, "")}`;
     this.offset = 0;
+    console.log(this.showSlide);
   }
 
   createDot() {
@@ -36,33 +38,71 @@ export class ProSlider {
     el.disabled = false;
   }
 
+  createNumDot(el) {
+    let btn = document.createElement("button");
+    btn.className = `${this.selector.className}-dot`;
+    btn.textContent = `${el + 1}`;
+
+    return btn;
+  }
+
+  createSliderNumDots() {
+    let sliderBtns = document.createElement("div");
+    sliderBtns.className = `${this.selector.className}-dots`;
+    let counterDots = 0;
+
+    this.selector.append(sliderBtns);
+
+    let items = document.querySelector(`.${this.selector.className}-line`);
+    Array.from(items.children).forEach((el, i) => {
+      if (i % 2 === 0) {
+        console.log();
+        sliderBtns.append(this.createNumDot(counterDots));
+        counterDots++;
+      }
+    });
+  }
+
   clickBtn() {
     let allBtn = document.querySelector(`.${this.selector.className}-dots`);
-    let allBtns = Array.from(document.querySelectorAll(`.${this.selector.className}-dot`));
+    let allBtns = Array.from(
+      document.querySelectorAll(`.${this.selector.className}-dot`)
+    );
     let line = document.querySelector(`.${this.selector.className}-line`);
 
     this.addActive(allBtns[0]);
 
-    allBtn.addEventListener('click', (event) => {
+    allBtn.addEventListener("click", (event) => {
       let index = allBtns.indexOf(event.target);
-      console.log(index);
 
-      if(index === -1) {
-        return
+      if (index === -1) {
+        return;
       }
 
-      this.offset = -this.selector.offsetWidth * index;
-      line.style.transform = `translateX(${this.offset}px)`;
-      
-      allBtns.forEach(el => this.removeActive(el));
+      let gap = window.getComputedStyle(line).gap.replace(/[a-z]/gi, "");
+
+      console.log(gap);
+      console.log(line.offsetWidth);
+      if (window.screen.width < 768 && this.showSlide >= 2) {
+        this.offset = -616 * index;
+        line.style.transform = `translateY(${this.offset}px)`;
+      } else {
+        this.offset = (-line.offsetWidth - gap) * index;
+        line.style.transform = `translateX(${this.offset}px)`;
+      }
+
+      allBtns.forEach((el) => this.removeActive(el));
       this.addActive(allBtns[index]);
-    })
+    });
   }
 
   init() {
-    if (!this.arrow) {
+    if (this.showSlide >= 2 && !this.arrow) {
+      this.createSliderNumDots();
+    } else if (this.showSlide < 2 && !this.arrow) {
       this.createSliderDots();
     }
+
     this.clickBtn();
   }
 }

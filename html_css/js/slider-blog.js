@@ -73,7 +73,7 @@ export class SliderBlog extends Slider {
     let sliderWrap = document.querySelector('.blog__slider-list');
 
     this.addActive(allBtns[0]);
-    
+
     allBtn.addEventListener('click', (event) => {
       let index = allBtns.indexOf(event.target);
 

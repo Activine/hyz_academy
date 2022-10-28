@@ -9,7 +9,7 @@ import { ProSlider } from "./pro-slider.js";
 
 // подскажи где лучше разместить эту функцию...
 // для каждого слайда она будет своя... может в отдельный файл вынести? или это перебор?))
-function someRender(selector, data) {
+function renderItemCust(selector, data) {
   let itemSlider = document.createElement("li");
   itemSlider.className = `${selector.className}-item`;
   itemSlider.innerHTML = `
@@ -30,6 +30,35 @@ function someRender(selector, data) {
   return itemSlider
 }
 
+function renderItemBlog(selector, data) {
+  let itemSlider = document.createElement("li");
+  itemSlider.className = `${selector.className}-item`;
+  itemSlider.innerHTML = `
+    <div class="${selector.className}-sidebar">
+        <p class="${selector.className}-sdesc">${data.category}</p>
+        <img
+            class="${selector.className}-avatar"
+            src="${data.userImage}"
+            alt="avatar"
+            width="48"
+        />
+    </div>
+    <div class="${selector.className}-desc">
+        <img
+            class="${selector.className}-img"
+            src="${data.url}"
+            alt="bussiness"
+        />
+        <h3 class="${selector.className}-title">
+            ${data.title}
+        </h3>
+        <a class="${selector.className}-link" href="${data.redirectLink}">Read Now</a>
+    </div>
+  `;
+
+  return itemSlider;
+}
+
 class App {
   constructor() {
     scrollApp();
@@ -37,16 +66,21 @@ class App {
 
     let storage = new Storage(data, "dataSlider");
 
-    let custItems = new HtmlFiller("#customers__slider", someRender, storage.setSliderData());
+    let custItems = new HtmlFiller("#customers__slider", renderItemCust, storage.setSliderData());
     custItems.init()
     
-    let custSlider = new ProSlider("#customers__slider", {arrow: false, dots: true});
+    let custSlider = new ProSlider("#customers__slider", {arrow: false, dots: true, showSlide: 1});
     custSlider.init()
     // let custSlider = new Slider("customers__slider", storage.setSliderData());
     // custSlider.init();
 
-    let blogSlider = new SliderBlog("blog__slider", storage.setSliderData());
-    blogSlider.init();
+    let blogItems = new HtmlFiller("#blog__slider", renderItemBlog, storage.setSliderData());
+    blogItems.init()
+
+    let blogSlider = new ProSlider("#blog__slider", {arrow: false, dots: true, showSlide: 2});
+    blogSlider.init()
+    // let blogSlider = new SliderBlog("blog__slider", storage.setSliderData());
+    // blogSlider.init();
 
     let prefSlider = new SliderPref("prefer__slider");
     prefSlider.init();
