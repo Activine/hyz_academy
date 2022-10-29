@@ -1,92 +1,96 @@
 export class ProSlider {
-  constructor(selector, { arrow, dots, showSlide }) {
-    this.selector = document.querySelector(`${selector}`);
+  constructor(sliderContainer, { arrow, dots, showSlide }) {
+    this.sliderContainer = document.querySelector(`${sliderContainer}`);
     this.arrow = arrow;
     this.dots = dots;
     this.showSlide = showSlide;
-    this.selector.className = `${selector.replace(/[#]/gi, "")}`;
-    this.offset = 0;
+    this.track = document.createElement("div");
+    this.sliderBtns = document.createElement("div");
+    this.counter = 0;
+  }
+
+  addClasses() {
+    this.track.className = `slider-track`;
+    this.sliderBtns.className = `slider-dots`;
   }
 
   createDot() {
     let btn = document.createElement("button");
-    btn.className = `${this.selector.className}-dot`;
+    btn.className = `slider-dot`;
 
     return btn;
   }
 
   createSliderDots() {
-    let sliderBtns = document.createElement("div");
-    sliderBtns.className = `${this.selector.className}-dots`;
-    this.selector.append(sliderBtns);
+    this.sliderContainer.append(this.sliderBtns);
 
-    let items = document.querySelector(`.${this.selector.className}-line`);
-
-    for (let i = 0; i < items.children.length; i++) {
-      sliderBtns.append(this.createDot());
+    for (let i = 0; i < this.track.children.length; i++) {
+      this.sliderBtns.appendChild(this.createDot())
     }
   }
 
   addActive(el) {
     el.disabled = true;
-    el.classList.add(`${this.selector.className}-active`);
+    el.classList.add(`slider-active`);
   }
 
   removeActive(el) {
-    el.classList.remove(`${this.selector.className}-active`);
+    el.classList.remove(`slider-active`);
     el.disabled = false;
   }
 
   createNumDot(el) {
     let btn = document.createElement("button");
-    btn.className = `${this.selector.className}-dot`;
+    btn.className = `slider-dot`;
     btn.textContent = `${el + 1}`;
 
     return btn;
   }
 
   createSliderNumDots() {
-    let sliderBtns = document.createElement("div");
-    sliderBtns.className = `${this.selector.className}-dots`;
     let counterDots = 0;
 
-    this.selector.append(sliderBtns);
+    this.sliderContainer.append(this.sliderBtns);
 
-    let items = document.querySelector(`.${this.selector.className}-line`);
-    Array.from(items.children).forEach((el, i) => {
+    Array.from(this.track.children).forEach((el, i) => {
       if (i % 2 === 0) {
-        console.log();
-        sliderBtns.append(this.createNumDot(counterDots));
+        this.sliderBtns.append(this.createNumDot(counterDots));
         counterDots++;
       }
     });
   }
 
   clickBtn() {
-    let allBtn = document.querySelector(`.${this.selector.className}-dots`);
-    let allBtns = Array.from(
-      document.querySelectorAll(`.${this.selector.className}-dot`)
-    );
-    let line = document.querySelector(`.${this.selector.className}-line`);
+    const allBtns = Array.from(this.sliderBtns.children);
+    console.log(allBtns);
+    const line = document.querySelector(`.slider-track`);
 
+    let offset = 0;
     this.addActive(allBtns[0]);
-    line.style.transform = `translateY(0px)`;
-    line.style.transform = `translateX(0px)`;
-    allBtn.addEventListener("click", (event) => {
+
+    this.sliderBtns.addEventListener("click", (event) => {
       let index = allBtns.indexOf(event.target);
 
       if (index === -1) {
         return;
       }
 
-      let gap = window.getComputedStyle(line).gap.replace(/[a-z]/gi, "");
+      const gap = window.getComputedStyle(this.track).gap.replace(/[a-z]/gi, "");
 
       if (window.screen.width < 768 && this.showSlide >= 2) {
-        this.offset = -616 * index;
-        line.style.transform = `translateY(${this.offset}px)`;
+        if(index+1 === allBtns.length) {
+          let height = window.getComputedStyle(this.track).maxHeight.replace(/[a-z]/gi, "");
+          this.track.style.maxHeight = '288px';
+          console.log(height);
+        } else {
+          this.track.style.maxHeight = '596px';
+        }
+        offset = -616 * index;
+        this.track.style.transform = `translateY(${offset}px)`;
       } else {
-        this.offset = (-line.offsetWidth - gap) * index;
-        line.style.transform = `translateX(${this.offset}px)`;
+        offset = (-this.track.offsetWidth - gap) * index;
+        this.track.style.transform = `translateX(${offset}px)`;
+        console.log(offset);
       }
 
       allBtns.forEach((el) => this.removeActive(el));
@@ -95,25 +99,39 @@ export class ProSlider {
   }
 
   updateAfterResize() {
-    let line = document.querySelector(`.${this.selector.className}-line`);
-    line.style.transform = `translateY(0px)`;
-    line.style.transform = `translateX(0px)`;
+    this.track.style.transform = `translateY(0px)`;
+    this.track.style.transform = `translateX(0px)`;
 
-    let allBtns = Array.from(
-      document.querySelectorAll(`.${this.selector.className}-dot`)
-    );
+    let allBtns = Array.from(this.sliderBtns.children);
 
     allBtns.forEach((el) => this.removeActive(el));
     this.addActive(allBtns[0]);
   }
 
-  init() {
+  renderHtml() {
+    let arrItems = Array.from(this.sliderContainer.children);
+
+    Array.from(this.sliderContainer.children).forEach((el) => el.remove());
+
+    const list = document.createElement("div");
+    list.className = `slider-list`;
+    this.sliderContainer.append(list);
+    list.append(this.track);
+
+    arrItems.forEach((el) => this.track.append(el));
+
     if (this.showSlide >= 2 && !this.arrow) {
+      console.log(1);
       this.createSliderNumDots();
     } else if (this.showSlide < 2 && !this.arrow) {
       this.createSliderDots();
+      console.log(2);
     }
+  }
 
+  init() {
+    this.addClasses();
+    this.renderHtml();
     this.clickBtn();
   }
 }

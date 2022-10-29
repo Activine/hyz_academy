@@ -5,7 +5,7 @@ export function scrollApp() {
   });
 } 
 
-export function burger(close, hamburgerLine) {
+export function createBurger() {
   const closeMenu = document.querySelector('#nav__close');
   const hamburger = document.querySelector("#hamburger-lines"); 
   const navMenu = document.querySelector('#nav__list'); 

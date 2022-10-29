@@ -1,100 +1,54 @@
 import { data } from "./data.js";
-import { Slider } from "./slider.js";
-import { SliderBlog } from "./slider-blog.js";
-import { scrollApp, burger } from "./mobile-menu.js";
+import { scrollApp, createBurger } from "./mobile-menu.js";
 import { SliderPref } from "./slider-prefer.js";
 import { Storage } from "./storage.js";
 import { HtmlFiller } from "./html-filler.js";
 import { ProSlider } from "./pro-slider.js";
-
-// подскажи где лучше разместить эту функцию...
-// для каждого слайда она будет своя... может в отдельный файл вынести? или это перебор?))
-function renderItemCust(selector, data) {
-  let itemSlider = document.createElement("li");
-  itemSlider.className = `${selector.className}-item`;
-  itemSlider.innerHTML = `
-  <figure>
-      <blockquote class="${selector.className}-quote">
-      <p class="${selector.className}-desc">
-      ${data.id}
-      </p>
-      <p class="${selector.className}-desc">
-      ${data.title}
-      </p>
-      </blockquote>
-      <figcaption class="${selector.className}-author">
-      ${data.url}
-      </figcaption> 
-      </figure>
-  `;
-  return itemSlider
-}
-
-function renderItemBlog(selector, data) {
-  let itemSlider = document.createElement("li");
-  itemSlider.className = `${selector.className}-item`;
-  itemSlider.innerHTML = `
-    <div class="${selector.className}-sidebar">
-        <p class="${selector.className}-sdesc">${data.category}</p>
-        <img
-            class="${selector.className}-avatar"
-            src="${data.userImage}"
-            alt="avatar"
-            width="48"
-        />
-    </div>
-    <div class="${selector.className}-desc">
-        <img
-            class="${selector.className}-img"
-            src="${data.url}"
-            alt="bussiness"
-        />
-        <h3 class="${selector.className}-title">
-            ${data.title}
-        </h3>
-        <a class="${selector.className}-link" href="${data.redirectLink}">Read Now</a>
-    </div>
-  `;
-
-  return itemSlider;
-}
+import { renderItemCust, renderItemBlog } from './html-filler.mapper.js'
 
 class App {
   constructor() {
     scrollApp();
-    burger();
+    createBurger();
+    this.storage = new Storage(data, "dataSlider");
+  }
 
-    let storage = new Storage(data, "dataSlider");
+  createHtml() {
+    let custItems = new HtmlFiller("#customers__slider", renderItemCust, this.storage.setSliderData());
+    custItems.init();
 
-    let custItems = new HtmlFiller("#customers__slider", renderItemCust, storage.setSliderData());
-    custItems.init()
-    
+    let blogItems = new HtmlFiller("#blog__slider", renderItemBlog, this.storage.setSliderData());
+    blogItems.init();
+    return { custItems, blogItems}
+  }
+
+  createSliders() {
+    this.createHtml()
     let custSlider = new ProSlider("#customers__slider", {arrow: false, dots: true, showSlide: 1});
-    custSlider.init()
-    // let custSlider = new Slider("customers__slider", storage.setSliderData());
-    // custSlider.init();
+    custSlider.init();
 
-    let blogItems = new HtmlFiller("#blog__slider", renderItemBlog, storage.setSliderData());
-    blogItems.init()
 
     let blogSlider = new ProSlider("#blog__slider", {arrow: false, dots: true, showSlide: 2});
-    blogSlider.init()
-    // let blogSlider = new SliderBlog("blog__slider", storage.setSliderData());
-    // blogSlider.init();
+    blogSlider.init();
 
     let prefSlider = new SliderPref("prefer__slider");
     prefSlider.init();
 
-  
-    window.addEventListener("resize", function() {
+    console.log(blogSlider);
+    return { custSlider, blogSlider }
+  }
+
+  init() {
+    let {custSlider, blogSlider} = this.createSliders();
+
+    window.addEventListener("resize", function () {
       blogSlider.updateAfterResize();
       custSlider.updateAfterResize();
     });
   }
 }
 
-new App();
-
+new App().init();
 
 // const form = document.getElementById("form");
 // const inputs = document.querySelectorAll(".form__input");
@@ -108,11 +62,6 @@ new App();
 //   }
 // }
 // sub()
-
-
-
-
-
 
 // function initForm() {
 //   infoForm()
@@ -132,7 +81,7 @@ new App();
 //       formValue.fullName = fullName;
 //       // console.log(formValue.fullName = fullName);
 //       // !fullName && !localStorage.getItem('form')
-//     } 
+//     }
 //     if (tel) {
 //       formValue.tel = tel;
 //       // console.log(formValue.fullName = fullName);
@@ -145,7 +94,7 @@ new App();
 //     // console.log(fullName);
 //     // console.log(tel);
 //     // console.log(email);
-    
+
 //     console.log(getdata());
 //     // console.log(formValue);
 //     // infoForm()
