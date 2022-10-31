@@ -151,7 +151,7 @@
   }
 }
 #blog__slider .slider-track{
-  // max-width: 850px;
+  // flex-wrap: wrap;
   max-height: 596px;
   display: flex;
   flex-direction: column;
@@ -260,6 +260,9 @@
   cursor: auto;
 }
 @media only screen and (min-width: 768px) {
+  #blog__slider .slider-track{
+    flex-wrap: nowrap;
+  }
   .blog {
     &__slider-line {
       flex-direction: row;

@@ -48,3 +48,38 @@ export function renderItemBlog(data) {
 
   return itemSlider;
 }
+
+export function renderItemPref(data) {
+  let itemSlider = document.createElement("a");
+  itemSlider.className = `item-link`;
+  itemSlider.innerHTML = `
+    <img
+      class="item-img"
+      src="${data.url}"
+      alt="Graphic Design"
+      width="197"
+    />
+    <p class="item-text">${data.title}</p>`;
+
+  return itemSlider;
+}
+
+function createOption(value) {
+  let option = document.createElement("option");
+  option.className = `option`;
+  option.setAttribute('value', `${value}`);
+  option.textContent = `Label ${value}`;
+
+  return option;
+}
+
+export function createSelect(value) {
+  let select = document.createElement("select");
+  select.className = "select";
+
+  for (let i = 0; i < value; i++) {
+    select.append(createOption(i + 1));
+  }
+
+  return select;
+}

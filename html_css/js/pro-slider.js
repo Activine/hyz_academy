@@ -62,8 +62,6 @@ export class ProSlider {
 
   clickBtn() {
     const allBtns = Array.from(this.sliderBtns.children);
-    console.log(allBtns);
-    const line = document.querySelector(`.slider-track`);
 
     let offset = 0;
     this.addActive(allBtns[0]);
@@ -76,21 +74,29 @@ export class ProSlider {
       }
 
       const gap = window.getComputedStyle(this.track).gap.replace(/[a-z]/gi, "");
-
-      if (window.screen.width < 768 && this.showSlide >= 2) {
-        if(index+1 === allBtns.length) {
-          let height = window.getComputedStyle(this.track).maxHeight.replace(/[a-z]/gi, "");
+      
+      if (this.showSlide >= 2) {
+        if(index+1 === allBtns.length && window.innerWidth < 768) {
+          this.offset = (-this.track.offsetHeight - gap) * index;
+          this.track.style.transform = `translateY(${this.offset}px)`;
           this.track.style.maxHeight = '288px';
-          console.log(height);
-        } else {
+        } 
+        
+        else if (window.innerWidth < 768) {
           this.track.style.maxHeight = '596px';
+          this.offset = (-this.track.offsetHeight - gap) * index;
+          this.track.style.transform = `translateY(${this.offset}px)`;
         }
-        offset = -616 * index;
-        this.track.style.transform = `translateY(${offset}px)`;
-      } else {
+
+        else {
+          this.offset = (-this.track.offsetWidth - gap) * index;
+          this.track.style.transform = `translateX(${this.offset}px)`;
+        }
+      } 
+      
+      else {
         offset = (-this.track.offsetWidth - gap) * index;
         this.track.style.transform = `translateX(${offset}px)`;
-        console.log(offset);
       }
 
       allBtns.forEach((el) => this.removeActive(el));
@@ -121,11 +127,9 @@ export class ProSlider {
     arrItems.forEach((el) => this.track.append(el));
 
     if (this.showSlide >= 2 && !this.arrow) {
-      console.log(1);
       this.createSliderNumDots();
     } else if (this.showSlide < 2 && !this.arrow) {
       this.createSliderDots();
-      console.log(2);
     }
   }
 
