@@ -89,7 +89,6 @@ export class PreferSlider {
         } 
         else if(btns.indexOf(el) === 1 && this.offset > -1953) {
           this.offset -= 217;
-          console.log(this.offset);
           this.track.style.transform = `translateX(${this.offset}px)`;
         }
       })

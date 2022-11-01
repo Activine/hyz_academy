@@ -13,7 +13,6 @@
   }
 
   &__slider-line {
-    // max-width: 850px;
     max-height: 596px;
     display: flex;
     flex-direction: column;
@@ -317,9 +316,6 @@
       width: 850px;
     }
 
-    &__slider {
-      // overflow: hidden;
-    }
   }
   #blog__slider .item{ 
     width: 415px;

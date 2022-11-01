@@ -5,13 +5,8 @@ import { HtmlFiller } from "./html-filler.js";
 import { ProSlider } from "./pro-slider.js";
 import { renderItemCust, renderItemBlog, renderItemPref } from './html-filler.mapper.js'
 import { PreferSlider } from './prefer-slider.js' 
-
-function getData(value) {
-  let result = fetch(`https://jsonplaceholder.typicode.com/albums/${value}/photos`)
-    .then(data => data.json())
-    .then(data => data.splice(0,10))
-    return result
-}
+import { initForm } from './form.js'
+import { getData } from './api-data.js'
 
 class App {
   constructor() {
@@ -32,7 +27,7 @@ class App {
 
   createSliders() {
     this.createHtml()
-    
+
     let custSlider = new ProSlider("#customers__slider", {arrow: false, dots: true, showSlide: 1});
     custSlider.init();
 
@@ -47,7 +42,7 @@ class App {
 
   init() {
     let {custSlider, blogSlider} = this.createSliders();
-
+    initForm()
     window.addEventListener("resize", function () {
       blogSlider.updateAfterResize();
       custSlider.updateAfterResize();
@@ -56,92 +51,3 @@ class App {
 }
 
 new App().init();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// const form = document.getElementById("form");
-// const inputs = document.querySelectorAll(".form__input");
-// console.log(inputs);
-
-// inputs[0].value = 'faf'
-// function sub() {
-//   for (let i = 0; i < form.children.length-1; i++) {
-//     console.log(form.children[i].value);
-//     console.log(form.children[i]);
-//   }
-// }
-// sub()
-
-// function initForm() {
-//   infoForm()
-//   changeValue()
-// }
-// initForm()
-
-// function changeValue() {
-//   form.addEventListener("change", function (event) {
-//     let formValue = {};
-//     // event.preventDefault();
-//     const formData = new FormData(form);
-//     const fullName = formData.get("full-name");
-//     const tel = formData.get("phone");
-//     const email = formData.get("mail");
-//     if (fullName) {
-//       formValue.fullName = fullName;
-//       // console.log(formValue.fullName = fullName);
-//       // !fullName && !localStorage.getItem('form')
-//     }
-//     if (tel) {
-//       formValue.tel = tel;
-//       // console.log(formValue.fullName = fullName);
-//     }
-//     if (email) {
-//       formValue.email = email;
-//       // console.log(formValue.email = fullName);
-//     }
-//     localStorage.setItem('form', JSON.stringify(formValue))
-//     // console.log(fullName);
-//     // console.log(tel);
-//     // console.log(email);
-
-//     console.log(getdata());
-//     // console.log(formValue);
-//     // infoForm()
-//   });
-// }
-
-// function getdata() {
-//   return JSON.parse(localStorage.getItem('form'))
-// }
-
-// function infoForm() {
-//   if (localStorage.getItem('form')) {
-//     console.log('AEGBWRSHGEsAfgARDH');
-//     inputs.forEach(el => console.log(el.value))
-//     let data = getdata()
-//     console.log(data);
-//     for( let el in data) {
-//       console.log(el.value);
-//     }
-//     // for (let [key, value] of formData.entries()) {
-//     //   formObj[key] = value;
-//     // }
-//     // data.forEarch(el => console.log(el))
-//   }
-// }
-
-// form.addEventListener('submit', (event) => {
-//   event.preventDefault()
-// })
