@@ -59,7 +59,9 @@
 }
 
 .slider-prev,
-.slider-next {
+.slider-next,
+.slick-prev,
+.slick-next {
   stroke: var(--greenBtn);
   width: 40px;
   height: 40px;
@@ -73,19 +75,25 @@
 }
 
 .slider-prev:focus-visible,
-.slider-next:focus-visible {
+.slider-next:focus-visible,
+.slick-prev:focus-visible,
+.slick-next:focus-visible {
   background-color: var(--greenSlideAct);
   stroke: var(--whiteDesc);
 }
 
 .slider-prev:hover,
-.slider-next:hover {
+.slider-next:hover,
+.slick-prev:hover,
+.slick-next:hover {
   background-color: var(--greenBtn);
   stroke: var(--whiteDesc);
 }
 
 .slider-prev:active,
-.slider-next:active {
+.slider-next:active,
+.slick-prev:active,
+.slick-next:active {
   background-color: var(--greenSlideAct);
 }
 

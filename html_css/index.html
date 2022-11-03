@@ -8,10 +8,10 @@
     <title>Document</title>
   </head>
   <body>
-    <header class="header">
+    <header id="header" class="header">
       <div class="container">
         <div class="header__top">
-          <div class="hamburger-lines">
+          <div id="hamburger-lines" class="hamburger-lines">
             <span class="line line1"></span>
             <span class="line line2"></span>
             <span class="line line3"></span>
@@ -22,7 +22,7 @@
             </svg>
           </a>
           <nav class="nav">
-            <ul class="nav__list">
+            <ul id="nav__list" class="nav__list">
               <li class="nav__item">
                 <a class="nav__link nav__link-active" href="#categories">Categories</a>
               </li>
@@ -38,7 +38,7 @@
             </ul>
             <button class="btn btn__blue btn__nav">Explore</button>
           </nav>
-          <div class="nav__close"></div>
+          <div id="nav__close" class="nav__close"></div>
         </div>
       </div>
     </header>
@@ -110,7 +110,7 @@
         </div>
       </section>
       <section id="categories" class="advantages">
-        <div class="container">
+        <div class="container small-cont">
           <h2 class="advantages__title section-title">Shy shoose us?</h2>
           <div class="advantages__list">
             <div class="advantages__item">
@@ -165,19 +165,11 @@
         </div>
       </section>
       <section class="courses">
-        <div class="container">
           <p class="courses__desc">MOST POPULAR COURSES</p>
           <h2 class="courses__title">2000+ Online courses</h2>
           <div class="courses__list">
-            <button class="slider-prev">
-              <svg class="icon__prev" width="24" height="24">
-                <use
-                  href="./assets/icons/symbol-defs.svg#icon-slide-left"
-                ></use>
-              </svg>
-            </button>
             <div class="courses__item-inner">
-              <a class="courses__item" href="#">
+              <a class="courses__item first-item" href="#">
                 <img
                   class="courses__item-avatar"
                   src="./assets/images/avatar-1.png"
@@ -211,7 +203,41 @@
                   </div>
                 </div>
               </a>
-              <a class="courses__item" href="#">
+              <a class="courses__item second-item" href="#">
+                <img
+                  class="courses__item-avatar"
+                  src="./assets/images/avatar-1.png"
+                  alt="avatar"
+                  width="48"
+                />
+                <p class="courses__item-title">DESIGN</p>
+                <h3 class="courses__item-desc">Learn Photoshop title</h3>
+                <div class="courses__item-bottom">
+                  <div class="courses__item-coust">
+                    <span class="courses__item-coust-new">$260</span>
+                    <span class="courses__item-coust-old">$360</span>
+                  </div>
+                  <div class="stars__inner">
+                    <svg class="star" width="10" height="10">
+                      <use href="./assets/icons/symbol-defs.svg#icon-star"></use>
+                    </svg>
+                    <svg class="star" width="10" height="10">
+                      <use href="./assets/icons/symbol-defs.svg#icon-star"></use>
+                    </svg>
+                    <svg class="star" width="10" height="10">
+                      <use href="./assets/icons/symbol-defs.svg#icon-star"></use>
+                    </svg>
+                    <svg class="star" width="10" height="10">
+                      <use href="./assets/icons/symbol-defs.svg#icon-star"></use>
+                    </svg>
+                    <svg class="star star-empty" width="10" height="10">
+                      <use href="./assets/icons/symbol-defs.svg#icon-star"></use>
+                    </svg>
+                    <span class="stars__counter">(4)</span>
+                  </div>
+                </div>
+              </a>
+              <a class="courses__item third-item" href="#">
                 <img
                   class="courses__item-avatar"
                   src="./assets/images/avatar-2.png"
@@ -245,7 +271,7 @@
                   </div>
                 </div>
               </a>
-              <a class="courses__item" href="#">
+              <a class="courses__item fourth-item" href="#">
                 <img
                   class="courses__item-avatar"
                   src="./assets/images/avatar-3.png"
@@ -280,15 +306,7 @@
                 </div>
               </a>
             </div>
-            <button class="slider-next">
-              <svg class="icon__next" width="24" height="24">
-                <use
-                  href="./assets/icons/symbol-defs.svg#icon-slide-right"
-                ></use>
-              </svg>
-            </button>
           </div>
-        </div>
       </section>
       <section id="degrees" class="tour">
         <div class="tour__inner">
@@ -524,59 +542,7 @@
                 veritatis et quasi architecto beatae vitae dicta sunt explicabo.
               </p>
             </div>
-            <div class="prefer__slider">
-              <button class="slider-prev">
-                <svg class="icon__prev" width="24" height="24">
-                  <use
-                    href="./assets/icons/symbol-defs.svg#icon-slide-left"
-                  ></use>
-                </svg>
-              </button>
-              <div class="prefer__slider-list">
-                <a class="prefer__slider-link" href="#">
-                  <img
-                    class="prefer__slider-img"
-                    src="./assets/images/slider-image1.png"
-                    alt="Graphic Design"
-                    width="197"
-                  />
-                  <p class="prefer__slider-text">Graphic Design</p>
-                </a>
-                <a class="prefer__slider-link" href="#">
-                  <img
-                    class="prefer__slider-img"
-                    src="./assets/images/slider-image2.png"
-                    alt="Graphic Design"
-                    width="197"
-                  />
-                  <p class="prefer__slider-text">Web Design</p>
-                </a>
-                <a class="prefer__slider-link" href="#">
-                  <img
-                    class="prefer__slider-img"
-                    src="./assets/images/slider-image3.png"
-                    alt="Graphic Design"
-                    width="197"
-                  />
-                  <p class="prefer__slider-text">Marketing</p>
-                </a>
-                <a class="prefer__slider-link" href="#">
-                  <img
-                    class="prefer__slider-img"
-                    src="./assets/images/slider-image4.png"
-                    alt="Graphic Design"
-                    width="197"
-                  />
-                  <p class="prefer__slider-text">Education</p>
-                </a>
-              </div>
-              <button class="slider-next">
-                <svg class="icon__next" width="24" height="24">
-                  <use
-                    href="./assets/icons/symbol-defs.svg#icon-slide-right"
-                  ></use>
-                </svg>
-              </button>
+            <div id="prefer__slider">
             </div>
           </div>
         </div>
@@ -599,32 +565,7 @@
               <h2 class="customers__title section-title">
                 Our great customers
               </h2>
-              <div class="customers__slider">
-                <figure class="customers__slider-item">
-                  <blockquote class="customers__slider-quote">
-                    <p class="customers__slider-desc">
-                      Sed ut perspiciatis unde omnis iste natus error sit
-                      voluptatem accusantium doloremque
-                    </p>
-                    <p class="customers__slider-desc">
-                      Laudantium, totam rem aperiam, eaque ipsa quae ab illo
-                      inventore veritatis et quasi architecto beatae vitae dicta
-                      sunt explicabo.
-                    </p>
-                  </blockquote>
-                  <figcaption class="customers__slider-author">
-                    Stephanie Magion
-                  </figcaption>
-                </figure>
-                <div class="customers__slider-dots">
-                  <button class="customers__slider-dot"></button>
-                  <button class="customers__slider-dot"></button>
-                  <button
-                    class="customers__slider-dot customers__slider-active"
-                  ></button>
-                  <button class="customers__slider-dot"></button>
-                  <button class="customers__slider-dot"></button>
-                </div>
+              <div id="customers__slider">
               </div>
             </div>
           </div>
@@ -705,60 +646,7 @@
       <section id="explore" class="blog">
         <div class="container">
           <h2 class="blog__title section-title">Latest Blog</h2>
-          <div class="blog__slider">
-            <div class="blog__list">
-              <div class="blog__item">
-                <div class="blog__sidebar">
-                  <p class="blog__sidebar-desc">DESIGN</p>
-                  <img
-                    class="blog__sidebar-avatar"
-                    src="./assets/images/avatar-1.png"
-                    alt="avatar"
-                    width="48"
-                  />
-                </div>
-                <div class="blog__item-desc">
-                  <img
-                    class="blog__item-img"
-                    src="./assets/images/blog-slider-img1.png"
-                    alt="bussiness"
-                  />
-                  <h3 class="blog__item-title item-title">
-                    International Conference on Bussiness
-                  </h3>
-                  <a class="blog__item-link" href="#">Read Now</a>
-                </div>
-              </div>
-              <div class="blog__item">
-                <div class="blog__sidebar">
-                  <p class="blog__sidebar-desc">DESIGN</p>
-                  <img
-                    class="blog__sidebar-avatar"
-                    src="./assets/images/avatar-2.png"
-                    alt="avatar"
-                    width="48"
-                  />
-                </div>
-                <div class="blog__item-desc">
-                  <img
-                    class="blog__item-img"
-                    src="./assets/images/blog-slider-img2.png"
-                    alt="bussiness"
-                  />
-                  <h3 class="blog__item-title item-title">
-                    International Conference on Bussiness
-                  </h3>
-                  <a class="blog__item-link" href="#">Read Now</a>
-                </div>
-              </div>
-            </div>
-            <div class="blog__slider-dots">
-              <button class="blog__slider-dot">1</button>
-              <button class="blog__slider-dot">2</button>
-              <button class="blog__slider-dot blog__slider-active">3</button>
-              <button class="blog__slider-dot">4</button>
-              <button class="blog__slider-dot">5</button>
-            </div>
+          <div id="blog__slider" class="blog__slider">
           </div>
         </div>
       </section>
@@ -772,7 +660,7 @@
                 class="form__input"
                 type="text"
                 placeholder="Name Surname"
-                name="full-name"
+                name="fullname"
               />
             </label>
             <label class="form__label" for="phone">
@@ -916,6 +804,9 @@
         </nav>
       </div>
     </footer>
-    <script src="mobile-menu.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="js/slick.min.js"></script>
+    <script src="./js/slick-slider.js"></script>
+    <script type="module" src="./js/index.js"></script>
   </body>
 </html>

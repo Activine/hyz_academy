@@ -27,6 +27,21 @@
     position: relative;
   }
 
+  &__slider {
+    width: 327px;
+  }
+
+  &__slider-wrap {
+    overflow: hidden;
+    padding-top: 111px;
+  }
+
+  &__slider-line {
+    display: flex;
+    transition: 250ms;
+    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
   &__bg {
     position: absolute;
     background: url("../../assets/icons/Vector3.svg") 93% 102%/ 25% no-repeat,
@@ -44,12 +59,11 @@
   }
 
   &__title {
-    padding-bottom: 111px;
     padding-right: 80px;
   }
 
   &__slider-item {
-    max-width: 415px;
+    min-width: 100%;
   }
 
   &__slider-quote {
@@ -66,10 +80,19 @@
     left: -2px;
   }
 
+  &__slider-desc:last-child {
+    padding-bottom: 0;
+    margin-bottom: 16px;
+  }
+
   &__slider-desc {
     padding-bottom: 16px;
     font-size: 14px;
     line-height: 157%;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
 
   &__slider-author {
@@ -116,13 +139,103 @@
   }
 }
 
-.customers__right .customers__title::after {
+#customers__slider {
+  width: 327px;
+}
+
+#customers__slider .item {
+  min-width: 100%;
+}
+
+#customers__slider .slider-list { 
+  padding-top: 111px  
+}
+
+#customers__slider .item-quote {
+  position: relative;
+}
+
+#customers__slider .item-quote::before {
+  position: absolute;
+  content: "\201C";
+  font-weight: 700;
+  font-size: 100px;
+  color: var(--blueQuote);
+  top: -100px;
+  left: -2px;
+}
+
+#customers__slider .item-desc {
+  padding-bottom: 16px;
+  font-size: 14px;
+  line-height: 157%;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+#customers__slider .item-desc:last-child {
+  padding-bottom: 0;
+  margin-bottom: 16px;
+}
+
+#customers__slider .slider-track {
+  display: flex;
+  transition: 250ms;
+  animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#customers__slider  .item-author {
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 133%;
+  color: var(--blackTitle);
+  padding-bottom: 60px;
+}
+#customers__slider .slider-dots{
+  gap: 5px;
+}
+#customers__slider .slider-dot{
+  padding: 0;
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border: none;
+  background-color: var(--blueDot);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 250ms;
+  animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+#customers__slider .slider-dot:not(#customers__slider .slider-active):hover {
+  background-color: var(--blueBlog);
+}
+#customers__slider .slider-dot:not(#customers__slider .slider-active):focus {
+  background-color: var(--blueBlog);
+}
+#customers__slider .slider-dot:not(#customers__slider .slider-active):active {
+  background-color: var(--blueData);
+}
+#customers__slider .slider-active{
+  background-color: var(--blueDesc);
+  cursor: auto;
+}
+
+
+.slider .customers__right .customers__title::after {
   top: 60px;
 }
 
 @media only screen and (min-width: 410px) {
   .customers__right .customers__title::after {
     top: 26px;
+  }
+}
+
+@media only screen and (min-width: 463px) {
+  #customers__slider {
+    width: 415px;
   }
 }
 
@@ -134,28 +247,30 @@
       display: flex;
       flex-direction: row;
       align-items: flex-start;
+      justify-content: center;
     }
 
     &__bg {
-      background: url("../../assets/icons/Vector3.svg") 28% 46%/ auto no-repeat,
-        url("../../assets/icons/Vector4.svg") 35% 48%/ auto no-repeat;
+      background: url("../../assets/icons/Vector3.svg") 28% 46% / auto no-repeat,
+        url("../../assets/icons/Vector4.svg") 35% 48% / auto no-repeat;
       height: 742px;
       top: -180px;
     }
 
     &__img {
-      width: 412px;
+      width: 373px;
       margin-right: 30px;
     }
 
     &__left {
       &::before {
-        width: 344px;
-        height: 344px;
+        width: 320px;
+        height: 320px;
       }
     }
   }
 }
+
 @media only screen and (min-width: 1440px) {
   .customers {
     padding-bottom: 160px;
@@ -164,7 +279,17 @@
       padding-bottom: 0;
     }
 
+    // &__slider-item {
+    //   width: 415px;
+    // }
+    &__left {
+      &::before {
+        width: 344px;
+        height: 344px;
+      }
+    }
     &__img {
+      width: 397px;
       margin-right: 110px;
     }
   }

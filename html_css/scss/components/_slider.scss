@@ -1,0 +1,18 @@
+.slider-list{
+    overflow: hidden;
+}
+.slider-track {
+    display: flex;
+}
+.slider-dots {
+    display: flex;
+    gap: 15px;
+}
+.slider-dot{
+    width: 15px;
+    height: 15px;
+    background-color: blueviolet;
+    border: none;
+    cursor: pointer;
+
+}

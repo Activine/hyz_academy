@@ -44,11 +44,11 @@
   }
 }
 
-.header.sticky {
+.sticky {
   background-color: var(--scroll-header-bg);
 }
 
-.header.sticky .nav__link {
+.sticky .nav__link {
   color: var(--greyBase);
 }
 
@@ -89,7 +89,7 @@
   &__close {
     cursor: pointer;
     position: absolute;
-    left: -200%;
+    transform: translateX(3000px);
     top: 20px;
     right: 10px;
     z-index: 2;
@@ -124,7 +124,7 @@
 
   &__close.show {
     display: block;
-    left: 95%;
+    transform: translateX(0px);
   }
   
   &__item {
