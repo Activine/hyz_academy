@@ -1,32 +1,9 @@
-export class PreferSlider {
-  constructor(sliderContainer, data, rendItem) {
+export class Pr {
+  constructor(sliderContainer) {
     this.sliderContainer = document.querySelector(`${sliderContainer}`);
     this.track = document.createElement("div");
-    this.data = data;
     this.offset = 0;
-    this.rendItem = rendItem;
     this.list = document.createElement("div");
-    // this.track = document.createElement("div");
-  }
-
-  createOption(value) {
-    let option = document.createElement("option");
-    option.className = `option`;
-    option.setAttribute('value', `${value}`);
-    option.textContent = `Label ${value}`;
-  
-    return option;
-  }
-  
-  createSelect(value) {
-    let select = document.createElement("select");
-    select.className = "select";
-  
-    for (let i = 0; i < value; i++) {
-      select.append(this.createOption(i + 1));
-    }
-
-    return select;
   }
 
   createBtnPrev() {
@@ -53,63 +30,43 @@ export class PreferSlider {
     return btn;
   }
 
-  async renderHtml(value) {
-    let data = await value;
-
+  renderHtml() {
     this.track.style.transform = `translateX(0px)`;
     this.offset = 0;
+
+    let arrItems = Array.from(this.sliderContainer.children);
+
+    Array.from(this.sliderContainer.children).forEach((el) => el.remove());
 
     this.list.className = `slider-list`;
     this.list.append(this.track);
     this.track.className = `slider-track`;
-    data.forEach(element => {
-      this.track.append(this.rendItem(element));
+    arrItems.forEach(element => {
+      this.track.append((element));
     });
-  }
-
-  delete() {
-    this.track.innerHTML = '';
-  }
-
-  clickSelect() {
-    let select = document.querySelector('.select');
-
-    select.addEventListener('change', () => {
-      this.delete();
-      this.renderHtml(this.data(select.value));
-    })
-  }
-
-  updateAfterResize() {
-    this.track.style.transform = `translateX(0px)`;
-    this.offset = 0;
-
-    if(window.innerWidth < 620) {
-      this.list.style.width = '200px';
-    } 
-    else if (window.innerWidth < 830){
-      this.list.style.width = '410px';
-    }
-    else if (window.innerWidth < 1040){
-      this.list.style.width = '620px';
-    } 
-    else {
-      this.list.style.width = '848px';
-      
-    }
   }
 
   btnClick() {
     let btns = Array.from(document.querySelectorAll(`#${this.sliderContainer.id} button`));
+    let maxOffset = -1953;
 
     btns.forEach(el => {
       el.addEventListener('click', () => {
+        if (window.innerWidth < 620) {
+          maxOffset = -1953
+        } else if (window.innerWidth < 840) {
+          maxOffset = -1736
+        } else if (window.innerWidth < 1040) {
+          maxOffset = -1519
+        } else if (window.innerWidth > 1040) {
+          maxOffset = -1302
+        }
 
         if(btns.indexOf(el) === 0 && this.offset < 0) {
           this.offset += 217;
           this.track.style.transform = `translateX(${this.offset}px)`;
         } 
-        else if(btns.indexOf(el) === 1 && this.offset > -1953) {
+        else if(btns.indexOf(el) === 1 && this.offset > maxOffset) {
           this.offset -= 217;
           this.track.style.transform = `translateX(${this.offset}px)`;
         }
@@ -118,12 +75,10 @@ export class PreferSlider {
   }
 
   init() {
-    this.sliderContainer.before(this.createSelect(3));
+    this.renderHtml()
     this.sliderContainer.append(this.createBtnPrev()); 
     this.sliderContainer.append(this.list);
     this.sliderContainer.append(this.createBtnNext());
-    this.renderHtml(this.data(1));
-    this.clickSelect();
-    this.btnClick();
+    this.btnClick()
   }
 }

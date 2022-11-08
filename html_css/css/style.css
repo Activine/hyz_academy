@@ -1180,9 +1180,8 @@ table {
 }
 
 #prefer__slider .slider-list {
-  width: 848px;
+  width: 197px;
   height: 197px;
-  overflow: hidden;
 }
 
 #prefer__slider .slider-track {
@@ -1232,6 +1231,21 @@ table {
   .prefer__title {
     text-align: start;
     padding-right: 80px;
+  }
+}
+@media only screen and (min-width: 620px) {
+  #prefer__slider .slider-list {
+    width: 410px;
+  }
+}
+@media only screen and (min-width: 840px) {
+  #prefer__slider .slider-list {
+    width: 630px;
+  }
+}
+@media only screen and (min-width: 1040px) {
+  #prefer__slider .slider-list {
+    width: 848px;
   }
 }
 @media only screen and (min-width: 482px) {
