@@ -34,9 +34,9 @@
 
   &__bg {
     position: absolute;
-    background: url("../../assets/icons/Coding-amico.svg") 100% 17% / 380px no-repeat,
-      url("../../assets/icons/Frame3.svg") 100% 0 / contain no-repeat,
-      url("../../assets/icons/Union.svg") 100% 100% / auto auto;
+    background: url("../assets/icons/Coding-amico.svg") 100% 17% / 380px no-repeat,
+      url("../assets/icons/Frame3.svg") 100% 0 / contain no-repeat,
+      url("../assets/icons/Union.svg") 100% 100% / auto auto;
     right: 0;
     left: 0;
     height: 652px;
@@ -217,10 +217,10 @@
   .header {
     &__bg {
       position: absolute;
-      background: url("../../assets/icons/Coding-amico.svg") 100% 84% / auto
+      background: url("../assets/icons/Coding-amico.svg") 100% 84% / auto
           no-repeat,
-        url("../../assets/icons/Frame3.svg") 100% 0 / auto no-repeat,
-        url("../../assets/icons/Union.svg") 100% 100% / auto auto;
+        url("../assets/icons/Frame3.svg") 100% 0 / auto no-repeat,
+        url("../assets/icons/Union.svg") 100% 100% / auto auto;
       right: 0;
     }
 
@@ -258,10 +258,10 @@
   .header {
     &__bg {
       position: absolute;
-      background: url("../../assets/icons/Coding-amico.svg")
+      background: url("../assets/icons/Coding-amico.svg")
           calc(var(--widthA) / 1.23) 84% / auto no-repeat,
-        url("../../assets/icons/Frame3.svg") 100% 0 / 50% no-repeat,
-        url("../../assets/icons/Union.svg") 100% 100% / auto auto;
+        url("../assets/icons/Frame3.svg") 100% 0 / 50% no-repeat,
+        url("../assets/icons/Union.svg") 100% 100% / auto auto;
       right: 0;
     }
   }

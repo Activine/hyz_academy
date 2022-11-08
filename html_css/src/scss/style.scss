@@ -1,21 +1,21 @@
 @import "./base/reset";
-// @import "./utils/variables";
-// @import "./utils/mixins";
+ @import "./utils/variables";
+ @import "./utils/mixins";
 @import "./components/buttons";
-// @import "./components/slider";
-// @import "./base//typography";
-// @import "./layout/header";
-// @import "./layout/education";
-// @import "./layout/advantages";
-// @import "./layout/courses";
-// @import "./layout/tour";
-// @import "./layout/choose";
-// @import "./layout/prefer";
-// @import "./layout/customers";
-// @import "./layout/started";
-// @import "./layout/blog";
-// @import "./layout/form";
-// @import "./layout/footer";
+ @import "./components/slider";
+ @import "./base/typography";
+ @import "./layout/header";
+ @import "./layout/education";
+ @import "./layout/advantages";
+ @import "./layout/courses";
+ @import "./layout/tour";
+ @import "./layout/choose";
+ @import "./layout/prefer";
+ @import "./layout/customers";
+ @import "./layout/started";
+ @import "./layout/blog";
+ @import "./layout/form";
+ @import "./layout/footer";
 
 html {
   scroll-behavior: smooth;
@@ -26,9 +26,9 @@ body {
   color: var(--greyBase);
 }
 
-// .section-title {
-//   @include sectionTitle();
-// }
+ .section-title {
+   @include sectionTitle();
+ }
 
 .section-title::after {
   content: "";
@@ -46,13 +46,13 @@ body {
   margin: 0 auto;
 }
 
-// .item-title {
-//   @include itemTitle();
-// }
+ .item-title {
+   @include itemTitle();
+ }
 .header__bg{
-  background: url("../../assets/icons/Coding-amico.svg") 100% 17% / 380px no-repeat,
-  url("../../assets/icons/Frame3.svg") 100% 0 / contain no-repeat,
-  url("../../assets/icons/Union.svg") 100% 100% / auto auto;
+  background: url("../assets/icons/Coding-amico.svg") 100% 17% / 380px no-repeat,
+  url("../assets/icons/Frame3.svg") 100% 0 / contain no-repeat,
+  url("../assets/icons/Union.svg") 100% 100% / auto auto;
 }
 @media only screen and (min-width: 768px) {
   .container {
