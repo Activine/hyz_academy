@@ -1,0 +1,69 @@
+@import "./base/reset";
+// @import "./utils/variables";
+// @import "./utils/mixins";
+@import "./components/buttons";
+// @import "./components/slider";
+// @import "./base//typography";
+// @import "./layout/header";
+// @import "./layout/education";
+// @import "./layout/advantages";
+// @import "./layout/courses";
+// @import "./layout/tour";
+// @import "./layout/choose";
+// @import "./layout/prefer";
+// @import "./layout/customers";
+// @import "./layout/started";
+// @import "./layout/blog";
+// @import "./layout/form";
+// @import "./layout/footer";
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Montserrat";
+  color: var(--greyBase);
+}
+
+// .section-title {
+//   @include sectionTitle();
+// }
+
+.section-title::after {
+  content: "";
+  position: absolute;
+  display: inline-block;
+  width: 60px;
+  height: 2px;
+  top: 26px;
+  background-color: var(--customerDecorSquare);
+  margin-left: 24px;
+}
+
+.container {
+  padding: 0 24px;
+  margin: 0 auto;
+}
+
+// .item-title {
+//   @include itemTitle();
+// }
+.header__bg{
+  background: url("../../assets/icons/Coding-amico.svg") 100% 17% / 380px no-repeat,
+  url("../../assets/icons/Frame3.svg") 100% 0 / contain no-repeat,
+  url("../../assets/icons/Union.svg") 100% 100% / auto auto;
+}
+@media only screen and (min-width: 768px) {
+  .container {
+    max-width: 1024px;
+    margin: 0 auto;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .small-cont {
+    padding-right: 87px;
+    padding-left: 87px;
+  }
+}
