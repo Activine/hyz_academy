@@ -6,7 +6,7 @@ export class PreferSlider {
     this.offset = 0;
     this.rendItem = rendItem;
     this.list = document.createElement("div");
-    this.track = document.createElement("div");
+    // this.track = document.createElement("div");
   }
 
   createOption(value) {
@@ -56,6 +56,9 @@ export class PreferSlider {
   async renderHtml(value) {
     let data = await value;
 
+    this.track.style.transform = `translateX(0px)`;
+    this.offset = 0;
+
     this.list.className = `slider-list`;
     this.list.append(this.track);
     this.track.className = `slider-track`;
@@ -75,6 +78,25 @@ export class PreferSlider {
       this.delete();
       this.renderHtml(this.data(select.value));
     })
+  }
+
+  updateAfterResize() {
+    this.track.style.transform = `translateX(0px)`;
+    this.offset = 0;
+
+    if(window.innerWidth < 620) {
+      this.list.style.width = '200px';
+    } 
+    else if (window.innerWidth < 830){
+      this.list.style.width = '410px';
+    }
+    else if (window.innerWidth < 1040){
+      this.list.style.width = '620px';
+    } 
+    else {
+      this.list.style.width = '848px';
+      
+    }
   }
 
   btnClick() {

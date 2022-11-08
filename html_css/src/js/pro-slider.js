@@ -87,8 +87,9 @@ export class ProSlider {
           this.offset = (-this.track.offsetHeight - gap) * index;
           this.track.style.transform = `translateY(${this.offset}px)`;
         }
-
+        
         else {
+          this.track.style.maxHeight = '596px';
           this.offset = (-this.track.offsetWidth - gap) * index;
           this.track.style.transform = `translateX(${this.offset}px)`;
         }
