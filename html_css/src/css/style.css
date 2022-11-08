@@ -84,8 +84,10 @@ table {
   *,
 *::before,
 *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
+    -webkit-animation-duration: 0.01ms !important;
+            animation-duration: 0.01ms !important;
+    -webkit-animation-iteration-count: 1 !important;
+            animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
@@ -146,7 +148,8 @@ table {
   cursor: pointer;
   text-decoration: none;
   transition: 250ms;
-  animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  -webkit-animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+          animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   background-color: var(--blueDesc);
 }
 .btn__blue:hover {
@@ -187,7 +190,8 @@ table {
   border-radius: 50%;
   cursor: pointer;
   transition: 250ms;
-  animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  -webkit-animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+          animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   background-color: var(--whiteDesc);
   box-shadow: 0px 4px 16px var(--sliderShadow);
 }
@@ -329,7 +333,8 @@ table {
   position: relative;
   z-index: 2;
   transition: 250ms;
-  animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  -webkit-animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+          animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .nav {
@@ -347,7 +352,8 @@ table {
   width: 100%;
   text-align: center;
   transition: 250ms;
-  animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  -webkit-animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+          animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .nav__list.active {
   left: 0;
@@ -362,7 +368,8 @@ table {
   right: 10px;
   z-index: 2;
   transition: 250ms;
-  animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  -webkit-animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+          animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .nav__close::before, .nav__close::after {
   content: "";
@@ -402,7 +409,8 @@ table {
   line-height: 133%;
   text-decoration: none;
   transition: 250ms;
-  animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  -webkit-animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+          animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   color: var(--blackTitle);
 }
 .nav__link:hover {
@@ -448,7 +456,8 @@ table {
   background-color: var(--blueDesc);
   border-radius: 2px;
   transition: 250ms;
-  animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  -webkit-animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+          animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .hamburger-lines:hover .line {
@@ -540,7 +549,8 @@ table {
 }
 .partners__link {
   transition: 250ms;
-  animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  -webkit-animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+          animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .partners__link:hover {
   opacity: 0.8;
@@ -663,9 +673,12 @@ table {
   word-wrap: break-word;
   word-break: break-all;
   word-break: break-word;
-  hyphens: auto;
+  -webkit-hyphens: auto;
+      -ms-hyphens: auto;
+          hyphens: auto;
   transition: 250ms;
-  animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  -webkit-animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+          animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .courses__item:hover {
   box-shadow: 0px 6px 20px rgba(27, 99, 240, 0.4);
@@ -810,7 +823,8 @@ table {
   cursor: pointer;
   box-shadow: 0px 4px 16px 0px rgba(75, 202, 103, 0.56);
   transition: 250ms;
-  animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  -webkit-animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+          animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .tour__video-play {
   margin: 6px;
@@ -1188,7 +1202,8 @@ table {
   display: flex;
   gap: 20px;
   transition: 250ms;
-  animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  -webkit-animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+          animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 #prefer__slider .item-link {
@@ -1198,7 +1213,8 @@ table {
   box-shadow: 0px 7px 20px var(--sliderShadow);
   border-radius: 4px;
   transition: 250ms;
-  animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  -webkit-animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+          animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 #prefer__slider .item-link:hover {
@@ -1209,7 +1225,8 @@ table {
 #prefer__slider .item-img {
   width: 197px;
   height: 197px;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 #prefer__slider .item-text {
@@ -1292,7 +1309,8 @@ table {
 .customers__slider-line {
   display: flex;
   transition: 250ms;
-  animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  -webkit-animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+          animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .customers__bg {
   position: absolute;
@@ -1359,7 +1377,8 @@ table {
   border-radius: 50%;
   cursor: pointer;
   transition: 250ms;
-  animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  -webkit-animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+          animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .customers__slider-dot:not(.customers__slider-active):hover {
   background-color: var(--blueBlog);
@@ -1419,7 +1438,8 @@ table {
 #customers__slider .slider-track {
   display: flex;
   transition: 250ms;
-  animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  -webkit-animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+          animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 #customers__slider .item-author {
@@ -1444,7 +1464,8 @@ table {
   border-radius: 50%;
   cursor: pointer;
   transition: 250ms;
-  animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  -webkit-animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+          animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 #customers__slider .slider-dot:not(#customers__slider .slider-active):hover {
@@ -1568,7 +1589,8 @@ table {
   display: flex;
   text-decoration: none;
   transition: 250ms;
-  animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  -webkit-animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+          animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   color: var(--whiteDesc);
   stroke: var(--whiteDesc);
 }
@@ -1683,7 +1705,8 @@ table {
   flex-direction: column;
   gap: 20px;
   transition: 250ms;
-  animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  -webkit-animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+          animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .blog__slider-item {
   display: flex;
@@ -1711,7 +1734,8 @@ table {
   text-align: center;
   color: var(--blueBlog);
   text-orientation: upright;
-  writing-mode: vertical-lr;
+  -ms-writing-mode: tb-lr;
+      writing-mode: vertical-lr;
   text-transform: uppercase;
 }
 .blog__slider-desc {
@@ -1745,7 +1769,10 @@ table {
   padding-bottom: 24px;
   color: var(--blackTitle);
   transition: 250ms;
-  animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  -webkit-animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+          animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
   width: fit-content;
 }
 .blog__slider-link:hover {
@@ -1765,7 +1792,8 @@ table {
   align-items: center;
   gap: 22px;
   transition: 250ms;
-  animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  -webkit-animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+          animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .blog__slider-dot {
   background-color: var(--whiteDesc);
@@ -1778,7 +1806,8 @@ table {
   font-size: 16px;
   line-height: 24px;
   transition: 250ms;
-  animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  -webkit-animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+          animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   cursor: pointer;
 }
 .blog__slider-dot:not(.blog__slider-active):hover {
@@ -1802,7 +1831,8 @@ table {
   flex-direction: column;
   gap: 20px;
   transition: 250ms;
-  animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  -webkit-animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+          animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 #blog__slider .item {
@@ -1830,7 +1860,8 @@ table {
   text-align: center;
   color: var(--blueBlog);
   text-orientation: upright;
-  writing-mode: vertical-lr;
+  -ms-writing-mode: tb-lr;
+      writing-mode: vertical-lr;
   text-transform: uppercase;
 }
 
@@ -1869,7 +1900,10 @@ table {
   padding-bottom: 24px;
   color: var(--blackTitle);
   transition: 250ms;
-  animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  -webkit-animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+          animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
   width: fit-content;
 }
 
@@ -1879,7 +1913,8 @@ table {
   align-items: center;
   gap: 22px;
   transition: 250ms;
-  animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  -webkit-animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+          animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 #blog__slider .slider-dot {
@@ -1893,7 +1928,8 @@ table {
   font-size: 16px;
   line-height: 24px;
   transition: 250ms;
-  animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  -webkit-animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+          animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   cursor: pointer;
 }
 #blog__slider .slider-dot #blog__slider .slider-dot:not(#blog__slider .slider-active):hover {
@@ -1994,7 +2030,8 @@ table {
   background-color: var(--formBG);
   outline-color: var(--formBG);
   transition: 250ms;
-  animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  -webkit-animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+          animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .form__input:focus {
   outline: 2px solid var(--blueDesc);
@@ -2071,7 +2108,8 @@ table {
   text-decoration: none;
   color: var(--greyBase);
   transition: 250ms;
-  animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  -webkit-animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+          animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .footer__item-link:hover {
   color: var(--lightgreenBtn);
@@ -2092,7 +2130,8 @@ table {
 .footer__social-img {
   stroke: var(--bgSocialImg);
   transition: 250ms;
-  animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  -webkit-animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+          animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .footer__social-img:hover {
   stroke: var(--lightgreenBtn);
@@ -2130,7 +2169,8 @@ table {
   text-decoration: none;
   color: var(--greyBase);
   transition: 250ms;
-  animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  -webkit-animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+          animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .footer__bottom-link:hover {
   color: var(--blueDesc);
@@ -2242,4 +2282,4 @@ body {
     padding-right: 87px;
     padding-left: 87px;
   }
-}/*# sourceMappingURL=style.css.map */
+}
