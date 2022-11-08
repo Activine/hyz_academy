@@ -20,4 +20,12 @@ module.exports = {
       template: path.resolve(__dirname, 'src', 'index.html')
     }),
   ],
+  module: {
+    rules: [
+      {
+        test: /\.html$/i,
+        loader: "html-loader",
+      },
+    ],
+  },
 };
