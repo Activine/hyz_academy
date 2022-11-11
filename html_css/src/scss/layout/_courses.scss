@@ -2,7 +2,7 @@
   max-width: 1000px;
   margin: 0 auto;
   padding-bottom: 39px;
-  background: url(../../assets/icons/Union.svg) 100% 100% / auto auto;
+  background: url(../assets/icons/Union.svg) 100% 100% / auto auto;
 
   &__desc {
     color: var(--blueDesc);
@@ -119,25 +119,25 @@
 }
 
 .courses .first-item {
-  background-image: url("../../assets/images/courses-slide3.png");
+  background-image: url("../assets/images/courses-slide3.png");
   background-position: center;
   background-size: cover;
 }
 
 .courses .second-item {
-  background-image: url("../../assets/images/slider-image1.png");
+  background-image: url("../assets/images/slider-image1.png");
   background-position: center;
   background-size: cover;
 }
 
 .courses .third-item {
-  background-image: url("../../assets/images/courses-slide2.jfif");
+  background-image: url("../assets/images/courses-slide2.jfif");
   background-position: center;
   background-size: cover;
 }
 
 .courses .fourth-item {
-  background-image: url("../../assets/images/slider-image4.png");
+  background-image: url("../assets/images/slider-image4.png");
   background-position: center;
   background-size: cover;
 }
