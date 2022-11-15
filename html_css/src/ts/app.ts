@@ -1,25 +1,29 @@
-import { data } from "./data.js";
-import { scrollApp, createBurger } from "./mobile-menu.js";
-import { Storage } from "./storage.js";
-import { HtmlFiller } from "./html-filler.js";
-import { ProSlider } from "./pro-slider.js";
+import { data } from "./data";
+import { scrollApp, createBurger } from "./mobile-menu";
+import { Storage } from "./storage";
+import { HtmlFiller } from "./html-filler";
+import { ProSlider } from "./pro-slider";
 import {
   renderItemCust,
   renderItemBlog,
   renderItemPref,
-} from "./html-filler.mapper.js";
-import { initForm } from "./form.js";
-import { getData } from "./api-data.js";
-import { Select } from "./select.js";
-import { Pr } from "./pr.js";
-import { debounce } from './debounce.js'
+} from "./html-filler.mapper";
+import { initForm } from "./form";
+import { getData } from "./api-data";
+import { Select } from "./select";
+import { Pr } from "./pr";
+import { debounce } from "./debounce"
+import './slick-slider'
 
 export class App {
+  prsl: HTMLElement;
+  storage: Storage;
+
   constructor() {
     scrollApp();
     createBurger();
     this.storage = new Storage(data, "dataSlider");
-    this.prsl = document.querySelector(`#prefer__slider`);
+    this.prsl = document.querySelector(`#prefer__slider`) as HTMLElement;
   }
 
   createHtml() {
@@ -37,22 +41,17 @@ export class App {
     );
     blogItems.init();
 
-    let select = document.querySelector(".select");
+    let select = document.querySelector(".select") as HTMLSelectElement;
 
-    select.addEventListener("change", (event) => {
+    select.addEventListener("change", (event: Event) => {
       this.prsl.innerHTML = "";
-      this.createPrefSlider(event.target.value)
+      this.createPrefSlider(+(event.target as HTMLInputElement).value)
     });
 
     return { custItems, blogItems };
   }
-
-  createSelect() {
-    let select = new Select("#prefer__slider", 3);
-    select.init();
-  }
-
-  createPrefSlider(id) {
+  
+  createPrefSlider(id: number): void {
     this.prsl.innerHTML = "";
 
     getData(id).then((res) => {
@@ -62,6 +61,11 @@ export class App {
       let prefSlider = new Pr("#prefer__slider");
       prefSlider.init();
     });
+  }
+
+  createSelect(): void {
+    let select = new Select("#prefer__slider", 3);
+    select.init();
   }
 
   createSliders() {
@@ -94,7 +98,7 @@ export class App {
     const returnedFunction = debounce(function() {
       blogSlider.updateAfterResize();
       custSlider.updateAfterResize();
-    }, 250);
+    }, 250, false);
 
     window.addEventListener("resize", returnedFunction);
   }

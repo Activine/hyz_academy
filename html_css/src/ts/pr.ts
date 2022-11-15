@@ -1,13 +1,20 @@
 export class Pr {
-  constructor(sliderContainer) {
-    this.sliderContainer = document.querySelector(`${sliderContainer}`);
+  selector: string;
+  sliderContainer: HTMLElement;
+  track: HTMLElement;
+  offset: number;
+  list:HTMLElement;
+
+  constructor(selector: string) {
+    this.selector = selector;
+    this.sliderContainer = document.querySelector(this.selector) as HTMLElement;
     this.track = document.createElement("div");
     this.offset = 0;
     this.list = document.createElement("div");
   }
 
-  createBtnPrev() {
-    let btn = document.createElement("button");
+  createBtnPrev(): HTMLElement {
+    let btn = document.createElement("button") as HTMLButtonElement;
     btn.className = "slider-prev prefer__btn";
     btn.innerHTML = `
       <svg class="icon__prev" width="24" height="24">
@@ -18,8 +25,8 @@ export class Pr {
     return btn;
   }
   
-  createBtnNext() {
-    let btn = document.createElement("button");
+  createBtnNext(): HTMLElement {
+    let btn = document.createElement("button") as HTMLButtonElement;
     btn.className = "slider-next prefer__btn";
     btn.innerHTML = `
       <svg class="icon__next" width="24" height="24">
@@ -30,7 +37,7 @@ export class Pr {
     return btn;
   }
 
-  renderHtml() {
+  renderHtml(): void {
     this.track.style.transform = `translateX(0px)`;
     this.offset = 0;
 
@@ -46,7 +53,7 @@ export class Pr {
     });
   }
 
-  btnClick() {
+  btnClick(): void {
     let btns = Array.from(document.querySelectorAll(`#${this.sliderContainer.id} button`));
     let maxOffset = -1953;
 
@@ -74,7 +81,7 @@ export class Pr {
     })
   }
 
-  init() {
+  init(): void {
     this.renderHtml()
     this.sliderContainer.append(this.createBtnPrev()); 
     this.sliderContainer.append(this.list);

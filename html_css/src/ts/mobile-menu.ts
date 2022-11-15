@@ -1,14 +1,14 @@
 export function scrollApp() {
   window.addEventListener("scroll", function () {
-    const header = document.getElementById("header");
+    const header = document.getElementById("header") as HTMLElement;
     header.classList.toggle("sticky", window.scrollY > 0);
   });
 } 
 
 export function createBurger() {
-  const closeMenu = document.querySelector('#nav__close');
-  const hamburger = document.querySelector("#hamburger-lines"); 
-  const navMenu = document.querySelector('#nav__list'); 
+  const closeMenu = document.querySelector('#nav__close') as HTMLElement;
+  const hamburger = document.querySelector("#hamburger-lines") as HTMLElement; 
+  const navMenu = document.querySelector('#nav__list') as HTMLElement; 
   
   hamburger.addEventListener("click", function () {
     hamburger.classList.toggle("active");
@@ -39,11 +39,11 @@ export function createBurger() {
   
   const allLinks = document.querySelectorAll('.nav__link');
   
-  navMenu.addEventListener("click", function (event) {
+  navMenu.addEventListener("click", function (event: Event) {
     allLinks.forEach((link) => {
       link.classList.remove('nav__link-active');
     });
     
-    event.target.classList.add('nav__link-active');
+    (event.target as HTMLElement).classList.add('nav__link-active');
   });
 }

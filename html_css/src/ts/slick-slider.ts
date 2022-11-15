@@ -1,3 +1,6 @@
+import * as $ from 'jquery';
+import "slick-carousel";
+
 $(document).ready(function() {
     $('.courses__item-inner').slick({
         arrows: true,

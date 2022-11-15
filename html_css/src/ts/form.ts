@@ -1,9 +1,10 @@
-const form = document.getElementById("form");
-const inputs = document.querySelectorAll(".form__input");
+import { FormState } from "./models/interface";
+const form = document.getElementById("form") as HTMLFormElement;
+const inputs: NodeListOf<HTMLInputElement> = document.querySelectorAll(".form__input") ;
 
 function changeValue() {
   form.addEventListener("change",() => {
-    let formValue = {};
+    let formValue = {} as FormState;
 
     const formData = new FormData(form);
     const fullname = formData.get("fullname");
@@ -13,7 +14,7 @@ function changeValue() {
     if (fullname) {
       formValue.fullname = fullname;
     }
-
+    
     if (phone) {
       formValue.phone = phone;
     }
@@ -27,11 +28,11 @@ function changeValue() {
 }
 
 function setData() {
-  let data = JSON.parse(localStorage.getItem("form"));
+  let data = JSON.parse(localStorage.getItem("form") as string);
 
   if (localStorage.getItem("form")) {
-    inputs.forEach((input) => {
-      input.value = data[input.getAttribute("name")];
+    inputs.forEach((input: HTMLInputElement) => {
+      input.value = data[input.getAttribute("name") as string];
     });
   }
 }
