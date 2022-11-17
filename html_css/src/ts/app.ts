@@ -13,14 +13,16 @@ import { getData } from "./api-data";
 import { Select } from "./select";
 import { Pr } from "./pr";
 import { debounce } from "./debounce";
+import { AppAbstract } from "./models/abstract";
 import './slick-slider';
-import { PrState } from "./models/interface";
 
-export class App {
+export class App extends AppAbstract {
   prsl: HTMLElement;
   storage: Storage;
+  protected baseUrl: string = `https://jsonplaceholder.typicode.com/albums/`;
 
   constructor() {
+    super()
     scrollApp();
     createBurger();
     this.storage = new Storage(data, "dataSlider");
@@ -55,7 +57,7 @@ export class App {
   createPrefSlider(id: number): void {
     this.prsl.innerHTML = "";
 
-    getData(id).then((res) => {
+    getData(id, this.baseUrl).then((res) => {
       let prefSl: HtmlFiller = new HtmlFiller("#prefer__slider", renderItemPref, res);
       prefSl.init();
 
@@ -104,4 +106,3 @@ export class App {
     window.addEventListener("resize", returnedFunction);
   }
 }
-

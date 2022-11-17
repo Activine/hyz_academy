@@ -1,6 +1,7 @@
 import { Data } from "./models/interface";
+import { IStorage } from "./models/interface";
 
-export class Storage {
+export class Storage implements IStorage {
   data: Array<Data>;
   key: string;
 
@@ -9,7 +10,7 @@ export class Storage {
     this.key = key;
   }
 
-  setSliderData(){
-    return !localStorage.getItem(this.key) ? localStorage.setItem(this.key, JSON.stringify(this.data)) : JSON.parse(localStorage.getItem(this.key) as any);
+  setSliderData() {
+    return !localStorage.getItem(this.key) ? localStorage.setItem(this.key, JSON.stringify(this.data)) : JSON.parse(localStorage.getItem(this.key));
   }
 }

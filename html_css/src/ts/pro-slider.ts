@@ -1,15 +1,14 @@
 import { OptionSlider } from "./models/interface";
 
 export class ProSlider {
-  selector: string;
-  sliderContainer: HTMLElement;
-  arrow: boolean;
-  dots: boolean;
-  showSlide: number;
-  track: HTMLElement;
-  sliderBtns: HTMLElement;
-  counter: number;
-  offset: number;
+  private selector: string;
+  private sliderContainer: HTMLElement;
+  private arrow: boolean;
+  public dots: boolean;
+  private showSlide: number;
+  private track: HTMLElement;
+  private sliderBtns: HTMLElement;
+  private offset: number;
 
   constructor(selector: string, options: OptionSlider) {
     this.selector = selector;
@@ -19,23 +18,22 @@ export class ProSlider {
     this.showSlide = options.showSlide;
     this.track = document.createElement("div");
     this.sliderBtns = document.createElement("div");
-    this.counter = 0;
     this.offset = 0;
   }
 
-  addClasses(): void {
+  private addClasses(): void {
     this.track.className = `slider-track`;
     this.sliderBtns.className = `slider-dots`;
   }
 
-  createDot(): HTMLButtonElement {
+  private createDot(): HTMLButtonElement {
     let btn = document.createElement("button") as HTMLButtonElement;
     btn.className = `slider-dot`;
 
     return btn;
   }
 
-  createSliderDots(): void {
+  private createSliderDots(): void {
     this.sliderContainer.append(this.sliderBtns);
 
     for (let i = 0; i < this.track.children.length; i++) {
@@ -43,22 +41,22 @@ export class ProSlider {
     }
   }
 
-  addActive(el: HTMLButtonElement) {
+  private addActive(el: HTMLButtonElement) {
     el.disabled = true;
     el.classList.add(`slider-active`);
   }
 
-  removeActive(el: HTMLButtonElement) {
+  private removeActive(el: HTMLButtonElement) {
     el.classList.remove(`slider-active`);
     el.disabled = false;
   }
 
-  removeAllActive(): void {
+  private removeAllActive(): void {
     let allBtns = Array.from(this.sliderBtns.children) as Array<HTMLButtonElement>;
     allBtns.forEach((el: HTMLButtonElement) => this.removeActive(el));
   }
 
-  createNumDot(el: number): HTMLButtonElement {
+  private createNumDot(el: number): HTMLButtonElement {
     let btn = document.createElement("button") as HTMLButtonElement;
     btn.className = `slider-dot`;
     btn.textContent = `${el + 1}`;
@@ -66,7 +64,7 @@ export class ProSlider {
     return btn;
   }
 
-  createSliderNumDots(): void {
+  private createSliderNumDots(): void {
     let counterDots: number = 0;
 
     this.sliderContainer.append(this.sliderBtns);
@@ -79,7 +77,7 @@ export class ProSlider {
     });
   }
 
-  handleClick(): void {
+  private handleClick(): void {
     const allBtns = Array.from(this.sliderBtns.children) as Array<HTMLButtonElement>;
 
     this.addActive(allBtns[0]);
@@ -120,7 +118,7 @@ export class ProSlider {
     });
   }
 
-  updateAfterResize(): void {
+  public updateAfterResize(): void {
     this.track.style.transform = `translateY(0px)`;
     this.track.style.transform = `translateX(0px)`;
 
@@ -130,7 +128,7 @@ export class ProSlider {
     this.addActive(allBtns[0]);
   }
 
-  renderHtml(): void {
+  private renderHtml(): void {
     let arrItems = Array.from(this.sliderContainer.children) as Array<HTMLButtonElement>;
 
     Array.from(this.sliderContainer.children).forEach((el: HTMLElement) => el.remove());
@@ -149,7 +147,7 @@ export class ProSlider {
     }
   }
 
-  init(): void {
+  public init(): void {
     this.addClasses();
     this.renderHtml();
     this.handleClick();
