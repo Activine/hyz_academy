@@ -12,8 +12,9 @@ import { initForm } from "./form";
 import { getData } from "./api-data";
 import { Select } from "./select";
 import { Pr } from "./pr";
-import { debounce } from "./debounce"
-import './slick-slider'
+import { debounce } from "./debounce";
+import './slick-slider';
+import { PrState } from "./models/interface";
 
 export class App {
   prsl: HTMLElement;
@@ -26,18 +27,18 @@ export class App {
     this.prsl = document.querySelector(`#prefer__slider`) as HTMLElement;
   }
 
-  createHtml() {
-    let custItems = new HtmlFiller(
+  createHtml(): {custItems: HtmlFiller; blogItems: HtmlFiller} {
+    let custItems: HtmlFiller = new HtmlFiller(
       "#customers__slider",
       renderItemCust,
-      this.storage.setSliderData()
+      this.storage.setSliderData(),
     );
     custItems.init();
 
-    let blogItems = new HtmlFiller(
+    let blogItems: HtmlFiller = new HtmlFiller(
       "#blog__slider",
       renderItemBlog,
-      this.storage.setSliderData()
+      this.storage.setSliderData(),
     );
     blogItems.init();
 
@@ -45,7 +46,7 @@ export class App {
 
     select.addEventListener("change", (event: Event) => {
       this.prsl.innerHTML = "";
-      this.createPrefSlider(+(event.target as HTMLInputElement).value)
+      this.createPrefSlider(+(event.target as HTMLInputElement).value);
     });
 
     return { custItems, blogItems };
@@ -55,30 +56,30 @@ export class App {
     this.prsl.innerHTML = "";
 
     getData(id).then((res) => {
-      let prefSl = new HtmlFiller("#prefer__slider", renderItemPref, res);
+      let prefSl: HtmlFiller = new HtmlFiller("#prefer__slider", renderItemPref, res);
       prefSl.init();
 
-      let prefSlider = new Pr("#prefer__slider");
+      let prefSlider: Pr = new Pr("#prefer__slider");
       prefSlider.init();
     });
   }
 
   createSelect(): void {
-    let select = new Select("#prefer__slider", 3);
+    let select: Select = new Select("#prefer__slider", 3);
     select.init();
   }
 
-  createSliders() {
+  createSliders(): {custSlider: ProSlider; blogSlider: ProSlider} {
     this.createHtml();
 
-    let custSlider = new ProSlider("#customers__slider", {
+    let custSlider: ProSlider = new ProSlider("#customers__slider", {
       arrow: false,
       dots: true,
       showSlide: 1,
     });
     custSlider.init();
 
-    let blogSlider = new ProSlider("#blog__slider", {
+    let blogSlider: ProSlider = new ProSlider("#blog__slider", {
       arrow: false,
       dots: true,
       showSlide: 2,
@@ -89,13 +90,13 @@ export class App {
     return { custSlider, blogSlider};
   }
 
-  init() {
+  init(): void {
     this.createSelect();
-    let { custSlider, blogSlider} = this.createSliders();
+    let { custSlider, blogSlider }: {custSlider: ProSlider; blogSlider: ProSlider} = this.createSliders();
     
     initForm();
 
-    const returnedFunction = debounce(function() {
+    const returnedFunction: () => void = debounce(function() {
       blogSlider.updateAfterResize();
       custSlider.updateAfterResize();
     }, 250, false);

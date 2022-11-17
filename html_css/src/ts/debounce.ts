@@ -1,16 +1,16 @@
-export function debounce(func: any, wait: any, immediate: any) {
-    var timeout: any;
+export function debounce(func: () => void, wait: number, immediate: boolean) {
+    let timeout: any;
   
-    return function executedFunction() {
-      var context = this;
-      var args = arguments;
+    return function executedFunction(): void {
+      const context = this;
+      const args: IArguments = arguments;
         
-      var later = function() {
+      const later = function(): void {
         timeout = null;
         if (!immediate) func.apply(context, args);
       };
   
-      var callNow = immediate && !timeout;
+      const callNow: boolean = immediate && !timeout;
     
       clearTimeout(timeout);
   

@@ -41,9 +41,9 @@ export class Pr {
     this.track.style.transform = `translateX(0px)`;
     this.offset = 0;
 
-    let arrItems = Array.from(this.sliderContainer.children);
+    let arrItems: Array<Element> = Array.from(this.sliderContainer.children);
 
-    Array.from(this.sliderContainer.children).forEach((el) => el.remove());
+    Array.from(this.sliderContainer.children).forEach((el: Element) => el.remove());
 
     this.list.className = `slider-list`;
     this.list.append(this.track);
@@ -54,20 +54,37 @@ export class Pr {
   }
 
   btnClick(): void {
-    let btns = Array.from(document.querySelectorAll(`#${this.sliderContainer.id} button`));
-    let maxOffset = -1953;
+    let btns: Array<HTMLButtonElement> = Array.from(document.querySelectorAll(`#${this.sliderContainer.id} button`));
+    let maxOffset: number = -1953;
 
-    btns.forEach(el => {
+    btns.forEach((el: HTMLButtonElement) => {
       el.addEventListener('click', () => {
-        if (window.innerWidth < 620) {
-          maxOffset = -1953
-        } else if (window.innerWidth < 840) {
-          maxOffset = -1736
-        } else if (window.innerWidth < 1040) {
-          maxOffset = -1519
-        } else if (window.innerWidth > 1040) {
-          maxOffset = -1302
+        switch(true) {
+          case(window.innerWidth < 620): {
+            maxOffset = -1953;
+          } break;
+
+          case(window.innerWidth < 840): {
+            maxOffset = -1736;
+          } break;
+
+          case(window.innerWidth < 1040): {
+            maxOffset = -1519;
+          } break;
+
+          default: {
+            maxOffset = -1302;
+          }
         }
+        // if (window.innerWidth < 620) {
+        //   maxOffset = -1953
+        // } else if (window.innerWidth < 840) {
+        //   maxOffset = -1736
+        // } else if (window.innerWidth < 1040) {
+        //   maxOffset = -1519
+        // } else if (window.innerWidth > 1040) {
+        //   maxOffset = -1302
+        // }
 
         if(btns.indexOf(el) === 0 && this.offset < 0) {
           this.offset += 217;
@@ -82,10 +99,10 @@ export class Pr {
   }
 
   init(): void {
-    this.renderHtml()
+    this.renderHtml();
     this.sliderContainer.append(this.createBtnPrev()); 
     this.sliderContainer.append(this.list);
     this.sliderContainer.append(this.createBtnNext());
-    this.btnClick()
+    this.btnClick();
   }
 }

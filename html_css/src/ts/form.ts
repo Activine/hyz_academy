@@ -2,32 +2,20 @@ import { FormState } from "./models/interface";
 const form = document.getElementById("form") as HTMLFormElement;
 const inputs: NodeListOf<HTMLInputElement> = document.querySelectorAll(".form__input") ;
 
-function changeValue() {
-  form.addEventListener("change",() => {
-    let formValue = {} as FormState;
-
+function changeValue(): void {
+  form.addEventListener("change", () => {
     const formData = new FormData(form);
-    const fullname = formData.get("fullname");
-    const phone = formData.get("phone");
-    const mail = formData.get("mail");
-
-    if (fullname) {
-      formValue.fullname = fullname;
-    }
-    
-    if (phone) {
-      formValue.phone = phone;
-    }
-
-    if (mail) {
-      formValue.mail = mail;
-    }
+    let formValue: FormState = {
+      fullname: formData.get("fullname"),
+      phone: formData.get("phone"),
+      mail: formData.get("mail"),
+    } as FormState
 
     localStorage.setItem('form', JSON.stringify(formValue))
   });
 }
 
-function setData() {
+function setData(): void {
   let data = JSON.parse(localStorage.getItem("form") as string);
 
   if (localStorage.getItem("form")) {
@@ -37,10 +25,10 @@ function setData() {
   }
 }
 
-function submitForm() {
-  form.addEventListener('submit', (event) => {
+function submitForm(): void {
+  form.addEventListener('submit', (event: SubmitEvent) => {
     event.preventDefault();
-    inputs.forEach(el => el.value = '');
+    inputs.forEach((el: HTMLButtonElement) => el.value = '');
     localStorage.removeItem('form');
   })
 }
