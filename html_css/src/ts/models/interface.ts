@@ -18,3 +18,11 @@ export interface OptionSlider {
   dots: boolean;
   showSlide: number;
 }
+
+export interface PrState {
+  albumId: number;
+  id: number;
+  thumbnailUrl: string;
+  title: string;
+  url: string
+}

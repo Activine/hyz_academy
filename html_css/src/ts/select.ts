@@ -12,8 +12,8 @@ export class Select {
     this.value = value;
   }
 
-  createOption(value: string) {
-    let option = document.createElement("option");
+  createOption(value: string): HTMLElement {
+    let option = document.createElement("option") as HTMLElement;
     option.className = `option`;
     option.setAttribute("value", `${value.replace((/[^0-9]/g), '')}`);
     option.textContent = `${value}`;
@@ -21,8 +21,8 @@ export class Select {
     return option;
   }
 
-  createSelect() {
-    let select = document.createElement("select");
+  createSelect(): HTMLElement {
+    let select = document.createElement("select") as HTMLElement;
     select.className = "select";
 
     for (let i = 0; i < this.value; i++) {
@@ -31,7 +31,7 @@ export class Select {
 
     return select;
   }
-  init() {
+  init(): void {
     this.sliderContainer.before(this.createSelect());
   }
 }
