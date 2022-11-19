@@ -1,5 +1,7 @@
-export function renderItemCust(data) {
-  let itemSlider = document.createElement("div");
+import { Data } from "./models/interface";
+
+export function renderItemCust(data: Data): HTMLElement {
+  let itemSlider = document.createElement("div") as HTMLElement;
   itemSlider.className = `item`;
   itemSlider.innerHTML = `
     <figure>
@@ -20,8 +22,8 @@ export function renderItemCust(data) {
   return itemSlider;
 }
 
-export function renderItemBlog(data) {
-  let itemSlider = document.createElement("div");
+export function renderItemBlog(data: Data): HTMLElement {
+  let itemSlider = document.createElement("div") as HTMLElement;
   itemSlider.className = `item`;
   itemSlider.innerHTML = `
     <div class="item-sidebar">
@@ -49,8 +51,8 @@ export function renderItemBlog(data) {
   return itemSlider;
 }
 
-export function renderItemPref(data) {
-  let itemSlider = document.createElement("a");
+export function renderItemPref(data: Data): HTMLElement {
+  let itemSlider = document.createElement("a") as HTMLElement;
   itemSlider.className = `item-link`;
   itemSlider.innerHTML = `
     <img
@@ -64,8 +66,8 @@ export function renderItemPref(data) {
   return itemSlider;
 }
 
-function createOption(value) {
-  let option = document.createElement("option");
+function createOption(value: number): HTMLElement {
+  let option = document.createElement("option") as HTMLElement;
   option.className = `option`;
   option.setAttribute('value', `${value}`);
   option.textContent = `Label ${value}`;
@@ -73,8 +75,8 @@ function createOption(value) {
   return option;
 }
 
-export function createSelect(value) {
-  let select = document.createElement("select");
+export function createSelect(value: number): HTMLElement {
+  let select = document.createElement("select") as HTMLElement;
   select.className = "select";
 
   for (let i = 0; i < value; i++) {

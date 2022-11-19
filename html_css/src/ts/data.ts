@@ -1,4 +1,6 @@
-export const data = [
+import { Data } from "./models/interface";
+
+export const data: Array<Data> = [
   {
     id: 1,
     title: "accusamus beatae ad facilis cum similique qui sunt",
