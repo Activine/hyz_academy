@@ -25,7 +25,8 @@ export class App extends AppAbstract {
     super()
     scrollApp();
     createBurger();
-    this.storage = new Storage(data, "dataSlider");
+    this.storage = new Storage();
+    this.storage.setData("dataSlider", data);
     this.prsl = document.querySelector(`#prefer__slider`) as HTMLElement;
   }
 
@@ -33,14 +34,14 @@ export class App extends AppAbstract {
     let custItems: HtmlFiller = new HtmlFiller(
       "#customers__slider",
       renderItemCust,
-      this.storage.setSliderData(),
+      this.storage.getData("dataSlider"),
     );
     custItems.init();
 
     let blogItems: HtmlFiller = new HtmlFiller(
       "#blog__slider",
       renderItemBlog,
-      this.storage.setSliderData(),
+      this.storage.getData("dataSlider"),
     );
     blogItems.init();
 

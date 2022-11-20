@@ -35,7 +35,6 @@ export interface SelectInt {
 }
 
 export interface StorageInt {
-  data: Array<Data>;
-  key: string;
-  setSliderData(): any;
+  setData(key: string, data: any): void;
+  getData(key: string): Array<Data> | null;
 }
