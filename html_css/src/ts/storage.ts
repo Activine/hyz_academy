@@ -2,16 +2,16 @@ import { Data } from "./models/interface";
 import { StorageInt } from "./models/interface";
 
 export class Storage implements StorageInt{
-  // private sta
+  private static instance: Storage;
 
-  // constructor() {
-  //   if(!instance) instance = this;
-    
-  // }
+  public static getInstance(): Storage {
+    if (!Storage.instance) {
+      Storage.instance = new Storage();
+    }
 
-  // setSliderData() {
-  //   return !localStorage.getItem(this.key) ? localStorage.setItem(this.key, JSON.stringify(this.data)) : JSON.parse(localStorage.getItem(this.key));
-  // }
+    return Storage.instance;
+  }
+
   public setData(key: string, data: any): void {
     return localStorage.setItem(key, JSON.stringify(data))
   }

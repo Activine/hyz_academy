@@ -22,10 +22,10 @@ export class App extends AppAbstract {
   protected baseUrl: string = `https://jsonplaceholder.typicode.com/albums/`;
 
   constructor() {
-    super()
+    super();
     scrollApp();
     createBurger();
-    this.storage = new Storage();
+    this.storage = Storage.getInstance();
     this.storage.setData("dataSlider", data);
     this.prsl = document.querySelector(`#prefer__slider`) as HTMLElement;
   }
