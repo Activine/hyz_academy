@@ -1,11 +1,11 @@
 import { Data } from "./models/interface";
 import { StorageInt } from "./models/interface";
 
-export class Storage{
-  private static singleton: Storage;
+export class Storage implements StorageInt{
+  // private sta
 
   // constructor() {
-  //   if(!Storage.singletonnce) singleton = this;
+  //   if(!instance) instance = this;
     
   // }
 
