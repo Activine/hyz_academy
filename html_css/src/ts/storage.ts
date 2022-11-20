@@ -1,7 +1,7 @@
 import { Data } from "./models/interface";
-import { IStorage } from "./models/interface";
+import { StorageInt } from "./models/interface";
 
-export class Storage implements IStorage {
+export class Storage implements StorageInt {
   data: Array<Data>;
   key: string;
 

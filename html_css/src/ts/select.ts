@@ -1,7 +1,7 @@
 import { SelectOptions } from "./models/enums";
-import { ISelect } from "./models/interface";
+import { SelectInt } from "./models/interface";
 
-export class Select implements ISelect {
+export class Select implements SelectInt {
   public selector: string;
   public sliderContainer: HTMLElement;
   public value: number;
@@ -13,8 +13,12 @@ export class Select implements ISelect {
     this.value = value;
   }
 
-  public createOption(value: string): HTMLElement {
-    let option = document.createElement("option") as HTMLElement;
+  public init(): void {
+    this.sliderContainer.before(this.createSelect());
+  }
+
+  private createOption(value: string): HTMLElement {
+    let option: HTMLElement = document.createElement("option");
     option.className = `option`;
     option.setAttribute("value", `${value.replace((/[^0-9]/g), '')}`);
     option.textContent = `${value}`;
@@ -22,8 +26,8 @@ export class Select implements ISelect {
     return option;
   }
 
-  public createSelect(): HTMLElement {
-    let select = document.createElement("select") as HTMLElement;
+  private createSelect(): HTMLElement {
+    let select: HTMLElement = document.createElement("select");
     select.className = "select";
 
     for (let i = 0; i < this.value; i++) {
@@ -31,8 +35,5 @@ export class Select implements ISelect {
     }
 
     return select;
-  }
-  public init(): void {
-    this.sliderContainer.before(this.createSelect());
   }
 }

@@ -27,16 +27,14 @@ export interface PrState {
   url: string
 }
 
-export interface ISelect {
+export interface SelectInt {
   selector: string;
   sliderContainer: HTMLElement;
   value: number;
-  createOption(value: string): HTMLElement;
-  createSelect(): HTMLElement;
   init(): void;
 }
 
-export interface IStorage {
+export interface StorageInt {
   data: Array<Data>;
   key: string;
   setSliderData(): any;

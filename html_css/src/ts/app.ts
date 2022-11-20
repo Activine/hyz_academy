@@ -17,8 +17,8 @@ import { AppAbstract } from "./models/abstract";
 import './slick-slider';
 
 export class App extends AppAbstract {
-  prsl: HTMLElement;
-  storage: Storage;
+  private prsl: HTMLElement;
+  private storage: Storage;
   protected baseUrl: string = `https://jsonplaceholder.typicode.com/albums/`;
 
   constructor() {
@@ -29,7 +29,7 @@ export class App extends AppAbstract {
     this.prsl = document.querySelector(`#prefer__slider`) as HTMLElement;
   }
 
-  createHtml(): {custItems: HtmlFiller; blogItems: HtmlFiller} {
+  private createHtml(): {custItems: HtmlFiller; blogItems: HtmlFiller} {
     let custItems: HtmlFiller = new HtmlFiller(
       "#customers__slider",
       renderItemCust,
@@ -44,7 +44,7 @@ export class App extends AppAbstract {
     );
     blogItems.init();
 
-    let select = document.querySelector(".select") as HTMLSelectElement;
+    let select: HTMLSelectElement = document.querySelector(".select");
 
     select.addEventListener("change", (event: Event) => {
       this.prsl.innerHTML = "";
@@ -54,7 +54,7 @@ export class App extends AppAbstract {
     return { custItems, blogItems };
   }
   
-  createPrefSlider(id: number): void {
+  private createPrefSlider(id: number): void {
     this.prsl.innerHTML = "";
 
     getData(id, this.baseUrl).then((res) => {
@@ -66,12 +66,12 @@ export class App extends AppAbstract {
     });
   }
 
-  createSelect(): void {
+  private createSelect(): void {
     let select: Select = new Select("#prefer__slider", 3);
     select.init();
   }
 
-  createSliders(): {custSlider: ProSlider; blogSlider: ProSlider} {
+  private createSliders(): {custSlider: ProSlider; blogSlider: ProSlider} {
     this.createHtml();
 
     let custSlider: ProSlider = new ProSlider("#customers__slider", {
@@ -92,7 +92,7 @@ export class App extends AppAbstract {
     return { custSlider, blogSlider};
   }
 
-  init(): void {
+  public init(): void {
     this.createSelect();
     let { custSlider, blogSlider }: {custSlider: ProSlider; blogSlider: ProSlider} = this.createSliders();
     

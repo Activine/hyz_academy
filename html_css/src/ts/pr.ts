@@ -14,7 +14,7 @@ export class Pr {
   }
 
   private createBtnPrev(): HTMLElement {
-    let btn = document.createElement("button") as HTMLButtonElement;
+    let btn: HTMLButtonElement = document.createElement("button");
     btn.className = "slider-prev prefer__btn";
     btn.innerHTML = `
       <svg class="icon__prev" width="24" height="24">
@@ -26,7 +26,7 @@ export class Pr {
   }
   
   private createBtnNext(): HTMLElement {
-    let btn = document.createElement("button") as HTMLButtonElement;
+    let btn: HTMLButtonElement = document.createElement("button");
     btn.className = "slider-next prefer__btn";
     btn.innerHTML = `
       <svg class="icon__next" width="24" height="24">
@@ -57,7 +57,7 @@ export class Pr {
     let btns: Array<HTMLButtonElement> = Array.from(document.querySelectorAll(`#${this.sliderContainer.id} button`));
     let maxOffset: number = -1953;
 
-    btns.forEach((el: HTMLButtonElement) => {
+    btns.forEach((el: HTMLButtonElement, index: number) => {
       el.addEventListener('click', () => {
         switch(true) {
           case(window.innerWidth < 620): {
@@ -76,12 +76,12 @@ export class Pr {
             maxOffset = -1302;
           }
         }
-
-        if(btns.indexOf(el) === 0 && this.offset < 0) {
+        if (index === 0 && this.offset < 0) {
           this.offset += 217;
           this.track.style.transform = `translateX(${this.offset}px)`;
-        } 
-        else if(btns.indexOf(el) === 1 && this.offset > maxOffset) {
+          return
+        }
+        if (index === 1 && this.offset > maxOffset) {
           this.offset -= 217;
           this.track.style.transform = `translateX(${this.offset}px)`;
         }
