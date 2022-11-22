@@ -1,6 +1,5 @@
 import { data } from "./data";
 import { scrollApp, createBurger } from "./mobile-menu";
-import { Storage } from "./storage";
 import { HtmlFiller } from "./html-filler";
 import { ProSlider } from "./pro-slider";
 import {
@@ -18,19 +17,30 @@ import './slick-slider';
 
 export class App extends AppAbstract {
   private prsl: HTMLElement;
-  private storage: Storage;
-  protected baseUrl: string = `https://jsonplaceholder.typicode.com/albums/`;
 
   constructor() {
     super();
     scrollApp();
     createBurger();
-    this.storage = Storage.getInstance();
     this.storage.setData("dataSlider", data);
     this.prsl = document.querySelector(`#prefer__slider`) as HTMLElement;
   }
 
-  private createHtml(): {custItems: HtmlFiller; blogItems: HtmlFiller} {
+  public init(): void {
+    this.createSelect();
+    let { custSlider, blogSlider }: { custSlider: ProSlider; blogSlider: ProSlider } = this.createSliders();
+
+    initForm();
+
+    const returnedFunction: () => void = debounce(function () {
+      blogSlider.updateAfterResize();
+      custSlider.updateAfterResize();
+    }, 250, false);
+
+    window.addEventListener("resize", returnedFunction);
+  }
+
+  private createHtml(): { custItems: HtmlFiller; blogItems: HtmlFiller } {
     let custItems: HtmlFiller = new HtmlFiller(
       "#customers__slider",
       renderItemCust,
@@ -54,7 +64,7 @@ export class App extends AppAbstract {
 
     return { custItems, blogItems };
   }
-  
+
   private createPrefSlider(id: number): void {
     this.prsl.innerHTML = "";
 
@@ -72,7 +82,7 @@ export class App extends AppAbstract {
     select.init();
   }
 
-  private createSliders(): {custSlider: ProSlider; blogSlider: ProSlider} {
+  private createSliders(): { custSlider: ProSlider; blogSlider: ProSlider } {
     this.createHtml();
 
     let custSlider: ProSlider = new ProSlider("#customers__slider", {
@@ -90,20 +100,6 @@ export class App extends AppAbstract {
     blogSlider.init();
 
     this.createPrefSlider(1);
-    return { custSlider, blogSlider};
-  }
-
-  public init(): void {
-    this.createSelect();
-    let { custSlider, blogSlider }: {custSlider: ProSlider; blogSlider: ProSlider} = this.createSliders();
-    
-    initForm();
-
-    const returnedFunction: () => void = debounce(function() {
-      blogSlider.updateAfterResize();
-      custSlider.updateAfterResize();
-    }, 250, false);
-
-    window.addEventListener("resize", returnedFunction);
+    return { custSlider, blogSlider };
   }
 }

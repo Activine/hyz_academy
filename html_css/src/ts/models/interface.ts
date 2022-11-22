@@ -27,14 +27,14 @@ export interface PrState {
   url: string
 }
 
-export interface SelectInt {
+export interface SliderSelect {
   selector: string;
   sliderContainer: HTMLElement;
   value: number;
   init(): void;
 }
 
-export interface StorageInt {
+export interface Storage {
   setData(key: string, data: any): void;
   getData(key: string): Array<Data> | null;
 }

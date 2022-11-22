@@ -1,15 +1,11 @@
 import { Data } from "./models/interface";
-import { StorageInt } from "./models/interface";
+import { Storage } from "./models/interface";
 
-export class Storage implements StorageInt{
-  private static instance: Storage;
+export class UserStorage implements Storage{
+  private static instance: UserStorage;
 
-  public static getInstance(): Storage {
-    if (!Storage.instance) {
-      Storage.instance = new Storage();
-    }
-
-    return Storage.instance;
+  public static getInstance(): UserStorage {
+    return !UserStorage.instance ? UserStorage.instance = new UserStorage() : UserStorage.instance
   }
 
   public setData(key: string, data: any): void {

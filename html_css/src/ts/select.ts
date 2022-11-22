@@ -1,7 +1,7 @@
 import { SelectOptions } from "./models/enums";
-import { SelectInt } from "./models/interface";
+import { SliderSelect } from "./models/interface";
 
-export class Select implements SelectInt {
+export class Select implements SliderSelect {
   public selector: string;
   public sliderContainer: HTMLElement;
   public value: number;
