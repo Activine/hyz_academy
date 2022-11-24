@@ -1,10 +1,10 @@
 import { FormState } from "./models/interface";
-const form = document.getElementById("form") as HTMLFormElement;
+const form: HTMLFormElement = document.getElementById("form") as HTMLFormElement;
 const inputs: NodeListOf<HTMLInputElement> = document.querySelectorAll(".form__input") ;
 
 function changeValue(): void {
   form.addEventListener("change", () => {
-    const formData = new FormData(form);
+    const formData: FormData = new FormData(form);
     let formValue: FormState = {
       fullname: formData.get("fullname"),
       phone: formData.get("phone"),
@@ -16,7 +16,7 @@ function changeValue(): void {
 }
 
 function setData(): void {
-  let data = JSON.parse(localStorage.getItem("form") as string);
+  let data: any = JSON.parse(localStorage.getItem("form") as string);
 
   if (localStorage.getItem("form")) {
     inputs.forEach((input: HTMLInputElement) => {
@@ -33,7 +33,7 @@ function submitForm(): void {
   })
 }
 
-export function initForm() {
+export function initForm(): void {
   changeValue();
   setData();
   submitForm();

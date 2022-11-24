@@ -1,9 +1,10 @@
 import { SelectOptions } from "./models/enums";
+import { SliderSelect } from "./models/interface";
 
-export class Select {
-  selector: string;
-  sliderContainer: HTMLElement;
-  value: number;
+export class Select implements SliderSelect {
+  public selector: string;
+  public sliderContainer: HTMLElement;
+  public value: number;
 
   
   constructor(selector: string, value: number) {
@@ -12,8 +13,12 @@ export class Select {
     this.value = value;
   }
 
-  createOption(value: string): HTMLElement {
-    let option = document.createElement("option") as HTMLElement;
+  public init(): void {
+    this.sliderContainer.before(this.createSelect());
+  }
+
+  private createOption(value: string): HTMLElement {
+    let option: HTMLElement = document.createElement("option");
     option.className = `option`;
     option.setAttribute("value", `${value.replace((/[^0-9]/g), '')}`);
     option.textContent = `${value}`;
@@ -21,8 +26,8 @@ export class Select {
     return option;
   }
 
-  createSelect(): HTMLElement {
-    let select = document.createElement("select") as HTMLElement;
+  private createSelect(): HTMLElement {
+    let select: HTMLElement = document.createElement("select");
     select.className = "select";
 
     for (let i = 0; i < this.value; i++) {
@@ -30,8 +35,5 @@ export class Select {
     }
 
     return select;
-  }
-  init(): void {
-    this.sliderContainer.before(this.createSelect());
   }
 }

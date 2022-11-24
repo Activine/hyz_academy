@@ -1,14 +1,14 @@
 export function scrollApp() {
   window.addEventListener("scroll", function () {
-    const header = document.getElementById("header") as HTMLElement;
+    const header: HTMLElement = document.getElementById("header");
     header.classList.toggle("sticky", window.scrollY > 0);
   });
 } 
 
 export function createBurger() {
-  const closeMenu = document.querySelector('#nav__close') as HTMLElement;
-  const hamburger = document.querySelector("#hamburger-lines") as HTMLElement; 
-  const navMenu = document.querySelector('#nav__list') as HTMLElement; 
+  const closeMenu: HTMLElement = document.querySelector('#nav__close');
+  const hamburger: HTMLElement = document.querySelector("#hamburger-lines"); 
+  const navMenu: HTMLElement = document.querySelector('#nav__list'); 
   
   hamburger.addEventListener("click", function () {
     hamburger.classList.toggle("active");
@@ -37,7 +37,7 @@ export function createBurger() {
   
   window.addEventListener("resize", updateWidgetAreaClassList, false);
   
-  const allLinks = document.querySelectorAll('.nav__link');
+  const allLinks: NodeListOf<Element> = document.querySelectorAll('.nav__link');
   
   navMenu.addEventListener("click", function (event: Event) {
     allLinks.forEach((link) => {
