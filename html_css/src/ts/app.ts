@@ -13,6 +13,7 @@ import { Select } from "./select";
 import { Pr } from "./pr";
 import { debounce } from "./debounce";
 import { AppAbstract } from "./models/abstract";
+import { ReadOnly } from "./decorators/readOnly.decorator";
 import './slick-slider';
 
 export class App extends AppAbstract {
@@ -22,10 +23,11 @@ export class App extends AppAbstract {
     super();
     scrollApp();
     createBurger();
-    this.storage.setData("dataSlider", data);
+    this.storage.setData(data);
     this.prsl = document.querySelector(`#prefer__slider`) as HTMLElement;
   }
 
+  @ReadOnly(true)
   public init(): void {
     this.createSelect();
     let { custSlider, blogSlider }: { custSlider: ProSlider; blogSlider: ProSlider } = this.createSliders();

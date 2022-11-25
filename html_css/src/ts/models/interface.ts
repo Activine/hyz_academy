@@ -35,6 +35,6 @@ export interface SliderSelect {
 }
 
 export interface Storage {
-  setData(key: string, data: any): void;
+  setData(data: any): void;
   getData(key: string): Array<Data> | null;
 }

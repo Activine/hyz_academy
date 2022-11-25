@@ -1,20 +1,21 @@
 import { Data } from "./models/interface";
 import { Storage } from "./models/interface";
+import { localSt } from "./decorators/localStorage.decorator";
 
 export class UserStorage implements Storage{
-  private static instance: UserStorage;
+  // private static instance: UserStorage;
 
-  public static getInstance(): UserStorage {
-    return !UserStorage.instance ? UserStorage.instance = new UserStorage() : UserStorage.instance
-  }
+  // public static getInstance(): UserStorage {
+  //   return !UserStorage.instance ? UserStorage.instance = new UserStorage() : UserStorage.instance
+  // }
+  @localSt("dataSlider")
+  private localData: Array<Data>;
 
-  public setData(key: string, data: any): void {
-    return localStorage.setItem(key, JSON.stringify(data))
+  public setData(data: any): void {
+    this.localData = data
   }
 
   public getData(key: string): Array<Data> | null {
-    return localStorage.getItem(key) 
-    ? JSON.parse(localStorage.getItem(key))
-    : null
+    return this.localData
   }
 }
