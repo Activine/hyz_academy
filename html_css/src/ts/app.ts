@@ -14,9 +14,7 @@ import { Pr } from "./pr";
 import { debounce } from "./debounce";
 import { AppAbstract } from "./models/abstract";
 import { ReadOnly } from "./decorators/readOnly.decorator";
-import { Storage } from "./models/interface";
 import './slick-slider';
-import { UserStorage } from "./storage";
 
 export class App extends AppAbstract {
   private prsl: HTMLElement;
@@ -25,7 +23,7 @@ export class App extends AppAbstract {
     super();
     scrollApp();
     createBurger();
-    this.storage = UserStorage.getInstance();
+    this.storage.setData(data);
     console.log(this.storage);
     
     this.prsl = document.querySelector(`#prefer__slider`) as HTMLElement;
