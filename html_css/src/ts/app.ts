@@ -25,7 +25,9 @@ export class App extends AppAbstract {
     super();
     scrollApp();
     createBurger();
-    this.storage = new UserStorage();
+    this.storage = UserStorage.getInstance();
+    console.log(this.storage);
+    
     this.prsl = document.querySelector(`#prefer__slider`) as HTMLElement;
   }
 
