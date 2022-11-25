@@ -1,9 +1,9 @@
 export class Pr {
-  selector: string;
-  sliderContainer: HTMLElement;
-  track: HTMLElement;
-  offset: number;
-  list:HTMLElement;
+  private selector: string;
+  private sliderContainer: HTMLElement;
+  private track: HTMLElement;
+  private offset: number;
+  private list:HTMLElement;
 
   constructor(selector: string) {
     this.selector = selector;
@@ -13,8 +13,8 @@ export class Pr {
     this.list = document.createElement("div");
   }
 
-  createBtnPrev(): HTMLElement {
-    let btn = document.createElement("button") as HTMLButtonElement;
+  private createBtnPrev(): HTMLElement {
+    let btn: HTMLButtonElement = document.createElement("button");
     btn.className = "slider-prev prefer__btn";
     btn.innerHTML = `
       <svg class="icon__prev" width="24" height="24">
@@ -25,8 +25,8 @@ export class Pr {
     return btn;
   }
   
-  createBtnNext(): HTMLElement {
-    let btn = document.createElement("button") as HTMLButtonElement;
+  private createBtnNext(): HTMLElement {
+    let btn: HTMLButtonElement = document.createElement("button");
     btn.className = "slider-next prefer__btn";
     btn.innerHTML = `
       <svg class="icon__next" width="24" height="24">
@@ -37,7 +37,7 @@ export class Pr {
     return btn;
   }
 
-  renderHtml(): void {
+  private renderHtml(): void {
     this.track.style.transform = `translateX(0px)`;
     this.offset = 0;
 
@@ -53,11 +53,11 @@ export class Pr {
     });
   }
 
-  btnClick(): void {
+  private handleClick(): void {
     let btns: Array<HTMLButtonElement> = Array.from(document.querySelectorAll(`#${this.sliderContainer.id} button`));
     let maxOffset: number = -1953;
 
-    btns.forEach((el: HTMLButtonElement) => {
+    btns.forEach((el: HTMLButtonElement, index: number) => {
       el.addEventListener('click', () => {
         switch(true) {
           case(window.innerWidth < 620): {
@@ -76,21 +76,12 @@ export class Pr {
             maxOffset = -1302;
           }
         }
-        // if (window.innerWidth < 620) {
-        //   maxOffset = -1953
-        // } else if (window.innerWidth < 840) {
-        //   maxOffset = -1736
-        // } else if (window.innerWidth < 1040) {
-        //   maxOffset = -1519
-        // } else if (window.innerWidth > 1040) {
-        //   maxOffset = -1302
-        // }
-
-        if(btns.indexOf(el) === 0 && this.offset < 0) {
+        if (index === 0 && this.offset < 0) {
           this.offset += 217;
           this.track.style.transform = `translateX(${this.offset}px)`;
-        } 
-        else if(btns.indexOf(el) === 1 && this.offset > maxOffset) {
+          return
+        }
+        if (index === 1 && this.offset > maxOffset) {
           this.offset -= 217;
           this.track.style.transform = `translateX(${this.offset}px)`;
         }
@@ -98,11 +89,11 @@ export class Pr {
     })
   }
 
-  init(): void {
+  public init(): void {
     this.renderHtml();
     this.sliderContainer.append(this.createBtnPrev()); 
     this.sliderContainer.append(this.list);
     this.sliderContainer.append(this.createBtnNext());
-    this.btnClick();
+    this.handleClick();
   }
 }

@@ -1,15 +1,20 @@
 import { Data } from "./models/interface";
+import { Storage } from "./models/interface";
 
-export class Storage {
-  data: Array<Data>;
-  key: string;
+export class UserStorage implements Storage{
+  private static instance: UserStorage;
 
-  constructor(data: Array<Data>, key: string) {
-    this.data = data;
-    this.key = key;
+  public static getInstance(): UserStorage {
+    return !UserStorage.instance ? UserStorage.instance = new UserStorage() : UserStorage.instance
   }
 
-  setSliderData(){
-    return !localStorage.getItem(this.key) ? localStorage.setItem(this.key, JSON.stringify(this.data)) : JSON.parse(localStorage.getItem(this.key) as any);
+  public setData(key: string, data: any): void {
+    return localStorage.setItem(key, JSON.stringify(data))
+  }
+
+  public getData(key: string): Array<Data> | null {
+    return localStorage.getItem(key) 
+    ? JSON.parse(localStorage.getItem(key))
+    : null
   }
 }

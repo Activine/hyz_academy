@@ -1,16 +1,15 @@
 import { OptionSlider } from "./models/interface";
 
 export class ProSlider {
-  selector: string;
-  sliderContainer: HTMLElement;
-  arrow: boolean;
-  dots: boolean;
-  showSlide: number;
-  track: HTMLElement;
-  sliderBtns: HTMLElement;
-  counter: number;
-  offset: number;
-
+  private selector: string;
+  private sliderContainer: HTMLElement;
+  private arrow: boolean;
+  private dots: boolean;
+  private showSlide: number;
+  private track: HTMLElement;
+  private sliderBtns: HTMLElement;
+  private offset: number;
+  
   constructor(selector: string, options: OptionSlider) {
     this.selector = selector;
     this.sliderContainer = document.querySelector(this.selector) as HTMLElement;
@@ -19,23 +18,38 @@ export class ProSlider {
     this.showSlide = options.showSlide;
     this.track = document.createElement("div");
     this.sliderBtns = document.createElement("div");
-    this.counter = 0;
     this.offset = 0;
   }
 
-  addClasses(): void {
+  public updateAfterResize(): void {
+    this.track.style.transform = `translateY(0px)`;
+    this.track.style.transform = `translateX(0px)`;
+    
+    let allBtns: Array<HTMLButtonElement> = Array.from(this.sliderBtns.children) as Array<HTMLButtonElement>;
+    
+    this.removeAllActive();
+    this.addActive(allBtns[0]);
+  }
+  
+  public init(): void {
+    this.addClasses();
+    this.renderHtml();
+    this.handleClick();
+  }
+  
+  private addClasses(): void {
     this.track.className = `slider-track`;
     this.sliderBtns.className = `slider-dots`;
   }
 
-  createDot(): HTMLButtonElement {
-    let btn = document.createElement("button") as HTMLButtonElement;
+  private createDot(): HTMLButtonElement {
+    let btn: HTMLButtonElement = document.createElement("button");
     btn.className = `slider-dot`;
 
     return btn;
   }
 
-  createSliderDots(): void {
+  private createSliderDots(): void {
     this.sliderContainer.append(this.sliderBtns);
 
     for (let i = 0; i < this.track.children.length; i++) {
@@ -43,35 +57,35 @@ export class ProSlider {
     }
   }
 
-  addActive(el: HTMLButtonElement) {
+  private addActive(el: HTMLButtonElement): void {
     el.disabled = true;
     el.classList.add(`slider-active`);
   }
 
-  removeActive(el: HTMLButtonElement) {
+  private removeActive(el: HTMLButtonElement): void {
     el.classList.remove(`slider-active`);
     el.disabled = false;
   }
 
-  removeAllActive(): void {
-    let allBtns = Array.from(this.sliderBtns.children) as Array<HTMLButtonElement>;
+  private removeAllActive(): void {
+    let allBtns: Array<HTMLButtonElement> = Array.from(this.sliderBtns.children) as Array<HTMLButtonElement>;
     allBtns.forEach((el: HTMLButtonElement) => this.removeActive(el));
   }
 
-  createNumDot(el: number): HTMLButtonElement {
-    let btn = document.createElement("button") as HTMLButtonElement;
+  private createNumDot(el: number): HTMLButtonElement {
+    let btn: HTMLButtonElement = document.createElement("button");
     btn.className = `slider-dot`;
     btn.textContent = `${el + 1}`;
 
     return btn;
   }
 
-  createSliderNumDots(): void {
+  private createSliderNumDots(): void {
     let counterDots: number = 0;
 
     this.sliderContainer.append(this.sliderBtns);
 
-    Array.from(this.track.children).forEach((el, i: number) => {
+    Array.from(this.track.children).forEach((el: Element, i: number) => {
       if (i % 2 === 0) {
         this.sliderBtns.append(this.createNumDot(counterDots));
         counterDots++;
@@ -79,8 +93,8 @@ export class ProSlider {
     });
   }
 
-  handleClick(): void {
-    const allBtns = Array.from(this.sliderBtns.children) as Array<HTMLButtonElement>;
+  private handleClick(): void {
+    const allBtns: Array<HTMLButtonElement> = Array.from(this.sliderBtns.children) as Array<HTMLButtonElement>;
 
     this.addActive(allBtns[0]);
 
@@ -88,7 +102,7 @@ export class ProSlider {
       let index: number = allBtns.indexOf(event.target as HTMLButtonElement);
       const gap: string = window.getComputedStyle(this.track).gap.replace(/[a-z]/gi, "");
 
-      if (index === -1) { return };
+      if (index === -1) { return }
       
       switch(true) {
         case(this.showSlide < 2): {
@@ -120,22 +134,12 @@ export class ProSlider {
     });
   }
 
-  updateAfterResize(): void {
-    this.track.style.transform = `translateY(0px)`;
-    this.track.style.transform = `translateX(0px)`;
-
-    let allBtns = Array.from(this.sliderBtns.children) as Array<HTMLButtonElement>;
-
-    this.removeAllActive();
-    this.addActive(allBtns[0]);
-  }
-
-  renderHtml(): void {
-    let arrItems = Array.from(this.sliderContainer.children) as Array<HTMLButtonElement>;
+  private renderHtml(): void {
+    let arrItems: Array<HTMLButtonElement> = Array.from(this.sliderContainer.children) as Array<HTMLButtonElement>;
 
     Array.from(this.sliderContainer.children).forEach((el: HTMLElement) => el.remove());
 
-    const list = document.createElement("div") as HTMLElement;
+    const list: HTMLElement = document.createElement("div");
     list.className = `slider-list`;
     this.sliderContainer.append(list);
     list.append(this.track);
@@ -147,11 +151,5 @@ export class ProSlider {
     } else if (this.showSlide < 2 && !this.arrow) {
       this.createSliderDots();
     }
-  }
-
-  init(): void {
-    this.addClasses();
-    this.renderHtml();
-    this.handleClick();
   }
 }
