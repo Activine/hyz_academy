@@ -2,7 +2,7 @@ import { Data } from "../models/interface";
 
 export function localSt(keyData: string) {
   return function (target: Object, key: string) {
-    const getData = () => {
+    const getData = (): Array<Data> | null => {
       return localStorage.getItem(keyData)
         ? JSON.parse(localStorage.getItem(keyData))
         : null
@@ -15,6 +15,7 @@ export function localSt(keyData: string) {
     Object.defineProperty(target, key, {
       get: getData,
       set: setData,
+      configurable: true
     });
   }
 }

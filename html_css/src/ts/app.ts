@@ -24,6 +24,7 @@ export class App extends AppAbstract {
     scrollApp();
     createBurger();
     this.storage.setData(data);
+    
     this.prsl = document.querySelector(`#prefer__slider`) as HTMLElement;
   }
 
