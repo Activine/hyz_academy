@@ -1,6 +1,7 @@
 import { Data } from "./models/interface";
 import { Storage } from "./models/interface";
 import { localSt } from "./decorators/localStorage.decorator";
+import { sessionSt } from "./decorators/sessionStorage.decorator";
 
 export class UserStorage implements Storage{
   private static instance: UserStorage;
@@ -10,6 +11,7 @@ export class UserStorage implements Storage{
   }
   
   @localSt("dataSlider")
+  @sessionSt("dataSlider")
   private localData: Array<Data>;
 
   public setData(data: any): void {
